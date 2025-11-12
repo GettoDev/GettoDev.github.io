@@ -114,6 +114,46 @@ body {
 	max-width: 80%;
 }
 
+/* Botón de inicio de audio */
+#audio-start {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.85);
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#audio-start button {
+	padding: 20px 40px;
+	font-size: 24px;
+	cursor: pointer;
+	background: #5b3943;
+	color: white;
+	border: 2px solid #9b3943;
+	border-radius: 10px;
+	transition: all 0.3s ease;
+}
+
+#audio-start button:hover {
+	background: #6b4953;
+	transform: scale(1.05);
+}
+
+#audio-start p {
+	margin-bottom: 20px;
+	font-size: 18px;
+	text-align: center;
+	max-width: 80%;
+}
+
 /* Mensaje de información sobre el tamaño */
 #size-info {
 	position: fixed;
@@ -124,7 +164,7 @@ body {
 	background: rgba(0, 0, 0, 0.7);
 	padding: 5px 10px;
 	border-radius: 5px;
-	display: none; /* Oculto por defecto */
+	display: none;
 }
 		</style>
 		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
@@ -133,6 +173,12 @@ body {
 
 	</head>
 	<body>
+		<!-- Botón de inicio para audio -->
+		<div id="audio-start">
+			<p>Haz clic en el botón para iniciar el juego con audio</p>
+			<button id="start-button">Comenzar Juego</button>
+		</div>
+
 		<div id="canvas-container">
 			<canvas id="canvas" width="960" height="540">
 				Your browser does not support the canvas tag.
@@ -157,7 +203,7 @@ body {
 		<script>
 const GODOT_CONFIG = {
 	"args":[],
-	"canvasResizePolicy":0, // 0 = Deshabilitar redimensionamiento
+	"canvasResizePolicy":0,
 	"emscriptenPoolSize":8,
 	"ensureCrossOriginIsolationHeaders":true,
 	"executable":"index",
@@ -171,14 +217,62 @@ const GODOT_CONFIG = {
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
+// Variables para control de audio
+let audioContext = null;
+let audioStarted = false;
+
+function startAudioContext() {
+	if (audioStarted) return;
+	
+	// Crear y reanudar contexto de audio
+	if (typeof AudioContext !== 'undefined') {
+		audioContext = new AudioContext();
+		if (audioContext.state === 'suspended') {
+			audioContext.resume().then(() => {
+				console.log('AudioContext reanudado correctamente');
+				audioStarted = true;
+			}).catch(err => {
+				console.error('Error al reanudar AudioContext:', err);
+			});
+		}
+	} else if (typeof webkitAudioContext !== 'undefined') {
+		// Para Safari
+		audioContext = new webkitAudioContext();
+		if (audioContext.state === 'suspended') {
+			audioContext.resume().then(() => {
+				console.log('AudioContext reanudado correctamente');
+				audioStarted = true;
+			});
+		}
+	}
+	
+	// Ocultar el botón de inicio
+	document.getElementById('audio-start').style.display = 'none';
+	audioStarted = true;
+}
+
+// Configurar evento para el botón de inicio
+document.getElementById('start-button').addEventListener('click', startAudioContext);
+
+// También capturar cualquier clic en la página para iniciar audio
+document.addEventListener('click', function() {
+	if (!audioStarted) {
+		startAudioContext();
+	}
+}, { once: true });
+
+// Intentar iniciar audio con cualquier tecla presionada
+document.addEventListener('keydown', function() {
+	if (!audioStarted) {
+		startAudioContext();
+	}
+}, { once: true });
+
 (function () {
 	const statusOverlay = document.getElementById('status');
 	const statusProgress = document.getElementById('status-progress');
 	const statusNotice = document.getElementById('status-notice');
-	const sizeInfo = document.getElementById('size-info');
-
-	// Mostrar información del tamaño (opcional, para debugging)
-	// sizeInfo.style.display = 'block';
+	const audioStartOverlay = document.getElementById('audio-start');
 
 	let initializing = true;
 	let statusMode = '';
@@ -234,7 +328,6 @@ const engine = new Engine(GODOT_CONFIG);
 			} catch (err) {
 				serviceWorkerRegistrationPromise = Promise.reject(new Error('Service worker registration failed.'));
 			}
-			// There's a chance that installing the service worker would fix the issue
 			Promise.race([
 				serviceWorkerRegistrationPromise.then((registration) => {
 					if (registration != null) {
@@ -242,18 +335,15 @@ const engine = new Engine(GODOT_CONFIG);
 					}
 					return registration;
 				}).then(() => engine.installServiceWorker()),
-				// For some reason, `getRegistration()` can stall
 				new Promise((resolve) => {
 					setTimeout(() => resolve(), 2000);
 				}),
 			]).then(() => {
-				// Reload if there was no error.
 				window.location.reload();
 			}).catch((err) => {
 				console.error('Error while registering service worker:', err);
 			});
 		} else {
-			// Display the message as usual
 			const missingMsg = 'Error\nThe following features required to run Godot projects on the Web are missing:\n';
 			displayFailureNotice(missingMsg + missing.join('\n'));
 		}
@@ -271,6 +361,23 @@ const engine = new Engine(GODOT_CONFIG);
 			},
 		}).then(() => {
 			setStatusMode('hidden');
+			
+			// SOLUCIÓN DE AUDIO - Forzar contexto de audio después de cargar el juego
+			setTimeout(() => {
+				if (!audioStarted) {
+					startAudioContext();
+				}
+				
+				// Intentar reanudar audio múltiples veces por si acaso
+				if (audioContext && audioContext.state === 'suspended') {
+					audioContext.resume().then(() => {
+						console.log('AudioContext activado después de carga del juego');
+					}).catch(err => {
+						console.warn('No se pudo activar AudioContext automáticamente, esperando interacción del usuario');
+					});
+				}
+			}, 1500);
+			
 		}, displayFailureNotice);
 	}
 }());
