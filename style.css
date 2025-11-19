@@ -1,0 +1,91 @@
+/* style.css */
+
+/* Estilos generales */
+body {
+    font-family: 'Press Start 2P', monospace;
+    margin: 0;
+    background-color: #222;
+    color: #fff;
+    background-image: url('spuare.gif'); 
+    background-repeat: repeat;
+}
+
+/* Cabecera */
+header {
+    background-image: url('retro-pattern.jpg');
+    background-size: cover;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header img {
+    max-width: 100%;
+}
+
+/* Divisor */
+.divider {
+    height: 2px;
+    background-color: #fff;
+    margin: 10px 0;
+}
+
+/* Navegación */
+nav {
+    float: left;
+    width: 150px;
+    background-color: blue;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Área de contenido principal */
+main {
+    margin-left: 160px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Texto del contenido principal */
+main p {
+    line-height: 1.5;
+}
+
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Elementos específicos del contenido principal */
+h1, h3 {
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+a {
+    color: #ff00ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos de botones (ejemplo) */
+.content-wrapper {
+  background-color: blue; /* Sets the background color to black */
+  padding: 0px; /* Adds some padding around the content */
+  margin: 0 auto; /* Centers the content horizontally */
+  /* Add other styles as needed (e.g., border, opacity) */
+}
+.button {
+    background-color: #ff00ff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
