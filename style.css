@@ -89,3 +89,63 @@ a:hover {
     display: inline-block;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+/* Pies Frescos */
+.game-hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.game-hero__image {
+    flex: 1 1 300px;
+    max-width: 420px;
+    width: 100%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.game-hero__content {
+    flex: 1 1 320px;
+}
+
+.game-hero__content p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.feature-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: rgba(0, 0, 0, 0.35);
+    border: 2px solid #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
+.feature-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.feature-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+}
+
+.feature-card p {
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
