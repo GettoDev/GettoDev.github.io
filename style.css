@@ -4,17 +4,16 @@
 body {
     font-family: 'Press Start 2P', monospace;
     margin: 0;
-    background-color: #222;
-    color: #fff;
+    background: linear-gradient(135deg, #0a001f, #1a001a);
+    color: #e0e0ff;
     background-image: url('spuare.gif');
     background-repeat: repeat;
 }
 
 /* Cabecera */
 header {
-    background-image: url('retro-pattern.jpg');
-    background-size: cover;
-    color: #fff;
+    background: linear-gradient(135deg, #2a0044, #1a001a);
+    color: #ff00ff;
     padding: 20px;
     text-align: center;
 }
@@ -26,7 +25,7 @@ header img {
 /* Divisor */
 .divider {
     height: 2px;
-    background-color: #fff;
+    background-color: #00ffff;
     margin: 10px 0;
 }
 
@@ -34,8 +33,9 @@ header img {
 nav {
     float: left;
     width: 150px;
-    background-color: blue;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    background: rgba(0,0,30,0.9);
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 10px #00ffff;
 }
 
 /* Área de contenido principal */
@@ -52,8 +52,8 @@ main p {
 
 /* Pie de página */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #0a001f;
+    color: #ff00ff;
     text-align: center;
     padding: 10px;
 }
@@ -66,7 +66,7 @@ h3 {
 }
 
 a {
-    color: #ff00ff;
+    color: #00ffff;
     text-decoration: none;
 }
 
@@ -92,7 +92,7 @@ a:hover {
     border-radius: 5px;
     text-decoration: none;
     display: inline-block;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px #ff00ff;
 }
 
 /* Pies Frescos */
@@ -130,11 +130,11 @@ a:hover {
 }
 
 .feature-card {
-    background-color: rgba(0, 0, 0, 0.35);
-    border: 2px solid #fff;
+    background-color: rgba(0,0,30,0.6);
+    border: 2px solid #00ffff;
     border-radius: 16px;
     padding: 20px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 12px #00ffff;
 }
 
 .feature-card img {
@@ -238,12 +238,11 @@ a:hover {
 }
 
 .game-card {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 2px solid #ff00ff;
-    /* Neon pink border for games */
+    background-color: rgba(0,0,30,0.6);
+    border: 2px solid #00ffff;
     border-radius: 12px;
     padding: 15px;
-    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+    box-shadow: 0 0 10px #00ffff;
     transition: transform 0.2s, box-shadow 0.2s;
     display: flex;
     flex-direction: column;
@@ -294,13 +293,12 @@ a:hover {
 }
 
 .game-frame {
-    border: 4px solid #ff00ff;
-    box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+    border: 4px solid #00ffff;
+    box-shadow: 0 0 30px #00ffff;
     border-radius: 8px;
     overflow: hidden;
-    background-color: #000;
+    background-color: #0a001f;
     position: relative;
-    /* For status overlay positioning */
 }
 
 .back-button-container {

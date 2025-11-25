@@ -13,8 +13,8 @@
 			border: 0 none;
 			padding: 0;
 			text-align: center;
-			background-color: #222;
-			/* Match site background */
+			background: linear-gradient(135deg, #0a001f, #1a001a);
+			color: #e0e0ff;
 			background-image: url('../spuare.gif');
 			background-repeat: repeat;
 		}
@@ -23,6 +23,8 @@
 			display: block;
 			margin: 0;
 			color: white;
+			width: 800px;
+			height: 450px;
 		}
 
 		#canvas:focus {
@@ -152,7 +154,7 @@
 		</div>
 
 		<div class="game-frame">
-			<canvas id='canvas'>
+			<canvas id='canvas' width='1280' height='768'>
 				HTML5 canvas appears to be unsupported in the current browser.<br />
 				Please try updating or use a different browser.
 			</canvas>
