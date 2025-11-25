@@ -96,7 +96,17 @@
 			border-radius: 10px;
 			overflow: hidden;
 			box-shadow: 0 0 30px #00f0ff, inset 0 0 30px rgba(0, 240, 255, 0.2);
+		}
+
+		/* Wrapper for responsive aspect ratio */
+		.canvas-wrapper {
 			position: relative;
+			width: 100%;
+			padding-bottom: 56.25%;
+			/* 16:9 aspect ratio */
+			height: 0;
+			overflow: hidden;
+			background: #000000;
 		}
 
 		.game-title-bar {
@@ -145,12 +155,14 @@
 			box-shadow: 0 0 10px currentColor;
 		}
 
-		/* Canvas - let Godot handle sizing with canvasResizePolicy: 2 */
+		/* Canvas - positioned absolutely within wrapper */
 		#canvas {
-			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
-			margin: 0 auto;
+			display: block;
 			color: white;
 			background: #000000;
 		}
@@ -366,26 +378,28 @@
 					</div>
 				</div>
 
-				<canvas id='canvas'>
-					HTML5 canvas appears to be unsupported in the current browser.<br />
-					Please try updating or use a different browser.
-				</canvas>
+				<div class="canvas-wrapper">
+					<canvas id='canvas'>
+						HTML5 canvas appears to be unsupported in the current browser.<br />
+						Please try updating or use a different browser.
+					</canvas>
 
-				<div id='status'>
-					<div id='status-progress' style='display: none;' oncontextmenu='event.preventDefault();'>
-						<div id='status-progress-inner'></div>
+					<div id='status'>
+						<div id='status-progress' style='display: none;' oncontextmenu='event.preventDefault();'>
+							<div id='status-progress-inner'></div>
+						</div>
+						<div id='status-indeterminate' style='display: none;' oncontextmenu='event.preventDefault();'>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+						<div id='status-notice' class='godot' style='display: none;'></div>
 					</div>
-					<div id='status-indeterminate' style='display: none;' oncontextmenu='event.preventDefault();'>
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-					</div>
-					<div id='status-notice' class='godot' style='display: none;'></div>
 				</div>
 			</div>
 
