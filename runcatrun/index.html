@@ -9,6 +9,7 @@
 	<style type='text/css'>
 		/* Game Page Specific Styles */
 		body {
+			touch-action: none;
 			background-color: #000000;
 			background-image: url('../spuare.gif');
 			background-repeat: repeat;
@@ -144,23 +145,25 @@
 			box-shadow: 0 0 10px currentColor;
 		}
 
-		/* Canvas container for responsive sizing */
-		.canvas-container {
-			position: relative;
-			width: 100%;
-			padding-bottom: 56.25%;
-			/* 16:9 aspect ratio */
+		/* Canvas - let Godot handle sizing with canvasResizePolicy: 2 */
+		#canvas {
+			display: block;
+			margin: 0 auto;
+			color: white;
 			background: #000000;
-			overflow: hidden;
 		}
 
-		#canvas {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: #000000;
+		#canvas:focus {
+			outline: none;
+		}
+
+		.godot {
+			font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
+			color: #e0e0e0;
+			background-color: #3b3943;
+			background-image: linear-gradient(to bottom, #403e48, #35333c);
+			border: 1px solid #45434e;
+			box-shadow: 0 0 1px 1px #2f2d35;
 		}
 
 		#status {
@@ -361,28 +364,26 @@
 					</div>
 				</div>
 
-				<div class="canvas-container">
-					<canvas id='canvas'>
-						HTML5 canvas appears to be unsupported in the current browser.<br />
-						Please try updating or use a different browser.
-					</canvas>
+				<canvas id='canvas'>
+					HTML5 canvas appears to be unsupported in the current browser.<br />
+					Please try updating or use a different browser.
+				</canvas>
 
-					<div id='status'>
-						<div id='status-progress' style='display: none;'>
-							<div id='status-progress-inner'></div>
-						</div>
-						<div id='status-indeterminate' style='display: none;'>
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-						</div>
-						<div id='status-notice' style='display: none;'></div>
+				<div id='status'>
+					<div id='status-progress' style='display: none;' oncontextmenu='event.preventDefault();'>
+						<div id='status-progress-inner'></div>
 					</div>
+					<div id='status-indeterminate' style='display: none;' oncontextmenu='event.preventDefault();'>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div id='status-notice' class='godot' style='display: none;'></div>
 				</div>
 			</div>
 
@@ -421,7 +422,7 @@
 
 	<script type='text/javascript' src='index.js'></script>
 	<script type='text/javascript'>//<![CDATA[
-		const GODOT_CONFIG = { "args": [], "canvasResizePolicy": 2, "executable": "index", "experimentalVK": false, "fileSizes": { "index.pck": 19069664, "index.wasm": 19796835 }, "focusCanvas": true, "gdnativeLibs": [], "serviceWorker": "index.service.worker.js" };
+		const GODOT_CONFIG = { "args": [], "canvasResizePolicy": 2, "executable": "index", "experimentalVK": false, "fileSizes": { "index.pck": 19069792, "index.wasm": 19796835 }, "focusCanvas": true, "gdnativeLibs": [], "serviceWorker": "index.service.worker.js" };
 		var engine = new Engine(GODOT_CONFIG);
 
 		(function () {
@@ -442,6 +443,7 @@
 			requestAnimationFrame(animate);
 
 			function setStatusMode(mode) {
+
 				if (statusMode === mode || !initializing)
 					return;
 				[statusProgress, statusIndeterminate, statusNotice].forEach(elem => {
@@ -508,6 +510,7 @@
 							statusProgressInner.style.width = current / total * 100 + '%';
 							setStatusMode('progress');
 							if (current === total) {
+								// wait for progress bar animation
 								setTimeout(() => {
 									setStatusMode('indeterminate');
 								}, 500);
