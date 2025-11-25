@@ -219,3 +219,57 @@ a:hover {
         margin-bottom: 15px;
     }
 }
+
+/* ===== GAMES SECTION STYLES ===== */
+
+.games-grid {
+    margin-top: 30px;
+    display: grid;
+    /* auto-fill allows items to take up available space without stretching to fill the whole row if there are few items */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center; /* Centers the grid items if they don't fill the row */
+}
+
+.game-card {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #ff00ff; /* Neon pink border for games */
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
+}
+
+.game-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9; /* Enforce a consistent aspect ratio */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #fff;
+}
+
+.game-card h4 {
+    margin: 5px 0 10px 0;
+    font-size: 1em;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 0px #000;
+}
+
+.game-card .button {
+    font-size: 0.8em;
+    padding: 8px 16px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
