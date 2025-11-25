@@ -6,7 +6,7 @@ body {
     margin: 0;
     background-color: #222;
     color: #fff;
-    background-image: url('spuare.gif'); 
+    background-image: url('spuare.gif');
     background-repeat: repeat;
 }
 
@@ -59,7 +59,8 @@ footer {
 }
 
 /* Elementos específicos del contenido principal */
-h1, h3 {
+h1,
+h3 {
     font-size: 2em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -75,11 +76,15 @@ a:hover {
 
 /* Estilos de botones (ejemplo) */
 .content-wrapper {
-  background-color: blue; /* Sets the background color to black */
-  padding: 0px; /* Adds some padding around the content */
-  margin: 0 auto; /* Centers the content horizontally */
-  /* Add other styles as needed (e.g., border, opacity) */
+    background-color: blue;
+    /* Sets the background color to black */
+    padding: 0px;
+    /* Adds some padding around the content */
+    margin: 0 auto;
+    /* Centers the content horizontally */
+    /* Add other styles as needed (e.g., border, opacity) */
 }
+
 .button {
     background-color: #ff00ff;
     color: #fff;
@@ -203,16 +208,16 @@ a:hover {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .team-hero__image {
         max-width: 100%;
     }
-    
+
     main {
         margin-left: 0;
         padding: 15px;
     }
-    
+
     nav {
         float: none;
         width: 100%;
@@ -228,12 +233,14 @@ a:hover {
     /* auto-fill allows items to take up available space without stretching to fill the whole row if there are few items */
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
-    justify-content: center; /* Centers the grid items if they don't fill the row */
+    justify-content: center;
+    /* Centers the grid items if they don't fill the row */
 }
 
 .game-card {
     background-color: rgba(0, 0, 0, 0.5);
-    border: 2px solid #ff00ff; /* Neon pink border for games */
+    border: 2px solid #ff00ff;
+    /* Neon pink border for games */
     border-radius: 12px;
     padding: 15px;
     box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
@@ -251,7 +258,8 @@ a:hover {
 .game-card img {
     width: 100%;
     height: auto;
-    aspect-ratio: 16/9; /* Enforce a consistent aspect ratio */
+    aspect-ratio: 16/9;
+    /* Enforce a consistent aspect ratio */
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -272,4 +280,33 @@ a:hover {
     width: 100%;
     text-align: center;
     box-sizing: border-box;
+}
+
+/* ===== GAME PAGE STYLES ===== */
+
+.game-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.game-frame {
+    border: 4px solid #ff00ff;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #000;
+    position: relative;
+    /* For status overlay positioning */
+}
+
+.back-button-container {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1024px;
+    /* Adjust based on game width */
+    text-align: left;
 }
