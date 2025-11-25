@@ -165,6 +165,8 @@
 			display: block;
 			color: white;
 			background: #000000;
+			image-rendering: pixelated;
+			image-rendering: crisp-edges;
 		}
 
 		#canvas:focus {
@@ -438,7 +440,7 @@
 
 	<script type='text/javascript' src='index.js'></script>
 	<script type='text/javascript'>//<![CDATA[
-		const GODOT_CONFIG = { "args": [], "canvasResizePolicy": 2, "executable": "index", "experimentalVK": false, "fileSizes": { "index.pck": 19069792, "index.wasm": 19796835 }, "focusCanvas": true, "gdnativeLibs": [], "serviceWorker": "index.service.worker.js" };
+		const GODOT_CONFIG = { "args": [], "canvasResizePolicy": 1, "executable": "index", "experimentalVK": false, "fileSizes": { "index.pck": 19069792, "index.wasm": 19796835 }, "focusCanvas": true, "gdnativeLibs": [], "serviceWorker": "index.service.worker.js" };
 		var engine = new Engine(GODOT_CONFIG);
 
 		(function () {
