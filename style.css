@@ -1,185 +1,403 @@
-/* style.css */
+/* ===== CYBERPUNK NEON REDESIGN ===== */
 
-/* Estilos generales */
-body {
-    font-family: 'Press Start 2P', monospace;
+/* Reset and Base */
+* {
     margin: 0;
-    background: #000000;
-    color: #55ead4;
-    background-image: url('spuare.gif');
-    background-repeat: repeat;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Cabecera */
+body {
+    font-family: 'Press Start 2P', monospace;
+    background: #000000;
+    color: #00f0ff;
+    background-image: url('spuare.gif');
+    background-repeat: repeat;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Scanline Effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg,
+            rgba(0, 240, 255, 0.03) 0px,
+            rgba(0, 240, 255, 0.03) 1px,
+            transparent 1px,
+            transparent 2px);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Neon Text Effects */
+.neon-cyan {
+    color: #00f0ff;
+    text-shadow:
+        0 0 5px #00f0ff,
+        0 0 10px #00f0ff,
+        0 0 20px #00f0ff,
+        0 0 40px #00f0ff;
+}
+
+.neon-yellow {
+    color: #f8e602;
+    text-shadow:
+        0 0 5px #f8e602,
+        0 0 10px #f8e602,
+        0 0 20px #f8e602;
+}
+
+.neon-green {
+    color: #4bff21;
+    text-shadow:
+        0 0 5px #4bff21,
+        0 0 10px #4bff21,
+        0 0 20px #4bff21;
+}
+
+/* Header */
 header {
-    background: #c5003c;
-    color: #f3e600;
+    background: linear-gradient(135deg, #772289, #000000);
     padding: 20px;
     text-align: center;
+    border-bottom: 3px solid #00f0ff;
+    box-shadow:
+        0 0 20px #00f0ff,
+        inset 0 0 20px rgba(0, 240, 255, 0.1);
+    position: relative;
 }
 
 header img {
     max-width: 100%;
+    filter: drop-shadow(0 0 10px #00f0ff);
 }
 
-/* Divisor */
-.divider {
-    height: 2px;
-    background-color: #f3e600;
-    margin: 10px 0;
-}
-
-/* Navegación */
+/* Navigation - Horizontal */
 nav {
-    float: left;
-    width: 150px;
-    background: #880425;
-    border: 2px solid #c5003c;
-    box-shadow: 0 0 10px #c5003c;
+    background: rgba(119, 34, 137, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #00f0ff;
+    box-shadow: 0 0 15px #00f0ff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* Área de contenido principal */
-main {
-    margin-left: 160px;
-    padding: 20px;
-    text-align: center;
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
 }
 
-/* Texto del contenido principal */
-main p {
-    line-height: 1.5;
+nav li {
+    margin: 0;
 }
 
-/* Pie de página */
-footer {
-    background-color: #c5003c;
-    color: #f3e600;
-    text-align: center;
-    padding: 10px;
-}
-
-/* Elementos específicos del contenido principal */
-h1,
-h3 {
-    font-size: 2em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-a {
-    color: #55ead4;
+nav a {
+    display: block;
+    padding: 15px 25px;
+    color: #00f0ff;
     text-decoration: none;
+    font-size: 0.8em;
+    border-right: 1px solid rgba(0, 240, 255, 0.3);
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #00f0ff;
+}
+
+nav a:hover {
+    background: rgba(0, 240, 255, 0.1);
+    color: #4bff21;
+    text-shadow:
+        0 0 10px #4bff21,
+        0 0 20px #4bff21;
+    box-shadow: inset 0 0 20px rgba(75, 255, 33, 0.2);
+}
+
+nav li:last-child a {
+    border-right: none;
+}
+
+/* Main Content */
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+    color: #f8e602;
+    text-shadow:
+        0 0 10px #f8e602,
+        0 0 20px #f8e602,
+        0 0 30px #f8e602;
+    margin-bottom: 20px;
+    animation: flicker 3s infinite alternate;
+}
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.95;
+    }
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+/* Paragraphs */
+p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #f4d5fd;
+    text-shadow: 0 0 3px rgba(244, 213, 253, 0.5);
+}
+
+/* Links */
+a {
+    color: #00f0ff;
+    text-decoration: none;
+    text-shadow: 0 0 5px #00f0ff;
+    transition: all 0.3s ease;
 }
 
 a:hover {
-    color: #f3e600;
-    text-decoration: underline;
+    color: #4bff21;
+    text-shadow:
+        0 0 10px #4bff21,
+        0 0 20px #4bff21;
 }
 
-/* Estilos de botones (ejemplo) */
-.content-wrapper {
-    background-color: blue;
-    /* Sets the background color to black */
-    padding: 0px;
-    /* Adds some padding around the content */
-    margin: 0 auto;
-    /* Centers the content horizontally */
-    /* Add other styles as needed (e.g., border, opacity) */
+/* Divider */
+.divider {
+    height: 3px;
+    background: linear-gradient(90deg,
+            transparent,
+            #4bff21,
+            transparent);
+    margin: 30px 0;
+    box-shadow: 0 0 10px #4bff21;
+    animation: pulse 2s infinite;
 }
 
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Buttons */
 .button {
-    background-color: #c5003c;
-    color: #f3e600;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
     display: inline-block;
-    box-shadow: 0 0 15px #c5003c;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #772289, #000000);
+    color: #f8e602;
+    text-decoration: none;
+    border: 2px solid #00f0ff;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-shadow: 0 0 5px #f8e602;
+    box-shadow:
+        0 0 15px #00f0ff,
+        inset 0 0 15px rgba(0, 240, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Pies Frescos */
-.game-hero {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: center;
-    margin-top: 40px;
-    text-align: left;
+.button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(75, 255, 33, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
 }
 
-.game-hero__image {
-    flex: 1 1 300px;
-    max-width: 420px;
-    width: 100%;
-    border: 4px solid #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+.button:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
-.game-hero__content {
-    flex: 1 1 320px;
+.button:hover {
+    border-color: #4bff21;
+    box-shadow:
+        0 0 25px #4bff21,
+        inset 0 0 25px rgba(75, 255, 33, 0.2);
+    transform: translateY(-2px);
 }
 
-.game-hero__content p {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.feature-grid {
-    margin-top: 50px;
+/* Game Cards Grid */
+.games-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
+    margin-top: 40px;
+}
+
+.game-card {
+    background: linear-gradient(135deg, rgba(119, 34, 137, 0.6), rgba(0, 0, 0, 0.8));
+    border: 2px solid #00f0ff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow:
+        0 0 20px #00f0ff,
+        inset 0 0 20px rgba(0, 240, 255, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+            transparent,
+            rgba(0, 240, 255, 0.1),
+            transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+.game-card:hover::before {
+    left: 100%;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    border-color: #4bff21;
+    box-shadow:
+        0 0 30px #4bff21,
+        0 10px 40px rgba(75, 255, 33, 0.3),
+        inset 0 0 30px rgba(75, 255, 33, 0.2);
+}
+
+.game-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #00f0ff;
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.game-card:hover img {
+    border-color: #4bff21;
+    box-shadow: 0 0 25px rgba(75, 255, 33, 0.7);
+}
+
+.game-card h4 {
+    color: #f8e602;
+    text-align: center;
+    margin: 15px 0;
+    font-size: 1em;
+    text-shadow: 0 0 10px #f8e602;
+}
+
+.game-card .button {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Feature Cards */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
 }
 
 .feature-card {
-    background-color: rgba(0, 0, 0, 0.6);
-    border: 2px solid #c5003c;
+    background: linear-gradient(135deg, rgba(119, 34, 137, 0.5), rgba(0, 0, 0, 0.7));
+    border: 2px solid #00f0ff;
     border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 0 12px #c5003c;
+    padding: 25px;
+    box-shadow:
+        0 0 15px #00f0ff,
+        inset 0 0 15px rgba(0, 240, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: #4bff21;
+    box-shadow:
+        0 0 25px #4bff21,
+        inset 0 0 25px rgba(75, 255, 33, 0.15);
+    transform: scale(1.02);
 }
 
 .feature-card img {
     width: 100%;
-    height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
+    border: 2px solid #00f0ff;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
 }
 
 .feature-card h4 {
-    margin: 0 0 10px 0;
-    font-size: 1.1em;
+    color: #f8e602;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px #f8e602;
 }
 
-.feature-card p {
-    margin: 0;
-    font-size: 0.95em;
-    line-height: 1.5;
-}
-
-/* ===== NUEVOS ESTILOS PARA "THE ARMY OF TWO" ===== */
-
-/* Estilos para la sección del equipo */
+/* Team Section */
 .team-hero {
+    background: linear-gradient(135deg, rgba(119, 34, 137, 0.4), rgba(0, 0, 0, 0.6));
+    border: 3px solid #00f0ff;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 40px 0;
+    box-shadow:
+        0 0 30px #00f0ff,
+        inset 0 0 30px rgba(0, 240, 255, 0.1);
     display: flex;
-    flex-wrap: wrap;
     gap: 30px;
     align-items: center;
-    margin: 40px 0;
-    text-align: left;
-    background-color: rgba(0, 0, 0, 0.35);
-    border: 2px solid #fff;
-    border-radius: 16px;
-    padding: 25px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    flex-wrap: wrap;
 }
 
 .team-hero__image {
     flex: 1 1 250px;
     max-width: 300px;
-    width: 100%;
-    border: 4px solid #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
+    border: 3px solid #00f0ff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00f0ff;
 }
 
 .team-hero__content {
@@ -187,103 +405,16 @@ a:hover {
 }
 
 .team-hero__content h3 {
-    margin-top: 0;
-    color: #ff00ff;
-    font-size: 1.4em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.team-hero__content p {
-    margin-bottom: 0.8rem;
-    line-height: 1.6;
-    font-size: 0.9em;
+    color: #f4d5fd;
+    margin-bottom: 15px;
 }
 
 .team-hero__content strong {
-    color: #ffff00;
+    color: #f8e602;
+    text-shadow: 0 0 5px #f8e602;
 }
 
-/* Para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .team-hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .team-hero__image {
-        max-width: 100%;
-    }
-
-    main {
-        margin-left: 0;
-        padding: 15px;
-    }
-
-    nav {
-        float: none;
-        width: 100%;
-        margin-bottom: 15px;
-    }
-}
-
-/* ===== GAMES SECTION STYLES ===== */
-
-.games-grid {
-    margin-top: 30px;
-    display: grid;
-    /* auto-fill allows items to take up available space without stretching to fill the whole row if there are few items */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    justify-content: center;
-    /* Centers the grid items if they don't fill the row */
-}
-
-.game-card {
-    background-color: rgba(0, 0, 0, 0.6);
-    border: 2px solid #c5003c;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 0 10px #c5003c;
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.game-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px #55ead4;
-}
-
-.game-card img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16/9;
-    /* Enforce a consistent aspect ratio */
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #fff;
-}
-
-.game-card h4 {
-    margin: 5px 0 10px 0;
-    font-size: 1em;
-    text-align: center;
-    color: #fff;
-    text-shadow: 2px 2px 0px #000;
-}
-
-.game-card .button {
-    font-size: 0.8em;
-    padding: 8px 16px;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-/* ===== GAME PAGE STYLES ===== */
-
+/* Game Page */
 .game-page-container {
     display: flex;
     flex-direction: column;
@@ -294,18 +425,72 @@ a:hover {
 }
 
 .game-frame {
-    border: 4px solid #c5003c;
-    box-shadow: 0 0 30px #c5003c;
-    border-radius: 8px;
+    border: 4px solid #00f0ff;
+    border-radius: 10px;
     overflow: hidden;
-    background-color: #000000;
+    background: #000000;
+    box-shadow:
+        0 0 40px #00f0ff,
+        inset 0 0 40px rgba(0, 240, 255, 0.2);
     position: relative;
 }
 
 .back-button-container {
     margin-bottom: 20px;
     width: 100%;
-    max-width: 1024px;
-    /* Adjust based on game width */
-    text-align: left;
+    max-width: 1280px;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #000000, #772289);
+    color: #f8e602;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    border-top: 3px solid #00f0ff;
+    box-shadow:
+        0 0 20px #00f0ff,
+        inset 0 0 20px rgba(0, 240, 255, 0.1);
+}
+
+footer img {
+    margin: 5px;
+    filter: drop-shadow(0 0 5px #00f0ff);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav a {
+        padding: 12px 15px;
+        font-size: 0.7em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    main {
+        padding: 20px 15px;
+    }
+}
+
+/* Selection */
+::selection {
+    background: #00f0ff;
+    color: #000000;
+    text-shadow: none;
 }
