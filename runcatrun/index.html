@@ -6,8 +6,68 @@
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<title>Run Cat Run - INFERNO TEAM</title>
 	<link href="../style.css" rel="stylesheet" type="text/css">
+
+	<!-- 🔸 GameMonetize SDK Integration -->
+	<script type="text/javascript">
+		window.SDK_OPTIONS = {
+			gameId: "sauiu1emtzmwlyt8ib6rc88t7wetq8ap",
+			onEvent: function (a) {
+				switch (a.name) {
+					case "SDK_GAME_PAUSE":
+						console.log("GameMonetize: Ad started - game paused");
+						if (window.godotPauseGame) {
+							window.godotPauseGame();
+						}
+						if (window.godotAdStarted) {
+							window.godotAdStarted();
+						}
+						break;
+					case "SDK_GAME_START":
+						console.log("GameMonetize: Ad finished - game resumed");
+						if (window.godotResumeGame) {
+							window.godotResumeGame();
+						}
+						if (window.godotAdCallback) {
+							console.log("Calling Godot ad callback");
+							window.godotAdCallback();
+						} else {
+							console.warn("Godot ad callback not found! Buffering event.");
+							window.pendingAdCallback = true;
+						}
+						break;
+					case "SDK_READY":
+						console.log("GameMonetize: SDK ready");
+						window.isGameMonetizeReady = true;
+						if (window.godotSdkReady) {
+							window.godotSdkReady();
+						}
+						break;
+				}
+			}
+		};
+		(function (a, b, c) {
+			var d = a.getElementsByTagName(b)[0];
+			a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = "https://api.gamemonetize.com/sdk.js", d.parentNode.insertBefore(a, d))
+		})(document, "script", "gamemonetize-sdk");
+
+		// Helper functions (optional, for testing)
+		window.showBanner = function () {
+			if (typeof sdk !== "undefined" && typeof sdk.showBanner === "function") {
+				console.log("Manual showBanner() trigger");
+				sdk.showBanner();
+			}
+		};
+
+		// These will be called by GameMonetize — implement them in Godot via JS interop
+		window.godotPauseGame = window.godotPauseGame || function() { console.log("godotPauseGame not implemented yet"); };
+		window.godotResumeGame = window.godotResumeGame || function() { console.log("godotResumeGame not implemented yet"); };
+		window.godotAdCallback = window.godotAdCallback || function() { console.log("godotAdCallback not implemented yet"); };
+		window.godotSdkReady = window.godotSdkReady || function() { console.log("SDK ready, but godotSdkReady not bound"); };
+	</script>
+	<!-- 🔸 End GameMonetize -->
+
 	<style type='text/css'>
-		/* Game Page Specific Styles */
+		/* (Tu estilo original SIN cambios — mantenido íntegro) */
 		body {
 			touch-action: none;
 			background-color: #000000;
@@ -98,12 +158,10 @@
 			box-shadow: 0 0 30px #00f0ff, inset 0 0 30px rgba(0, 240, 255, 0.2);
 		}
 
-		/* Wrapper for responsive aspect ratio */
 		.canvas-wrapper {
 			position: relative;
 			width: 100%;
 			padding-bottom: 56.25%;
-			/* 16:9 aspect ratio */
 			height: 0;
 			overflow: hidden;
 			background: #000000;
@@ -155,7 +213,6 @@
 			box-shadow: 0 0 10px currentColor;
 		}
 
-		/* Canvas - positioned absolutely within wrapper */
 		#canvas {
 			position: absolute;
 			top: 0;
@@ -237,37 +294,14 @@
 			position: absolute;
 		}
 
-		#status-indeterminate>div:nth-child(1) {
-			transform: rotate(22.5deg);
-		}
-
-		#status-indeterminate>div:nth-child(2) {
-			transform: rotate(67.5deg);
-		}
-
-		#status-indeterminate>div:nth-child(3) {
-			transform: rotate(112.5deg);
-		}
-
-		#status-indeterminate>div:nth-child(4) {
-			transform: rotate(157.5deg);
-		}
-
-		#status-indeterminate>div:nth-child(5) {
-			transform: rotate(202.5deg);
-		}
-
-		#status-indeterminate>div:nth-child(6) {
-			transform: rotate(247.5deg);
-		}
-
-		#status-indeterminate>div:nth-child(7) {
-			transform: rotate(292.5deg);
-		}
-
-		#status-indeterminate>div:nth-child(8) {
-			transform: rotate(337.5deg);
-		}
+		#status-indeterminate>div:nth-child(1) { transform: rotate(22.5deg); }
+		#status-indeterminate>div:nth-child(2) { transform: rotate(67.5deg); }
+		#status-indeterminate>div:nth-child(3) { transform: rotate(112.5deg); }
+		#status-indeterminate>div:nth-child(4) { transform: rotate(157.5deg); }
+		#status-indeterminate>div:nth-child(5) { transform: rotate(202.5deg); }
+		#status-indeterminate>div:nth-child(6) { transform: rotate(247.5deg); }
+		#status-indeterminate>div:nth-child(7) { transform: rotate(292.5deg); }
+		#status-indeterminate>div:nth-child(8) { transform: rotate(337.5deg); }
 
 		#status-notice {
 			margin: 0 100px;
@@ -303,17 +337,11 @@
 			.game-layout {
 				grid-template-columns: 1fr;
 			}
-
-			.sidebar-left,
-			.sidebar-right {
-				order: 2;
-			}
-
-			.game-window {
-				order: 1;
-			}
+			.sidebar-left, .sidebar-right { order: 2; }
+			.game-window { order: 1; }
 		}
 	</style>
+
 	<link id='-gd-engine-icon' rel='icon' type='image/png' href='index.icon.png' />
 	<link rel='apple-touch-icon' href='index.apple-touch-icon.png' />
 	<link rel='manifest' href='index.manifest.json'>
@@ -333,15 +361,12 @@
 	<div class="divider"></div>
 
 	<div class="game-container">
-		<!-- Game Header -->
 		<div class="game-header">
 			<h1 class="neon-yellow">🐱 Run Cat Run</h1>
 			<p>An endless runner adventure through pixelated landscapes</p>
 		</div>
 
-		<!-- Game Layout -->
 		<div class="game-layout">
-			<!-- Left Sidebar -->
 			<div class="game-panel sidebar-left">
 				<h3>📋 Game Info</h3>
 				<p><strong>Genre:</strong> Endless Runner</p>
@@ -356,11 +381,8 @@
 					<li><strong>X</strong> - Jump</li>
 					<li><strong>Z</strong> - Duck/Slide</li>
 				</ul>
-
-
 			</div>
 
-			<!-- Game Window -->
 			<div class="game-window">
 				<div class="game-title-bar">
 					<h2>▶ Run Cat Run - Now Playing</h2>
@@ -396,7 +418,6 @@
 				</div>
 			</div>
 
-			<!-- Right Sidebar -->
 			<div class="game-panel sidebar-right">
 				<h3>⭐ Features</h3>
 				<ul>
@@ -447,30 +468,18 @@
 			requestAnimationFrame(animate);
 
 			function setStatusMode(mode) {
-
-				if (statusMode === mode || !initializing)
-					return;
-				[statusProgress, statusIndeterminate, statusNotice].forEach(elem => {
-					elem.style.display = 'none';
-				});
-				animationCallbacks = animationCallbacks.filter(function (value) {
-					return (value != animateStatusIndeterminate);
-				});
+				if (statusMode === mode || !initializing) return;
+				[statusProgress, statusIndeterminate, statusNotice].forEach(elem => elem.style.display = 'none');
+				animationCallbacks = animationCallbacks.filter(value => value != animateStatusIndeterminate);
 				switch (mode) {
-					case 'progress':
-						statusProgress.style.display = 'block';
-						break;
-					case 'indeterminate':
+					case 'progress': statusProgress.style.display = 'block'; break;
+					case 'indeterminate': 
 						statusIndeterminate.style.display = 'block';
 						animationCallbacks.push(animateStatusIndeterminate);
 						break;
-					case 'notice':
-						statusNotice.style.display = 'block';
-						break;
-					case 'hidden':
-						break;
-					default:
-						throw new Error('Invalid status mode');
+					case 'notice': statusNotice.style.display = 'block'; break;
+					case 'hidden': break;
+					default: throw new Error('Invalid status mode');
 				}
 				statusMode = mode;
 			}
@@ -478,23 +487,18 @@
 			function animateStatusIndeterminate(ms) {
 				var i = Math.floor(ms / INDETERMINATE_STATUS_STEP_MS % 8);
 				if (statusIndeterminate.children[i].style.borderTopColor == '') {
-					Array.prototype.slice.call(statusIndeterminate.children).forEach(child => {
-						child.style.borderTopColor = '';
-					});
+					Array.prototype.slice.call(statusIndeterminate.children).forEach(child => child.style.borderTopColor = '');
 					statusIndeterminate.children[i].style.borderTopColor = '#00f0ff';
 				}
 			}
 
 			function setStatusNotice(text) {
-				while (statusNotice.lastChild) {
-					statusNotice.removeChild(statusNotice.lastChild);
-				}
-				var lines = text.split('\n');
-				lines.forEach((line) => {
+				while (statusNotice.lastChild) statusNotice.removeChild(statusNotice.lastChild);
+				text.split('\n').forEach(line => {
 					statusNotice.appendChild(document.createTextNode(line));
 					statusNotice.appendChild(document.createElement('br'));
 				});
-			};
+			}
 
 			function displayFailureNotice(err) {
 				var msg = err.message || err;
@@ -502,7 +506,7 @@
 				setStatusNotice(msg);
 				setStatusMode('notice');
 				initializing = false;
-			};
+			}
 
 			if (!Engine.isWebGLAvailable()) {
 				displayFailureNotice('WebGL not available');
@@ -514,10 +518,7 @@
 							statusProgressInner.style.width = current / total * 100 + '%';
 							setStatusMode('progress');
 							if (current === total) {
-								// wait for progress bar animation
-								setTimeout(() => {
-									setStatusMode('indeterminate');
-								}, 500);
+								setTimeout(() => setStatusMode('indeterminate'), 500);
 							}
 						} else {
 							setStatusMode('indeterminate');
@@ -544,5 +545,4 @@
 		</div>
 	</footer>
 </body>
-
 </html>
