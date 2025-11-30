@@ -441,6 +441,52 @@ a:hover {
     flex-wrap: wrap;
 }
 
+/* Game Hero Section - Horizontal Layout */
+.game-hero {
+    background: linear-gradient(135deg, rgba(119, 34, 137, 0.4), rgba(0, 0, 0, 0.6));
+    border: 3px solid #00f0ff;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 40px 0;
+    box-shadow:
+        0 0 30px #00f0ff,
+        inset 0 0 30px rgba(0, 240, 255, 0.1);
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.game-hero__image {
+    flex: 1 1 45%;
+    max-width: 500px;
+    border: 3px solid #00f0ff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00f0ff;
+    transition: all 0.3s ease;
+}
+
+.game-hero__image:hover {
+    border-color: #4bff21;
+    box-shadow: 0 0 30px rgba(75, 255, 33, 0.7);
+    transform: scale(1.02);
+}
+
+.game-hero__content {
+    flex: 1 1 50%;
+}
+
+.game-hero__content h3 {
+    color: #f4d5fd;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.game-hero__content strong {
+    color: #f8e602;
+    text-shadow: 0 0 5px #f8e602;
+}
+
 .team-hero__image {
     flex: 1 1 250px;
     max-width: 300px;
