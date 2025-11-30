@@ -4,16 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RetroReviews - GettoDev</title>
+    <title>RetroReviews - Classic Game Reviews | GettoDev</title>
+    <meta name="description" content="RetroReviews - Análisis detallados de juegos clásicos. Reseñas de títulos legendarios, joyas ocultas y clásicos olvidados que moldearon la historia del gaming.">
+    <meta name="keywords" content="retro reviews, game reviews, classic games, video game analysis, retro gaming, game criticism">
+    <meta name="author" content="GettoDev">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gettodev.com/RetroReviews.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gettodev.com/RetroReviews.html">
+    <meta property="og:title" content="RetroReviews - Classic Game Reviews">
+    <meta property="og:description" content="Análisis detallados de juegos clásicos y retro gaming">
+    <meta property="og:image" content="https://gettodev.com/assets/banners/getto-banner.webp">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gettodev.com/RetroReviews.html">
+    <meta property="twitter:title" content="RetroReviews - Classic Game Reviews">
+    <meta property="twitter:description" content="Análisis detallados de juegos clásicos y retro gaming">
+    <meta property="twitter:image" content="https://gettodev.com/assets/banners/getto-banner.webp">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/ui/favicon.webp">
+    <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.webp">
+    
     <link href="style.css" rel="stylesheet" type="text/css">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "RetroReviews",
+        "description": "Análisis detallados de juegos clásicos y retro gaming",
+        "url": "https://gettodev.com/RetroReviews.html",
+        "mainEntity": {
+            "@type": "Review",
+            "itemReviewed": {
+                "@type": "VideoGame",
+                "name": "Classic Games Collection"
+            },
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Organization",
+                "name": "GettoDev"
+            }
+        }
+    }
+    </script>
 </head>
 
 <body>
-    <header>
-        <img src="banner1024.png" alt="GettoDev Banner" />
+    <header role="banner">
+        <img src="assets/banners/getto-banner.webp" alt="GettoDev Banner - Cyberpunk Gaming Studio" width="1024" height="300" loading="lazy>
     </header>
 
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div id="sidebar">
             <script type="text/javascript" src="sidebar.js"></script>
         </div>
@@ -21,17 +72,17 @@
 
     <div class="divider"></div>
 
-    <main>
+    <main role="main">
         <h1 class="neon-yellow" style="text-align: center;">RetroReviews</h1>
-        <h3 class="neon-cyan" style="text-align: center;">Classic Games, Modern Reviews</h3>
+        <h2 class="neon-cyan" style="text-align: center;">Classic Games, Modern Reviews</h2>
 
-        <section class="team-hero">
+        <section aria-labelledby="coming-soon">
             <div class="team-hero__content" style="text-align: center;">
-                <h3 class="neon-yellow">Coming Soon</h3>
+                <h2 id="coming-soon" class="neon-yellow">Coming Soon</h2>
                 <p style="font-size: 1.2em; color: #00f0ff;">We're working on bringing you the best retro game reviews!</p>
                 <p>Get ready to dive into nostalgia with detailed analysis of classic games from the golden age of gaming.</p>
                 <div style="margin-top: 30px;">
-                    <img src="warmdivider.gif" alt="divider" />
+                    <img src="assets/ui/divider.webp" alt="Divider - Retro gaming separator" width="400" height="50" loading="lazy>
                 </div>
                 <p style="margin-top: 30px;">Stay tuned for reviews of legendary titles, hidden gems, and forgotten classics that shaped gaming history.</p>
             </div>
@@ -43,13 +94,13 @@
     <footer>
         <p class="neon-yellow">--Powered by GettoDev since 1998.--</p>
         <div>
-            <img src="a18.gif" alt="badge" />
-            <img src="e7.png" alt="badge" />
-            <img src="b56.png" alt="badge" />
-            <img src="d34.gif" alt="badge" />
-            <img src="d11.gif" alt="badge" />
-            <img src="d64.gif" alt="badge" />
-            <img src="h1.gif" alt="badge" />
+            <img src="assets/badges/a18.webp" alt="badge" />
+            <img src="assets/badges/e7.webp" alt="badge" />
+            <img src="assets/badges/b56.webp" alt="badge" />
+            <img src="assets/badges/d34.webp" alt="badge" />
+            <img src="assets/badges/d11.webp" alt="badge" />
+            <img src="assets/badges/d64.webp" alt="badge" />
+            <img src="assets/badges/h1.webp" alt="badge" />
         </div>
     </footer>
 

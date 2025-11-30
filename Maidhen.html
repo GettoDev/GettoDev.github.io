@@ -4,16 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maidhen - INFERNO TEAM</title>
+    <title>Maidhen - Retro Space Shooter Game | GettoDev</title>
+    <meta name="description" content="Maidhen - El shooter espacial retro definitivo. Controla la nave Maidhen en un universo pixelado hostil. Combate naves enemigas y jefes épicos en esta experiencia arcade rápida.">
+    <meta name="keywords" content="maidhen, space shooter, retro game, arcade shooter, pixel art, indie game, cyberpunk gaming">
+    <meta name="author" content="GettoDev">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gettodev.com/Maidhen.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gettodev.com/Maidhen.html">
+    <meta property="og:title" content="Maidhen - Retro Space Shooter Game">
+    <meta property="og:description" content="El shooter espacial retro definitivo con gráficos pixel art y acción arcade intensa">
+    <meta property="og:image" content="https://gettodev.com/assets/games/maidhen-spacecraft.webp">
+    <meta property="og:image:alt" content="Maidhen spacecraft firing lasers in retro pixel art style">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gettodev.com/Maidhen.html">
+    <meta property="twitter:title" content="Maidhen - Retro Space Shooter Game">
+    <meta property="twitter:description" content="El shooter espacial retro definitivo con gráficos pixel art">
+    <meta property="twitter:image" content="https://gettodev.com/assets/games/maidhen-spacecraft.webp">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/ui/favicon.webp">
+    <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.webp">
+    
     <link href="style.css" rel="stylesheet" type="text/css">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Maidhen",
+        "description": "El shooter espacial retro definitivo. Controla la nave Maidhen y viaja a través de un universo hostil y pixelado.",
+        "url": "https://gettodev.com/Maidhen.html",
+        "image": "https://gettodev.com/assets/games/maidhen-spacecraft.webp",
+        "genre": ["Shooter", "Arcade", "Retro", "Indie"],
+        "gamePlatform": ["Web", "PC"],
+        "applicationCategory": "Game",
+        "operatingSystem": "Web Browser",
+        "author": {
+            "@type": "Organization",
+            "name": "GettoDev",
+            "url": "https://gettodev.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "GettoDev",
+            "url": "https://gettodev.com"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "ratingCount": "1",
+            "bestRating": "5",
+            "worstRating": "1"
+        }
+    }
+    </script>
 </head>
 
 <body>
-    <header>
-        <img src="banner1024.png" alt="GettoDev Banner" />
+    <header role="banner">
+        <img src="assets/banners/getto-banner.webp" alt="GettoDev Banner - Cyberpunk Gaming Studio" width="1024" height="300" loading="lazy>
     </header>
 
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div id="sidebar">
             <script type="text/javascript" src="sidebar.js"></script>
         </div>
@@ -21,14 +85,15 @@
 
     <div class="divider"></div>
 
-    <main>
+    <main role="main">
         <h1 class="neon-yellow" style="text-align: center;">Maidhen</h1>
-        <h3 class="neon-cyan" style="text-align: center;">a pixelated space odyssey</h3>
+        <h2 class="neon-cyan" style="text-align: center;">a pixelated space odyssey</h2>
 
-        <section class="game-hero">
-            <img class="game-hero__image" src="m6.png" alt="Maidhen spacecraft in action" />
-            <div class="game-hero__content">
-                <h3 class="neon-yellow">Maidhen, the ultimate retro space shooter.</h3>
+        <section aria-labelledby="game-description">
+            <h2 id="game-description" class="neon-yellow">Maidhen, the ultimate retro space shooter.</h2>
+            <div class="game-hero">
+                <img class="game-hero__image" src="assets/games/maidhen-spacecraft.webp" alt="Maidhen spacecraft firing lasers in retro space battle" width="500" height="400" loading="lazy>
+                <div class="game-hero__content">
                 <p>Take control of the Maidhen spacecraft and travel through a hostile and pixelated universe. Combat a
                     great variety of enemy ships and epic bosses in this fast-paced arcade experience.</p>
             </div>
@@ -36,27 +101,29 @@
 
         <div class="divider"></div>
 
-        <section class="feature-grid">
+        <section aria-labelledby="features-heading">
+            <h2 id="features-heading" class="neon-yellow" style="text-align: center;">Game Features</h2>
+            <div class="feature-grid">
             <article class="feature-card">
-                <img src="m2.png" alt="Maidhen gameplay screenshot" />
+                <img src="assets/games/maidhen-gameplay.webp" alt="Maidhen gameplay - epic space battles with enemy waves" width="300" height="200" loading="lazy>
                 <h4>Epic Space Battles</h4>
                 <p>Face waves of enemies in intense shoot-em-up action. Master your weapons and dodge patterns to
                     survive the cosmic onslaught.</p>
             </article>
             <article class="feature-card">
-                <img src="m3.png" alt="Maidhen boss fight" />
+                <img src="assets/games/maidhen-boss.webp" alt="Maidhen boss fight - challenging epic boss encounters" width="300" height="200" loading="lazy>
                 <h4>Challenging Bosses</h4>
                 <p>Test your skills against massive boss encounters. Learn their attack patterns and strike at the
                     perfect moment to claim victory.</p>
             </article>
             <article class="feature-card">
-                <img src="m4.png" alt="Maidhen power-ups" />
+                <img src="assets/games/maidhen-powerups.webp" alt="Maidhen power-up system - weapon upgrades and shields" width="300" height="200" loading="lazy>
                 <h4>Power-Up System</h4>
                 <p>Collect power-ups to enhance your spacecraft. Upgrade your weapons and shields to become an
                     unstoppable force in the galaxy.</p>
             </article>
             <article class="feature-card">
-                <img src="m5.png" alt="Maidhen retro graphics" />
+                <img src="assets/games/maidhen-graphics.webp" alt="Maidhen retro pixel art graphics - authentic arcade style" width="300" height="200" loading="lazy>
                 <h4>Retro Pixel Art</h4>
                 <p>Experience authentic pixel art graphics that pay homage to classic arcade shooters. Every sprite
                     crafted with nostalgic detail.</p>
@@ -69,13 +136,13 @@
     <footer>
         <p class="neon-yellow">--Powered by INFIERNITOTEAM since 1998.--</p>
         <div>
-            <img src="a18.gif" alt="badge" />
-            <img src="e7.png" alt="badge" />
-            <img src="b56.png" alt="badge" />
-            <img src="d34.gif" alt="badge" />
-            <img src="d11.gif" alt="badge" />
-            <img src="d64.gif" alt="badge" />
-            <img src="h1.gif" alt="badge" />
+            <img src="assets/badges/a18.webp" alt="badge" />
+            <img src="assets/badges/e7.webp" alt="badge" />
+            <img src="assets/badges/b56.webp" alt="badge" />
+            <img src="assets/badges/d34.webp" alt="badge" />
+            <img src="assets/badges/d11.webp" alt="badge" />
+            <img src="assets/badges/d64.webp" alt="badge" />
+            <img src="assets/badges/h1.webp" alt="badge" />
         </div>
     </footer>
 

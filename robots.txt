@@ -1,0 +1,34 @@
+# Robots.txt for GettoDev
+# https://gettodev.com
+
+User-agent: *
+Allow: /
+
+# Priority pages
+Allow: /assets/
+Allow: /games/
+Allow: /team/
+Allow: /banners/
+Allow: /ui/
+Allow: /badges/
+
+# Sitemap
+Sitemap: https://gettodev.com/sitemap.xml
+
+# Crawl delay (optional, be nice to servers)
+Crawl-delay: 1
+
+# Specific instructions for common bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Disallow temporary/private directories (if any)
+Disallow: /_private/
+Disallow: /*.tmp$
+Disallow: /*.log$

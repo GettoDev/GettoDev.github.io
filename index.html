@@ -4,16 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GettoDev - Cyberpunk Gaming Studio</title>
+    <title>GettoDev - Cyberpunk Gaming Studio | Juegos Retro Indie</title>
+    <meta name="description" content="GettoDev - Estudio indie de juegos retro. Desarrollamos arcade shooters y endless runners con estética cyberpunk. ¡Explosiones, píxeles y música chiptune!">
+    <meta name="keywords" content="juegos retro, indie games, arcade shooter, pixel art, cyberpunk gaming, maidhen, pies frescos, endless runner">
+    <meta name="author" content="GettoDev">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gettodev.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gettodev.com/">
+    <meta property="og:title" content="GettoDev - Cyberpunk Gaming Studio">
+    <meta property="og:description" content="Estudio indie especializado en juegos retro con estética cyberpunk">
+    <meta property="og:image" content="https://gettodev.com/assets/banners/getto-banner.webp">
+    <meta property="og:image:alt" content="GettoDev Banner - Cyberpunk Gaming Studio">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gettodev.com/">
+    <meta property="twitter:title" content="GettoDev - Cyberpunk Gaming Studio">
+    <meta property="twitter:description" content="Estudio indie especializado en juegos retro con estética cyberpunk">
+    <meta property="twitter:image" content="https://gettodev.com/assets/banners/getto-banner.webp">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/ui/favicon.webp">
+    <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.webp">
+    
     <link href="style.css" rel="stylesheet" type="text/css">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "GettoDev",
+        "url": "https://gettodev.com",
+        "logo": "https://gettodev.com/assets/banners/getto-banner.webp",
+        "description": "Estudio indie de juegos retro especializado en arcade shooters y endless runners con estética cyberpunk",
+        "sameAs": ["https://instagram.com/gettodev"],
+        "founder": {
+            "@type": "Person",
+            "name": "Getto",
+            "jobTitle": "Game Developer"
+        }
+    }
+    </script>
 </head>
 
 <body>
-    <header>
-        <img src="banner1024.png" alt="GettoDev Banner">
+    <header role="banner">
+        <img src="assets/banners/getto-banner.webp" alt="GettoDev Banner - Cyberpunk Gaming Studio" width="1024" height="300" loading="lazy">
     </header>
 
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div id="sidebar">
             <script type="text/javascript" src="sidebar.js"></script>
         </div>
@@ -21,16 +64,17 @@
 
     <div class="divider"></div>
 
-    <main>
-        <h1 class="neon-yellow" style="text-align: center;">keep it simple</h1>
-        <h3 class="neon-cyan" style="text-align: center;">Nostalgia never dies.</h3>
+    <main role="main">
+        <h1 class="neon-yellow" style="text-align: center;">GettoDev - Cyberpunk Gaming Studio</h1>
+        <h2 class="neon-cyan" style="text-align: center;">keep it simple</h2>
+        <p class="neon-cyan" style="text-align: center;">Nostalgia never dies.</p>
 
         <p>¡Explosions, pixels and chiptune music! We are an indie studio that revives the magic of classic
             FPS and arcades. Challenge your friends and climb the leaderboards. Download our free games, follow us
             on <a href="https://www.instagram.com/gettodev/" target="_blank">Instagram</a> and become an
             Retro legend!</p>
 
-        <p><img src="warmdivider.gif" alt="divider" /></p>
+                <img src="assets/ui/divider.webp" alt="Divider - Retro gaming separator" width="400" height="50" loading="lazy">
 
         <p>¡Explosiones, píxeles y música chiptune! Somos un estudio indie que revive la magia de los FPS y
             arcades clásicos. Desafía a tus amigos y escala en las tablas de posiciones. ¡Descarga nuestros juegos
@@ -39,8 +83,9 @@
 
         <div class="divider"></div>
 
-        <h3 class="neon-yellow" style="text-align: center;">Try Our Games</h3>
-        <div class="games-grid">
+        <section aria-labelledby="games-heading">
+            <h2 id="games-heading" class="neon-yellow" style="text-align: center;">Try Our Games</h2>
+            <div class="games-grid">
             <div class="game-card">
                 <img src="runcatrun/miniatura.png" alt="Run Cat Run">
                 <h4>Run Cat Run</h4>
@@ -58,13 +103,13 @@
     <footer>
         <p class="neon-yellow">--Powered by GettoDev since 1998.--</p>
         <div>
-            <img src="a18.gif" alt="badge" />
-            <img src="e7.png" alt="badge" />
-            <img src="b56.png" alt="badge" />
-            <img src="d34.gif" alt="badge" />
-            <img src="d11.gif" alt="badge" />
-            <img src="d64.gif" alt="badge" />
-            <img src="h1.gif" alt="badge" />
+            <img src="assets/badges/a18.webp" alt="badge" />
+            <img src="assets/badges/e7.webp" alt="badge" />
+            <img src="assets/badges/b56.webp" alt="badge" />
+            <img src="assets/badges/d34.webp" alt="badge" />
+            <img src="assets/badges/d11.webp" alt="badge" />
+            <img src="assets/badges/d64.webp" alt="badge" />
+            <img src="assets/badges/h1.webp" alt="badge" />
         </div>
     </footer>
 

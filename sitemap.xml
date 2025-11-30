@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://gettodev.com/</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://gettodev.com/assets/banners/getto-banner.webp</image:loc>
+            <image:title>GettoDev Banner - Cyberpunk Gaming Studio</image:title>
+            <image:caption>GettoDev - Estudio indie de juegos retro con estética cyberpunk</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- About Us Page -->
+    <url>
+        <loc>https://gettodev.com/AboutUs.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://gettodev.com/assets/team/team-getto.webp</image:loc>
+            <image:title>Getto - Indie Game Developer</image:title>
+            <image:caption>Getto - The Code Master, desarrollador de juegos retro</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://gettodev.com/assets/team/team-bash.webp</image:loc>
+            <image:title>Bash - Game Localization Expert</image:title>
+            <image:caption>Bash - The Localization Expert, traductor de juegos</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Maidhen Game Page -->
+    <url>
+        <loc>https://gettodev.com/Maidhen.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://gettodev.com/assets/games/maidhen-spacecraft.webp</image:loc>
+            <image:title>Maidhen Spacecraft</image:title>
+            <image:caption>Nave espacial Maidhen en combate retro pixel art</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://gettodev.com/assets/games/maidhen-gameplay.webp</image:loc>
+            <image:title>Maidhen Gameplay</image:title>
+            <image:caption>Gameplay de Maidhen - batallas espaciales épicas</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://gettodev.com/assets/games/maidhen-boss.webp</image:loc>
+            <image:title>Maidhen Boss Fight</image:title>
+            <image:caption>Combate contra jefes en Maidhen - desafíos épicos</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://gettodev.com/assets/games/maidhen-powerups.webp</image:loc>
+            <image:title>Maidhen Power-Ups</image:title>
+            <image:caption>Sistema de power-ups en Maidhen - mejoras de armas</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://gettodev.com/assets/games/maidhen-graphics.webp</image:loc>
+            <image:title>Maidhen Pixel Art Graphics</image:title>
+            <image:caption>Gráficos retro pixel art de Maidhen - estilo arcade auténtico</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Pies Frescos Game Page -->
+    <url>
+        <loc>https://gettodev.com/PiesFrescos.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://gettodev.com/assets/games/piesfrescos-hero.webp</image:loc>
+            <image:title>Pies Frescos Hero</image:title>
+            <image:caption>Ero corriendo a toda velocidad en Pies Frescos</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://gettodev.com/assets/games/piesfrescos-desert.webp</image:loc>
+            <image:title>Pies Frescos Desert Level</image:title>
+            <image:caption>Nivel del desierto en Pies Frescos - dunas de neon</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://gettodev.com/assets/games/piesfrescos-cemetery.webp</image:loc>
+            <image:title>Pies Frescos Cemetery Level</image:title>
+            <image:caption>Nivel del cementerio en Pies Frescos - ambiente oscuro</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://gettodev.com/assets/games/piesfrescos-gameplay.webp</image:loc>
+            <image:title>Pies Frescos Gameplay</image:title>
+            <image:caption>Gameplay de Pies Frescos - endless runner retro</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- RetroReviews Page -->
+    <url>
+        <loc>https://gettodev.com/RetroReviews.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Run Cat Run Game Page -->
+    <url>
+        <loc>https://gettodev.com/runcatrun/index.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+</urlset>

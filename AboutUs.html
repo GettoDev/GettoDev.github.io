@@ -4,16 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - INFERNO TEAM</title>
+    <title>About Us - GettoDev Team | Desarrolladores de Juegos Retro</title>
+    <meta name="description" content="Conoce al equipo GettoDev - Getto y Bash, los desarrolladores detrás de juegos retro como Maidhen y Pies Frescos. Especialistas en arcade shooters y endless runners.">
+    <meta name="keywords" content="about gettodev, equipo de desarrollo, getto bash, desarrolladores indie, juegos retro, pixel art">
+    <meta name="author" content="GettoDev">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gettodev.com/AboutUs.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gettodev.com/AboutUs.html">
+    <meta property="og:title" content="About Us - GettoDev Team">
+    <meta property="og:description" content="Conoce al equipo GettoDev - Getto y Bash, desarrolladores de juegos retro">
+    <meta property="og:image" content="https://gettodev.com/assets/team/team-getto.webp">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gettodev.com/AboutUs.html">
+    <meta property="twitter:title" content="About Us - GettoDev Team">
+    <meta property="twitter:description" content="Conoce al equipo GettoDev - Getto y Bash, desarrolladores de juegos retro">
+    <meta property="twitter:image" content="https://gettodev.com/assets/team/team-getto.webp">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/ui/favicon.webp">
+    <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.webp">
+    
     <link href="style.css" rel="stylesheet" type="text/css">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About GettoDev Team",
+        "description": "Conoce al equipo de desarrollo detrás de los juegos retro de GettoDev",
+        "url": "https://gettodev.com/AboutUs.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "GettoDev",
+            "member": [
+                {
+                    "@type": "Person",
+                    "name": "Getto",
+                    "jobTitle": "The Code Master",
+                    "description": "Indie game developer with a passion for retro gaming. Proficient in Java, C#, and JavaScript.",
+                    "image": "https://gettodev.com/assets/team/team-getto.webp"
+                },
+                {
+                    "@type": "Person",
+                    "name": "Bash",
+                    "jobTitle": "The Localization Expert",
+                    "description": "Chinese/English translator dedicated to game localization.",
+                    "image": "https://gettodev.com/assets/team/team-bash.webp"
+                }
+            ]
+        }
+    }
+    </script>
 </head>
 
 <body>
-    <header>
-        <img src="banner1024.png" alt="GettoDev Banner" />
+    <header role="banner">
+        <img src="assets/banners/getto-banner.webp" alt="GettoDev Banner - Cyberpunk Gaming Studio" width="1024" height="300" loading="lazy">
     </header>
 
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div id="sidebar">
             <script type="text/javascript" src="sidebar.js"></script>
         </div>
@@ -21,14 +76,15 @@
 
     <div class="divider"></div>
 
-    <main>
+    <main role="main">
         <h1 class="neon-yellow" style="text-align: center;">The Army of Two</h1>
-        <h3 class="neon-cyan" style="text-align: center;">Meet the developers behind the games</h3>
+        <h2 class="neon-cyan" style="text-align: center;">Meet the developers behind the games</h2>
 
-        <section class="team-hero">
-            <img class="team-hero__image" src="getto.png" alt="Getto, indie game developer" />
-            <div class="team-hero__content">
-                <h3 class="neon-yellow">Getto - The Code Master</h3>
+        <section aria-labelledby="getto-heading">
+            <h2 id="getto-heading" class="neon-yellow">Getto - The Code Master</h2>
+            <div class="team-hero">
+                <img class="team-hero__image" src="assets/team/team-getto.webp" alt="Getto - Indie game developer" width="300" height="300" loading="lazy>
+                <div class="team-hero__content">
                 <p><strong>Date Of Birth:</strong> 04-21-1987</p>
                 <p><strong>Height:</strong> 177cm</p>
                 <p><strong>Weight:</strong> 88kg</p>
@@ -41,10 +97,11 @@
 
         <div class="divider"></div>
 
-        <section class="team-hero">
-            <img class="team-hero__image" src="bash2.png" alt="Bash, translator and game localizer" />
-            <div class="team-hero__content">
-                <h3 class="neon-yellow">Bash - The Localization Expert</h3>
+        <section aria-labelledby="bash-heading">
+            <h2 id="bash-heading" class="neon-yellow">Bash - The Localization Expert</h2>
+            <div class="team-hero">
+                <img class="team-hero__image" src="assets/team/team-bash.webp" alt="Bash - Translator and game localizer" width="300" height="300" loading="lazy>
+                <div class="team-hero__content">
                 <p><strong>Date Of Birth:</strong> Unknown</p>
                 <p><strong>Height:</strong> 181cm</p>
                 <p><strong>Weight:</strong> 95kg</p>
@@ -59,13 +116,13 @@
     <footer>
         <p class="neon-yellow">--Powered by INFIERNITOTEAM since 1998.--</p>
         <div>
-            <img src="a18.gif" alt="badge" />
-            <img src="e7.png" alt="badge" />
-            <img src="b56.png" alt="badge" />
-            <img src="d34.gif" alt="badge" />
-            <img src="d11.gif" alt="badge" />
-            <img src="d64.gif" alt="badge" />
-            <img src="h1.gif" alt="badge" />
+            <img src="assets/badges/a18.webp" alt="badge" />
+            <img src="assets/badges/e7.webp" alt="badge" />
+            <img src="assets/badges/b56.webp" alt="badge" />
+            <img src="assets/badges/d34.webp" alt="badge" />
+            <img src="assets/badges/d11.webp" alt="badge" />
+            <img src="assets/badges/d64.webp" alt="badge" />
+            <img src="assets/badges/h1.webp" alt="badge" />
         </div>
     </footer>
 

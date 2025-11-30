@@ -4,16 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pies Frescos - INFERNO TEAM</title>
+    <title>Pies Frescos - Retro Endless Runner Game | GettoDev</title>
+    <meta name="description" content="Pies Frescos - El endless runner que revolucionó los juegos de carreras. Acompaña a Ero en su aventura pixelada a través de dunas de neon, cementerios oscuros y campos de hierba crujiente.">
+    <meta name="keywords" content="pies frescos, endless runner, retro game, pixel art, indie game, cyberpunk gaming, arcade runner">
+    <meta name="author" content="GettoDev">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gettodev.com/PiesFrescos.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gettodev.com/PiesFrescos.html">
+    <meta property="og:title" content="Pies Frescos - Retro Endless Runner Game">
+    <meta property="og:description" content="El endless runner que revolucionó los juegos de carreras con estética retro">
+    <meta property="og:image" content="https://gettodev.com/assets/games/piesfrescos-hero.webp">
+    <meta property="og:image:alt" content="Ero running at full speed in Pies Frescos endless runner">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gettodev.com/PiesFrescos.html">
+    <meta property="twitter:title" content="Pies Frescos - Retro Endless Runner Game">
+    <meta property="twitter:description" content="El endless runner que revolucionó los juegos de carreras">
+    <meta property="twitter:image" content="https://gettodev.com/assets/games/piesfrescos-hero.webp">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/ui/favicon.webp">
+    <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.webp">
+    
     <link href="style.css" rel="stylesheet" type="text/css">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Pies Frescos",
+        "description": "El endless runner que revolucionó los juegos de carreras. Acompaña a Ero en su aventura pixelada.",
+        "url": "https://gettodev.com/PiesFrescos.html",
+        "image": "https://gettodev.com/assets/games/piesfrescos-hero.webp",
+        "genre": ["Endless Runner", "Arcade", "Retro", "Indie"],
+        "gamePlatform": ["Web", "PC"],
+        "applicationCategory": "Game",
+        "operatingSystem": "Web Browser",
+        "author": {
+            "@type": "Organization",
+            "name": "GettoDev",
+            "url": "https://gettodev.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "GettoDev",
+            "url": "https://gettodev.com"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
 </head>
 
 <body>
-    <header>
-        <img src="banner1024.png" alt="GettoDev Banner" />
+    <header role="banner">
+        <img src="assets/banners/getto-banner.webp" alt="GettoDev Banner - Cyberpunk Gaming Studio" width="1024" height="300" loading="lazy>
     </header>
 
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div id="sidebar">
             <script type="text/javascript" src="sidebar.js"></script>
         </div>
@@ -21,14 +78,15 @@
 
     <div class="divider"></div>
 
-    <main>
+    <main role="main">
         <h1 class="neon-yellow" style="text-align: center;">Pies Frescos</h1>
-        <h3 class="neon-cyan" style="text-align: center;">a fresh endless runner</h3>
+        <h2 class="neon-cyan" style="text-align: center;">a fresh endless runner</h2>
 
-        <section class="game-hero">
-            <img class="game-hero__image" src="pm.png" alt="Ero running at full speed" />
-            <div class="game-hero__content">
-                <h3 class="neon-yellow">Pies Frescos, the game that came to revolutionize racing games.</h3>
+        <section aria-labelledby="game-description">
+            <h2 id="game-description" class="neon-yellow">Pies Frescos, the game that came to revolutionize racing games.</h2>
+            <div class="game-hero">
+                <img class="game-hero__image" src="assets/games/piesfrescos-hero.webp" alt="Ero running at full speed in endless runner gameplay" width="500" height="400" loading="lazy>
+                <div class="game-hero__content">
                 <p>Feel the rush of a haunted runner that never slows down. Neon dunes, dark cemeteries and crunchy
                     grass fields blend into a single frantic journey where jumping, sliding and reacting fast are the
                     only rules.</p>
@@ -37,21 +95,23 @@
 
         <div class="divider"></div>
 
-        <section class="feature-grid">
+        <section aria-labelledby="features-heading">
+            <h2 id="features-heading" class="neon-yellow" style="text-align: center;">Game Features</h2>
+            <div class="feature-grid">
             <article class="feature-card">
-                <img src="p1.png" alt="Pies Frescos desert screenshot" />
+                <img src="assets/games/piesfrescos-desert.webp" alt="Pies Frescos desert level - neon dunes and obstacles" width="300" height="200" loading="lazy>
                 <h4>Choose Your Path</h4>
                 <p>Accompany Ero on her bangshtastic adventure full of obstacles, multi-layered screens and dangers that
                     keep stacking the further you go.</p>
             </article>
             <article class="feature-card">
-                <img src="p3.png" alt="Pies Frescos cemetery screenshot" />
+                <img src="assets/games/piesfrescos-cemetery.webp" alt="Pies Frescos cemetery level - dark spooky environment" width="300" height="200" loading="lazy>
                 <h4>Chase The Record</h4>
                 <p>Will she accomplish her task? Only you decide. Chain flawless runs, share your highest score with
                     your crew and keep the rivalry alive.</p>
             </article>
             <article class="feature-card">
-                <img src="p4.png" alt="Pies Frescos gameplay" />
+                <img src="assets/games/piesfrescos-gameplay.webp" alt="Pies Frescos endless runner gameplay - jumping and sliding" width="300" height="200" loading="lazy>
                 <h4>Endless Challenge</h4>
                 <p>The game never ends, only your determination does. Push your limits and see how far you can run in
                     this infinite pixel adventure.</p>
@@ -64,13 +124,13 @@
     <footer>
         <p class="neon-yellow">--Powered by INFIERNITOTEAM since 1998.--</p>
         <div>
-            <img src="a18.gif" alt="badge" />
-            <img src="e7.png" alt="badge" />
-            <img src="b56.png" alt="badge" />
-            <img src="d34.gif" alt="badge" />
-            <img src="d11.gif" alt="badge" />
-            <img src="d64.gif" alt="badge" />
-            <img src="h1.gif" alt="badge" />
+            <img src="assets/badges/a18.webp" alt="badge" />
+            <img src="assets/badges/e7.webp" alt="badge" />
+            <img src="assets/badges/b56.webp" alt="badge" />
+            <img src="assets/badges/d34.webp" alt="badge" />
+            <img src="assets/badges/d11.webp" alt="badge" />
+            <img src="assets/badges/d64.webp" alt="badge" />
+            <img src="assets/badges/h1.webp" alt="badge" />
         </div>
     </footer>
 
