@@ -125,6 +125,55 @@ nav li:last-child a {
     border-right: none;
 }
 
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer !important;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(119, 34, 137, 0.95);
+    backdrop-filter: blur(10px);
+    border: 2px solid #00f0ff;
+    border-top: none;
+    min-width: 200px;
+    z-index: 1001;
+    box-shadow: 0 0 20px #00f0ff;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    padding: 12px 20px;
+    font-size: 0.75em;
+    background: transparent;
+}
+
+.dropdown-menu li:last-child a {
+    border-bottom: none;
+}
+
+.dropdown-menu li a:hover {
+    background: rgba(0, 240, 255, 0.15);
+    color: #4bff21;
+    text-shadow: 0 0 10px #4bff21;
+}
+
 /* Main Content */
 main {
     max-width: 1400px;

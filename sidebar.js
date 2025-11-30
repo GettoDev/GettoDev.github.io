@@ -1,10 +1,21 @@
 // Horizontal Navigation Menu
 const menuItems = [
   { name: 'Home', url: 'index.html' },
-  { name: 'About Us', url: 'About Us.html' },
+  { name: 'About Us', url: 'AboutUs.html' },
   { name: 'Guestbook', url: 'http://users3.smartgb.com/g/g.php?a=s&i=g36-37295-9b', external: true },
-  { name: 'Pies Frescos', url: 'Pies Frescos.html' },
-  { name: 'Maidhen', url: 'Maidhen.html' }
+  { 
+    name: 'GAMES', 
+    dropdown: [
+      { name: 'Pies Frescos', url: 'PiesFrescos.html' },
+      { name: 'Maidhen', url: 'Maidhen.html' }
+    ]
+  },
+  { 
+    name: 'RetroReviews', 
+    dropdown: [
+      { name: 'Coming Soon', url: 'RetroReviews.html' }
+    ]
+  }
 ];
 
 // Detect if we're in a subdirectory and adjust paths accordingly
@@ -28,8 +39,16 @@ function createHorizontalMenu() {
   menuItems.forEach(item => {
     if (item.external) {
       menuHTML += `<li><a href="${item.url}" target="_blank" rel="noopener">${item.name}</a></li>`;
+    } else if (item.dropdown) {
+      // Create dropdown menu
+      menuHTML += `<li class="dropdown"><a href="#" class="dropdown-toggle">${item.name} ▼</a><ul class="dropdown-menu">`;
+      item.dropdown.forEach(subItem => {
+        const url = basePath + subItem.url;
+        menuHTML += `<li><a href="${url}">${subItem.name}</a></li>`;
+      });
+      menuHTML += '</ul></li>';
     } else {
-      // Prepend basePath for relative URLs
+      // Regular menu item
       const url = basePath + item.url;
       menuHTML += `<li><a href="${url}">${item.name}</a></li>`;
     }
