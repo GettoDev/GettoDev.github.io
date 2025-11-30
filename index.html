@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GettoDev - Cyberpunk Gaming Studio | Juegos Retro Indie</title>
-    <meta name="description" content="GettoDev - Estudio indie de juegos retro. Desarrollamos arcade shooters y endless runners con estética cyberpunk. ¡Explosiones, píxeles y música chiptune!">
-    <meta name="keywords" content="juegos retro, indie games, arcade shooter, pixel art, cyberpunk gaming, maidhen, pies frescos, endless runner">
+    <meta name="description"
+        content="GettoDev - Estudio indie de juegos retro. Desarrollamos arcade shooters y endless runners con estética cyberpunk. ¡Explosiones, píxeles y música chiptune!">
+    <meta name="keywords"
+        content="juegos retro, indie games, arcade shooter, pixel art, cyberpunk gaming, maidhen, pies frescos, endless runner">
     <meta name="author" content="GettoDev">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://gettodev.com/">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gettodev.com/">
@@ -18,20 +20,20 @@
     <meta property="og:description" content="Estudio indie especializado en juegos retro con estética cyberpunk">
     <meta property="og:image" content="https://gettodev.com/assets/banners/getto-banner.webp">
     <meta property="og:image:alt" content="GettoDev Banner - Cyberpunk Gaming Studio">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://gettodev.com/">
     <meta property="twitter:title" content="GettoDev - Cyberpunk Gaming Studio">
     <meta property="twitter:description" content="Estudio indie especializado en juegos retro con estética cyberpunk">
     <meta property="twitter:image" content="https://gettodev.com/assets/banners/getto-banner.webp">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="assets/ui/favicon.webp">
     <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.webp">
-    
+
     <link href="style.css" rel="stylesheet" type="text/css">
-    
+
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
     {
@@ -57,16 +59,14 @@
     </header>
 
     <nav role="navigation" aria-label="Main navigation">
-        <div id="sidebar">
-            <script type="text/javascript" src="sidebar.js"></script>
-        </div>
+        <div id="sidebar"></div>
     </nav>
 
     <div class="divider"></div>
 
     <main role="main">
-        <h1 class="neon-yellow" style="text-align: center;">keep it simple</h1>
-        <h3 class="neon-cyan" style="text-align: center;">Nostalgia never dies.</h3>
+        <p class="tagline neon-yellow" style="text-align: center;">keep it simple</p>
+        <h1 class="neon-cyan" style="text-align: center;">Nostalgia never dies.</h1>
 
         <p>¡Explosions, pixels and chiptune music! We are an indie studio that revives the magic of classic
             FPS and arcades. Challenge your friends and climb the leaderboards. Download our free games, follow us
@@ -85,18 +85,22 @@
         <section aria-labelledby="games-heading">
             <h2 id="games-heading" class="neon-yellow" style="text-align: center;">Try Our Games</h2>
             <div class="games-grid">
-            <div class="game-card">
-                <img src="runcatrun/miniatura.png" alt="Run Cat Run">
-                <h4>Run Cat Run</h4>
-                <a href="https://html5.gamemonetize.co/sauiu1emtzmwlyt8ib6rc88t7wetq8ap/" class="button">PLAY NOW</a>
+                <div class="game-card">
+                    <img src="runcatrun/miniatura.png" alt="Run Cat Run">
+                    <h4>Run Cat Run</h4>
+                    <p></p>
+                    <a href="/runcatrun/index.html" class="button">PLAY
+                        NOW</a>
+                </div>
+                <div class="game-card" style="display: flex; align-items: center; justify-content: center; padding: 0;">
+                    <iframe frameborder="0" src="https://itch.io/embed/4004582" width="100%" height="167"><a
+                            href="https://www.newgrounds.com/portal/view/1004363">Super Robot X by
+                            GetToShoto</a></iframe>
+                </div>
             </div>
-            <div class="game-card" style="display: flex; align-items: center; justify-content: center; padding: 0;">
-                <iframe frameborder="0" src="https://itch.io/embed/4004582" width="100%" height="167"><a
-                        href="https://www.newgrounds.com/portal/view/1004363">Super Robot X by GetToShoto</a></iframe>
-            </div>
-        </div>
 
-        <div class="divider"></div>
+            <div class="divider"></div>
+        </section>
     </main>
 
     <footer>
@@ -105,12 +109,134 @@
             <img src="assets/badges/a18.webp" alt="badge" />
             <img src="assets/badges/e7.webp" alt="badge" />
             <img src="assets/badges/b56.webp" alt="badge" />
-            <img src="assets/badges/d34.webp" alt="badge" />
             <img src="assets/badges/d11.webp" alt="badge" />
             <img src="assets/badges/d64.webp" alt="badge" />
             <img src="assets/badges/h1.webp" alt="badge" />
         </div>
     </footer>
+
+    <!-- Inline sidebar script to avoid caching issues -->
+    <script type="text/javascript">
+        // Horizontal Navigation Menu
+        const menuItems = [
+            { name: 'Home', url: 'index.html' },
+            { name: 'About Us', url: 'AboutUs.html' },
+            { name: 'Guestbook', url: 'http://users3.smartgb.com/g/g.php?a=s&i=g36-37295-9b', external: true },
+            {
+                name: 'GAMES',
+                dropdown: [
+                    { name: 'Pies Frescos', url: 'PiesFrescos.html' },
+                    { name: 'Maidhen', url: 'Maidhen.html' }
+                ]
+            },
+            {
+                name: 'RetroReviews',
+                dropdown: [
+                    { name: 'Coming Soon', url: 'RetroReviews.html' }
+                ]
+            }
+        ];
+
+        // Detect if we're in a subdirectory and adjust paths accordingly
+        function getBasePath() {
+            const path = window.location.pathname;
+            const pathParts = path.split('/');
+
+            // Get the directory name (second to last part)
+            const dirName = pathParts[pathParts.length - 2];
+
+            // Known subdirectories that need '../' prefix
+            const subdirs = ['runcatrun', 'selene', '_private'];
+
+            // If we're in a known subdirectory, prepend '../' to relative URLs
+            if (subdirs.includes(dirName)) {
+                return '../';
+            }
+            return '';
+        }
+
+        function createHorizontalMenu() {
+            const basePath = getBasePath();
+            console.log('BasePath:', basePath);
+
+            const ul = document.createElement('ul');
+
+            menuItems.forEach(item => {
+                const li = document.createElement('li');
+
+                if (item.external) {
+                    const a = document.createElement('a');
+                    a.href = item.url;
+                    a.target = '_blank';
+                    a.rel = 'noopener';
+                    a.textContent = item.name;
+                    li.appendChild(a);
+                } else if (item.dropdown) {
+                    // Create dropdown menu
+                    li.className = 'dropdown';
+                    const a = document.createElement('a');
+                    a.href = '#';
+                    a.className = 'dropdown-toggle';
+                    a.textContent = item.name + ' ▼';
+
+                    // Prevent default link behavior and toggle dropdown
+                    a.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        // Close all other dropdowns
+                        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                            if (menu !== dropdownUl) {
+                                menu.style.display = 'none';
+                            }
+                        });
+                        // Toggle current dropdown
+                        dropdownUl.style.display = dropdownUl.style.display === 'block' ? 'none' : 'block';
+                    });
+
+                    li.appendChild(a);
+
+                    const dropdownUl = document.createElement('ul');
+                    dropdownUl.className = 'dropdown-menu';
+                    dropdownUl.style.display = 'none'; // Force hidden state initially
+
+                    item.dropdown.forEach(subItem => {
+                        const subLi = document.createElement('li');
+                        const subA = document.createElement('a');
+                        subA.href = basePath + subItem.url;
+                        subA.textContent = subItem.name;
+                        console.log('Dropdown item:', subItem.name, 'URL:', subA.href);
+                        subLi.appendChild(subA);
+                        dropdownUl.appendChild(subLi);
+                    });
+
+                    li.appendChild(dropdownUl);
+                } else {
+                    // Regular menu item
+                    const a = document.createElement('a');
+                    a.href = basePath + item.url;
+                    a.textContent = item.name;
+                    li.appendChild(a);
+                }
+
+                ul.appendChild(li);
+            });
+
+            return ul;
+        }
+
+        const sidebar = document.getElementById("sidebar");
+        sidebar.innerHTML = ''; // Clear any existing content
+        sidebar.appendChild(createHorizontalMenu());
+        console.log('Menu created successfully');
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                    menu.style.display = 'none';
+                });
+            }
+        });
+    </script>
 
 </body>
 

@@ -3,15 +3,15 @@ const menuItems = [
   { name: 'Home', url: 'index.html' },
   { name: 'About Us', url: 'AboutUs.html' },
   { name: 'Guestbook', url: 'http://users3.smartgb.com/g/g.php?a=s&i=g36-37295-9b', external: true },
-  { 
-    name: 'GAMES', 
+  {
+    name: 'GAMES',
     dropdown: [
       { name: 'Pies Frescos', url: 'PiesFrescos.html' },
       { name: 'Maidhen', url: 'Maidhen.html' }
     ]
   },
-  { 
-    name: 'RetroReviews', 
+  {
+    name: 'RetroReviews',
     dropdown: [
       { name: 'Coming Soon', url: 'RetroReviews.html' }
     ]
@@ -22,11 +22,15 @@ const menuItems = [
 function getBasePath() {
   const path = window.location.pathname;
   const pathParts = path.split('/');
-  const fileName = pathParts[pathParts.length - 1];
-  
-  // If we're in a subdirectory (not root), prepend '../' to relative URLs
-  // Check if there's a directory before the filename (e.g., /runcatrun/index.html)
-  if (pathParts.length > 2 && pathParts[pathParts.length - 2] !== '') {
+
+  // Get the directory name (second to last part)
+  const dirName = pathParts[pathParts.length - 2];
+
+  // Known subdirectories that need '../' prefix
+  const subdirs = ['runcatrun', 'selene', '_private'];
+
+  // If we're in a known subdirectory, prepend '../' to relative URLs
+  if (subdirs.includes(dirName)) {
     return '../';
   }
   return '';
@@ -34,28 +38,82 @@ function getBasePath() {
 
 function createHorizontalMenu() {
   const basePath = getBasePath();
-  let menuHTML = '<ul>';
-  
+  console.log('BasePath:', basePath);
+
+  const ul = document.createElement('ul');
+
   menuItems.forEach(item => {
+    const li = document.createElement('li');
+
     if (item.external) {
-      menuHTML += `<li><a href="${item.url}" target="_blank" rel="noopener">${item.name}</a></li>`;
+      const a = document.createElement('a');
+      a.href = item.url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = item.name;
+      li.appendChild(a);
     } else if (item.dropdown) {
       // Create dropdown menu
-      menuHTML += `<li class="dropdown"><a href="#" class="dropdown-toggle">${item.name} ▼</a><ul class="dropdown-menu">`;
-      item.dropdown.forEach(subItem => {
-        const url = basePath + subItem.url;
-        menuHTML += `<li><a href="${url}">${subItem.name}</a></li>`;
+      li.className = 'dropdown';
+      const a = document.createElement('a');
+      a.href = '#';
+      a.className = 'dropdown-toggle';
+      a.textContent = item.name + ' ▼';
+      
+      // Prevent default link behavior and toggle dropdown
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Close all other dropdowns
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          if (menu !== dropdownUl) {
+            menu.style.display = 'none';
+          }
+        });
+        // Toggle current dropdown
+        dropdownUl.style.display = dropdownUl.style.display === 'block' ? 'none' : 'block';
       });
-      menuHTML += '</ul></li>';
+      
+      li.appendChild(a);
+
+      const dropdownUl = document.createElement('ul');
+      dropdownUl.className = 'dropdown-menu';
+      dropdownUl.style.display = 'none'; // Force hidden state initially
+
+      item.dropdown.forEach(subItem => {
+        const subLi = document.createElement('li');
+        const subA = document.createElement('a');
+        subA.href = basePath + subItem.url;
+        subA.textContent = subItem.name;
+        console.log('Dropdown item:', subItem.name, 'URL:', subA.href);
+        subLi.appendChild(subA);
+        dropdownUl.appendChild(subLi);
+      });
+
+      li.appendChild(dropdownUl);
     } else {
       // Regular menu item
-      const url = basePath + item.url;
-      menuHTML += `<li><a href="${url}">${item.name}</a></li>`;
+      const a = document.createElement('a');
+      a.href = basePath + item.url;
+      a.textContent = item.name;
+      li.appendChild(a);
     }
+
+    ul.appendChild(li);
   });
-  
-  menuHTML += '</ul>';
-  return menuHTML;
+
+  return ul;
 }
 
-document.getElementById("sidebar").innerHTML = createHorizontalMenu();
+const sidebar = document.getElementById("sidebar");
+sidebar.innerHTML = ''; // Clear any existing content
+sidebar.appendChild(createHorizontalMenu());
+console.log('Menu created successfully');
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.dropdown')) {
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+      menu.style.display = 'none';
+    });
+  }
+});
