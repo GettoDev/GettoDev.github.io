@@ -1,3 +1,14 @@
+/* 
+ _____ _   _ _   _    _    _   _  ____ _____ ____  
+| ____| \ | | | | |  / \  | \ | |/ ___| ____|  _ \ 
+|  _| |  \| | |_| | / _ \ |  \| | |   |  _| | | | |
+| |___| |\  |  _  |/ ___ \| |\  | |___| |___| |_| |
+|_____|_| \_|_| |_/_/   \_\_| \_|\____|_____|____/ 
+                                                
+    POWERED BY GETTODEV SINCE 1998
+    Cyberpunk Gaming Studio - Retro Indie Games
+*/
+
 // Horizontal Navigation Menu
 const menuItems = [
   { name: 'Home', url: 'index.html' },
