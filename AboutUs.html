@@ -26,15 +26,16 @@
         <h3 class="neon-cyan" style="text-align: center;">Meet the developers behind the games</h3>
 
         <section class="team-hero">
-            <img class="team-hero__image" src="getto.png" alt="Geto, indie game developer" />
+            <img class="team-hero__image" src="getto.png" alt="Getto, indie game developer" />
             <div class="team-hero__content">
-                <h3 class="neon-yellow">Geto - The Code Master</h3>
+                <h3 class="neon-yellow">Getto - The Code Master</h3>
                 <p><strong>Date Of Birth:</strong> 04-21-1987</p>
                 <p><strong>Height:</strong> 177cm</p>
                 <p><strong>Weight:</strong> 88kg</p>
                 <p>Indie game developer with a passion for retro gaming. Proficient in Java, C#, and JavaScript. I
                     specialize in creating challenging and nostalgic gaming experiences. Fan of shmup and a proud
                     Nintendo and Sega enthusiast. I once achieved a 200-win streak in KoF 2000.</p>
+                <p style="margin-top: 15px;"><strong>Contact:</strong> <span id="email-contact">[Email Protected]</span></p>
             </div>
         </section>
 
@@ -67,6 +68,17 @@
             <img src="h1.gif" alt="badge" />
         </div>
     </footer>
+
+    <script>
+        // Email protection against spam bots
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailElement = document.getElementById('email-contact');
+            const user = 'GettoDev';
+            const domain = 'proton.me';
+            
+            emailElement.innerHTML = `<a href="mailto:${user}@${domain}" style="color: #00f0ff; text-decoration: none; text-shadow: 0 0 5px #00f0ff;" onmouseover="this.style.color='#4bff21'; this.style.textShadow='0 0 10px #4bff21';" onmouseout="this.style.color='#00f0ff'; this.style.textShadow='0 0 5px #00f0ff';">${user}@${domain}</a>`;
+        });
+    </script>
 
 </body>
 
