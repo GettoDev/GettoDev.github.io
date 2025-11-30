@@ -125,14 +125,15 @@
             {
                 name: 'GAMES',
                 dropdown: [
+                    { name: 'Run Cat Run', url: 'RunCatRun.html' },
                     { name: 'Pies Frescos', url: 'PiesFrescos.html' },
                     { name: 'Maidhen', url: 'Maidhen.html' }
                 ]
             },
             {
-                name: 'RetroReviews',
+                name: 'Mod',
                 dropdown: [
-                    { name: 'Coming Soon', url: 'RetroReviews.html' }
+                    { name: 'UT99', url: 'UT99.html' }
                 ]
             }
         ];
@@ -178,25 +179,10 @@
                     a.href = '#';
                     a.className = 'dropdown-toggle';
                     a.textContent = item.name + ' ▼';
-
-                    // Prevent default link behavior and toggle dropdown
-                    a.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        // Close all other dropdowns
-                        document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                            if (menu !== dropdownUl) {
-                                menu.style.display = 'none';
-                            }
-                        });
-                        // Toggle current dropdown
-                        dropdownUl.style.display = dropdownUl.style.display === 'block' ? 'none' : 'block';
-                    });
-
                     li.appendChild(a);
 
                     const dropdownUl = document.createElement('ul');
                     dropdownUl.className = 'dropdown-menu';
-                    dropdownUl.style.display = 'none'; // Force hidden state initially
 
                     item.dropdown.forEach(subItem => {
                         const subLi = document.createElement('li');
@@ -228,13 +214,9 @@
         sidebar.appendChild(createHorizontalMenu());
         console.log('Menu created successfully');
 
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                    menu.style.display = 'none';
-                });
-            }
+        // Force hide all dropdown menus on page load
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.style.display = 'none';
         });
     </script>
 

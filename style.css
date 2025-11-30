@@ -144,7 +144,7 @@ nav li:last-child a,
 }
 
 .dropdown-menu {
-    display: none;
+    display: none !important;
     position: absolute;
     top: 100%;
     left: 0;
@@ -154,10 +154,9 @@ nav li:last-child a,
     z-index: 1001;
 }
 
-/* Commented out to prevent interference with JavaScript dropdown control */
-/* .dropdown:hover .dropdown-menu {
-    display: block;
-} */
+.dropdown:hover .dropdown-menu {
+    display: block !important;
+}
 
 .dropdown-menu li {
     width: 100%;
@@ -735,15 +734,14 @@ footer img {
 
     .dropdown-menu {
         position: static;
-        display: none;
+        display: none !important;
         background: rgba(0, 0, 0, 0.8);
         border: 1px solid #00f0ff;
     }
 
-    /* Commented out to prevent interference with JavaScript dropdown control */
-    /* .dropdown:hover .dropdown-menu {
-        display: block;
-    } */
+    .dropdown:hover .dropdown-menu {
+        display: block !important;
+    }
 
     h1 {
         font-size: 1.5em;
