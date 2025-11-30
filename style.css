@@ -650,6 +650,35 @@ footer img {
         padding: 20px 15px;
     }
 
+    /* Improved Game Hero for Mobile */
+    .game-hero {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .game-hero__image {
+        max-width: 100%;
+        width: 100%;
+        order: 2;
+    }
+
+    .game-hero__content {
+        order: 1;
+        text-align: center;
+    }
+
+    .game-hero__content h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .game-hero__content p {
+        font-size: 0.9em;
+        line-height: 1.5;
+    }
+
     .showcase-row,
     .showcase-row.reverse {
         flex-direction: column;
