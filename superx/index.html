@@ -149,13 +149,13 @@ document.getElementById('fullscreen-button').addEventListener('click', function(
     }
 });
 
-// Update button text based on fullscreen state
+// Update button visibility based on fullscreen state
 document.addEventListener('fullscreenchange', function() {
     const button = document.getElementById('fullscreen-button');
     if (document.fullscreenElement) {
-        button.textContent = 'Salir de Pantalla Completa';
+        button.style.display = 'none'; // Hide button when in fullscreen
     } else {
-        button.textContent = 'Pantalla Completa';
+        button.style.display = 'block'; // Show button when exiting fullscreen
     }
 });
 
