@@ -17,7 +17,8 @@ const menuItems = [
   {
     name: 'GAMES',
     dropdown: [
-      { name: 'Run Cat Run', url: 'RunCatRun.html' },
+      { name: 'Run Cat Run', url: 'runcatrun.html' },
+      { name: 'Go Mafalda!', url: 'gomafalda.html' },
       { name: 'Pies Frescos', url: 'PiesFrescos.html' },
       { name: 'Maidhen', url: 'Maidhen.html' }
     ]
