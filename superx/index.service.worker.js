@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1764717311|725551299';
+const CACHE_VERSION = '1764731626|226317294';
 /** @type {string} */
 const CACHE_PREFIX = 'Supa Loboto X Pr-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
