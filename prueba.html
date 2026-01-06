@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- 
+ _____ _   _ _   _    _    _   _  ____ _____ ____  
+| ____| \ | | | | |  / \  | \ | |/ ___| ____|  _ \ 
+|  _| |  \| | |_| | / _ \ |  \| | |   |  _| | | | |
+| |___| |\  |  _  |/ ___ \| |\  | |___| |___| |_| |
+|_____|_| \_|_| |_/_/   \_\_| \_|\____|_____|____/ 
+                                                
+    POWERED BY GETTODEV SINCE 1998
+    Cyberpunk Gaming Studio - Retro Indie Games
+	
+-->
+<html>
+
+<head>
+	<meta charset='utf-8' />
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title>Prueba Game - GettoDev</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<link href="css/game-page.css" rel="stylesheet" type="text/css">
+
+	<style type='text/css'>
+		body {
+			touch-action: none;
+			background-color: #000000;
+			background-image: url('assets/ui/bg-pattern.webp');
+			background-repeat: repeat;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<img src="assets/banners/getto-banner.webp" alt="GettoDev Banner">
+	</header>
+
+	<div class="divider"></div>
+
+	<div class="game-container">
+		<div class="game-header">
+			<h1 class="neon-yellow">🎮 Test Game</h1>
+			<p>Experimental game build for testing</p>
+		</div>
+
+		<div class="game-layout">
+			<div class="game-panel sidebar-left">
+				<h3>📋 Game Info</h3>
+				<p><strong>Status:</strong> Test Build</p>
+				<p><strong>Platform:</strong> Web (HTML5)</p>
+				<p><strong>Version:</strong> 0.1</p>
+
+				<div class="divider" style="margin: 15px 0;"></div>
+
+				<h3>⚙️ Technical</h3>
+				<ul>
+					<li>Godot Engine</li>
+					<li>WebAssembly</li>
+					<li>Cross-platform</li>
+				</ul>
+			</div>
+
+			<div class="game-window">
+				<div class="game-title-bar">
+					<h2>▶ Test Game - Now Playing</h2>
+					<div class="game-controls">
+						<div class="control-btn minimize"></div>
+						<div class="control-btn maximize"></div>
+						<div class="control-btn close" onclick="alert('Game closed')"></div>
+					</div>
+				</div>
+
+				<div class="iframe-wrapper">
+					<iframe src="prueba/index.html" scrolling="none" frameborder="0"></iframe>
+				</div>
+			</div>
+
+			<div class="game-panel sidebar-right">
+				<h3>ℹ️ About</h3>
+				<p>This is a test build of an experimental game project.</p>
+
+				<div class="divider" style="margin: 15px 0;"></div>
+
+				<h3>📝 Notes</h3>
+				<ul>
+					<li>This is a direct test link</li>
+					<li>For development purposes</li>
+					<li>Report issues to GettoDev team</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<footer style="margin-top: 40px;">
+		<p class="neon-yellow">--Powered by GettoDev since 1998.--</p>
+		<div>
+			<img src="assets/badges/a18.gif" alt="badge" />
+			<img src="assets/badges/b38.gif" alt="badge" />
+			<img src="assets/badges/c6.gif" alt="badge" />
+			<img src="assets/badges/c8.gif" alt="badge" />
+			<img src="assets/badges/c11.gif" alt="badge" />
+			<img src="assets/badges/d11.gif" alt="badge" />
+			<img src="assets/badges/d33.gif" alt="badge" />
+			<img src="assets/badges/d34.gif" alt="badge" />
+			<img src="assets/badges/d57.gif" alt="badge" />
+			<img src="assets/badges/d64.gif" alt="badge" />
+			<img src="assets/badges/b56.png" alt="badge" />
+			<img src="assets/badges/d17.png" alt="badge" />
+			<img src="assets/badges/d56.png" alt="badge" />
+		</div>
+	</footer>
+</body>
+
+</html>
