@@ -90,6 +90,36 @@
 			border: none;
 		}
 	</style>
+	
+	<script type='text/javascript'>
+		// Habilitar audio en el navegador
+		function enableAudio() {
+			const audioContexts = window.webkitAudioContext || window.AudioContext;
+			if (audioContexts) {
+				const audioContext = new audioContexts();
+				if (audioContext.state === 'suspended') {
+					audioContext.resume();
+				}
+			}
+			
+			// Enviar mensaje al iframe para reanudar su AudioContext
+			const iframe = document.querySelector('.iframe-wrapper iframe');
+			if (iframe && iframe.contentWindow) {
+				try {
+					iframe.contentWindow.postMessage({type: 'resumeAudio'}, '*');
+				} catch (e) {
+					console.log('No se pudo enviar mensaje al iframe');
+				}
+			}
+		}
+		
+		// Ejecutar cuando la página cargue
+		window.addEventListener('load', enableAudio);
+		
+		// También ejecutar con primer click/toque
+		document.addEventListener('click', enableAudio, {once: true});
+		document.addEventListener('touchstart', enableAudio, {once: true});
+	</script>
 </head>
 
 <body>
