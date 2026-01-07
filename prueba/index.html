@@ -75,6 +75,35 @@ body {
 	text-align: center;
 	z-index: 1;
 }
+
+#start-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #242424;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+}
+
+#start-button {
+	padding: 1rem 2rem;
+	font-size: 1.5rem;
+	background-color: #3b3943;
+	color: #e0e0e0;
+	border: 2px solid #9b3943;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
+	transition: background-color 0.2s;
+}
+
+#start-button:hover {
+	background-color: #5b3943;
+}
 		</style>
 		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
 <link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
@@ -93,6 +122,10 @@ body {
 			<img id="status-splash" src="index.png" alt="">
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
+		</div>
+
+		<div id="start-overlay">
+			<button id="start-button">Start Game</button>
 		</div>
 
 		<script src="index.js"></script>
@@ -178,19 +211,26 @@ const engine = new Engine(GODOT_CONFIG);
 		}
 	} else {
 		setStatusMode('progress');
-		engine.startGame({
-			'onProgress': function (current, total) {
-				if (current > 0 && total > 0) {
-					statusProgress.value = current;
-					statusProgress.max = total;
-				} else {
-					statusProgress.removeAttribute('value');
-					statusProgress.removeAttribute('max');
-				}
-			},
-		}).then(() => {
-			setStatusMode('hidden');
-		}, displayFailureNotice);
+		
+		const startOverlay = document.getElementById('start-overlay');
+		const startButton = document.getElementById('start-button');
+		
+		startButton.addEventListener('click', () => {
+			startOverlay.style.display = 'none';
+			engine.startGame({
+				'onProgress': function (current, total) {
+					if (current > 0 && total > 0) {
+						statusProgress.value = current;
+						statusProgress.max = total;
+					} else {
+						statusProgress.removeAttribute('value');
+						statusProgress.removeAttribute('max');
+					}
+				},
+			}).then(() => {
+				setStatusMode('hidden');
+			}, displayFailureNotice);
+		});
 	}
 }());
 		</script>
