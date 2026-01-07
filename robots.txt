@@ -13,7 +13,7 @@ Allow: /ui/
 Allow: /badges/
 
 # Sitemap
-Sitemap: https://gettodev.com/sitemap.xml
+Sitemap: https://gettodev.github.io/sitemap.xml
 
 # Crawl delay (optional, be nice to servers)
 Crawl-delay: 1
