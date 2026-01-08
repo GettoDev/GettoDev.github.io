@@ -1,5 +1,5 @@
 # Robots.txt for GettoDev
-# https://gettodev.com
+# https://gettodev.github.io
 
 User-agent: *
 Allow: /

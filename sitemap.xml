@@ -134,4 +134,30 @@
         <priority>0.6</priority>
     </url>
     
+    <!-- BubbleNoid Game Page -->
+    <url>
+        <loc>https://gettodev.github.io/bubblenoid.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://gettodev.github.io/assets/banners/getto-banner.webp</image:loc>
+            <image:title>BubbleNoid - Arcade Breakout Game</image:title>
+            <image:caption>BubbleNoid - Juego arcade breakout retro con gráficos pixel art</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- BubbleNoid Folder Game Page -->
+    <url>
+        <loc>https://gettodev.github.io/bubblenoid/</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://gettodev.github.io/assets/banners/getto-banner.webp</image:loc>
+            <image:title>BubbleNoid - Arcade Breakout Game</image:title>
+            <image:caption>BubbleNoid - Juego arcade breakout retro con gráficos pixel art</image:caption>
+        </image:image>
+    </url>
+    
 </urlset>

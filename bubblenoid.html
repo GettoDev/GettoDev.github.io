@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!-- 
+ _____ _   _ _   _    _    _   _  ____ _____ ____  
+| ____| \ | | | | |  / \  | \ | |/ ___| ____|  _ \ 
+|  _| |  \| | |_| | / _ \ |  \| | |   |  _| | | | |
+| |___| |\  |  _  |/ ___ \| |\  | |___| |___| |_| |
+|_____|_| \_|_| |_/_/   \_\_| \_|\____|_____|____/ 
+                                                
+    POWERED BY GETTODEV SINCE 1998
+    Cyberpunk Gaming Studio - Retro Indie Games
+-->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BubbleNoid - Arcade Breakout Game | GettoDev</title>
+    <meta name="description"
+        content="¡Juega BubbleNoid gratis! Un juego arcade clásico de tipo breakout. Destruye bloques, potencia tu bola y alcanza la máxima puntuación. ¡Disponible online!">
+    <meta name="keywords" content="bubblenoid, breakout, arcade, juego clásico, puzzle, juego indie, html5">
+    <meta name="author" content="GettoDev">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gettodev.github.io/bubblenoid.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gettodev.github.io/bubblenoid.html">
+    <meta property="og:title" content="BubbleNoid - Arcade Breakout Game">
+    <meta property="og:description" content="¡Juega gratis! Un emocionante juego arcade clásico de tipo breakout con gráficos modernos.">
+    <meta property="og:image" content="https://gettodev.github.io/assets/thumbs/go-mafalda.webp">
+    <meta property="og:image:alt" content="Go Mafalda! - Juego de carreras retro pixel art">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gettodev.github.io/bubblenoid.html">
+    <meta property="twitter:title" content="BubbleNoid - Arcade Breakout Game">
+    <meta property="twitter:description" content="¡Juega gratis! Un emocionante juego arcade clásico de tipo breakout con gráficos modernos.">
+    <meta property="twitter:image" content="https://gettodev.github.io/assets/thumbs/go-mafalda.webp">
+
+    <!-- VideoGame Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "BubbleNoid",
+        "description": "Un juego arcade clásico de tipo breakout donde destruyes bloques con una bola y paleta",
+        "url": "https://gettodev.github.io/bubblenoid.html",
+        "image": "https://gettodev.github.io/assets/thumbs/go-mafalda.webp",
+        "genre": ["Arcade", "Breakout", "Puzzle", "Indie", "Classic"],
+        "gamePlatform": ["Web Browser", "HTML5"],
+        "applicationCategory": "Game",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "GettoDev",
+            "url": "https://gettodev.github.io"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "GettoDev"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.3",
+            "ratingCount": "120"
+        },
+        "playMode": "SinglePlayer",
+        "difficulty": "Easy"
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/ui/favicon.webp">
+    <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.webp">
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="css/game-page.css" rel="stylesheet" type="text/css">
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "BubbleNoid",
+        "description": "Un emocionante juego arcade clásico de tipo breakout",
+        "url": "https://gettodev.github.io/bubblenoid.html",
+        "image": "https://gettodev.github.io/gomafalda/gomafalda.webp",
+        "genre": ["Arcade", "Breakout", "Puzzle", "Classic"],
+        "gamePlatform": ["Web"],
+        "applicationCategory": "Game",
+        "operatingSystem": "Web Browser",
+        "author": {
+            "@type": "Organization",
+            "name": "GettoDev",
+            "url": "https://gettodev.github.io"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <header>
+        <img src="assets/banners/getto-banner.webp" alt="GettoDev Banner - Cyberpunk Gaming Studio">
+    </header>
+
+    <nav>
+        <div id="sidebar">
+            <script type="text/javascript" src="sidebar.js"></script>
+        </div>
+    </nav>
+
+    <div class="divider"></div>
+
+    <div class="game-container">
+        <div class="game-header">
+            <h1 class="neon-yellow">🎮 BubbleNoid</h1>
+            <p>A classic arcade breakout game with modern graphics and addictive gameplay</p>
+        </div>
+
+        <div class="game-layout">
+            <!-- LEFT SIDEBAR - GAME INFO -->
+            <div class="game-panel sidebar-left">
+                <h3>📋 Game Info</h3>
+                <p><strong>Genre:</strong> Arcade Breakout</p>
+                <p><strong>Platform:</strong> Web (HTML5)</p>
+                <p><strong>Developer:</strong> GettoDev</p>
+                <p><strong>Release:</strong> 2026</p>
+
+                <div class="divider" style="margin: 15px 0;"></div>
+
+                <h3>🎮 Controls</h3>
+                <ul>
+                    <li><strong>Space Bar</strong> - Shoot Ball</li>
+                    <li><strong>Arrow Keys</strong> - Move paddle left/right</li>
+                </ul>
+
+                <div class="divider" style="margin: 15px 0;"></div>
+
+                <h3>🎯 Objective</h3>
+                <p>Destroy all blocks by bouncing the ball off your paddle. Don't let the ball fall off the screen! Clear all levels to achieve the highest score!</p>
+            </div>
+
+            <!-- CENTER - GAME WINDOW -->
+            <div class="game-window">
+                <div class="game-title-bar">
+                    <h2>▶ BubbleNoid - Now Playing</h2>
+                    <div class="game-controls">
+                        <div class="control-btn minimize"></div>
+                        <div class="control-btn maximize"></div>
+                        <div class="control-btn close" onclick="window.location.href='index.html'"></div>
+                    </div>
+                </div>
+
+                <div class="iframe-wrapper">
+                    <iframe src="bubblenoid/index.html" scrolling="none"
+                        frameborder="0" title="BubbleNoid - Game">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDEBAR - FEATURES & TIPS -->
+            <div class="game-panel sidebar-right">
+                <h3>⭐ Features</h3>
+                <ul>
+                    <li>Classic breakout gameplay</li>
+                    <li>Multiple levels</li>
+                    <li>Power-ups and bonuses</li>
+                    <li>Smooth paddle control</li>
+                    <li>Progressive difficulty</li>
+                </ul>
+
+                <div class="divider" style="margin: 15px 0;"></div>
+
+                <h3>💡 Pro Tips</h3>
+                <ul>
+                    <li>Aim for corners to create strategic angles</li>
+                    <li>Watch for power-up blocks</li>
+                    <li>Keep the ball in upper areas longer</li>
+                    <li>Master paddle control for precision shots!</li>
+                </ul>
+
+                <div class="divider" style="margin: 15px 0;"></div>
+
+                <h3>🏆 Challenge</h3>
+                <p>Can you clear all levels? Share your high scores with friends and compete for the top spot on the leaderboard!</p>
+
+                <div class="divider" style="margin: 15px 0;"></div>
+
+                <a href="index.html" class="button" style="width: 100%; margin-top: 10px;">← Back to Games</a>
+            </div>
+        </div>
+    </div>
+
+    <footer style="margin-top: 40px;">
+        <p class="neon-yellow">--Powered by GettoDev since 1998.--</p>
+        <div>
+            <img src="assets/badges/a18.gif" alt="ghost" />
+            <img src="assets/badges/b38.gif" alt="loading" />
+            <img src="assets/badges/c6.gif" alt="arkanoid" />
+            <img src="assets/badges/c8.gif" alt="retrogamer" />
+            <img src="assets/badges/c11.gif" alt="somanyideas" />
+            <img src="assets/badges/d11.gif" alt="pcuser" />
+            <img src="assets/badges/d33.gif" alt="thecomputer" />
+            <img src="assets/badges/d34.gif" alt="system32" />
+            <img src="assets/badges/d57.gif" alt="invaders" />
+            <img src="assets/badges/d64.gif" alt="retrovideo" />
+            <img src="assets/badges/b56.png" alt="oldelectronic" />
+            <img src="assets/badges/d17.png" alt="dukenukem" />
+            <img src="assets/badges/d56.png" alt="what" />
+        </div>
+    </footer>
+</body>
+
+</html>
