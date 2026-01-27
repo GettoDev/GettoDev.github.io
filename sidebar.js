@@ -11,22 +11,34 @@
 
 // Horizontal Navigation Menu
 const menuItems = [
-  { name: 'Home', url: 'index.html' },
-  { name: 'About Us', url: 'AboutUs.html' },
-  { name: 'Guestbook', url: 'http://users3.smartgb.com/g/g.php?a=s&i=g36-37295-9b', external: true },
+  { name: 'Home', url: 'index.html', 'data-en': 'Home', 'data-es': 'Inicio' },
+  { name: 'About Us', url: 'AboutUs.html', 'data-en': 'About Us', 'data-es': 'Acerca de' },
+  { name: 'Guestbook', url: 'http://users3.smartgb.com/g/g.php?a=s&i=g36-37295-9b', external: true, 'data-en': 'Guestbook', 'data-es': 'Libro de Visitas' },
   {
-    name: 'GAMES',
+    name: 'Legacy Games',
+    'data-en': 'Legacy Games',
+    'data-es': 'Juegos Legacy',
     dropdown: [
-      { name: 'Run Cat Run', url: 'runcatrun.html' },
-      { name: 'Go Mafalda!', url: 'gomafalda.html' },
-      { name: 'Pies Frescos', url: 'PiesFrescos.html' },
-      { name: 'Maidhen', url: 'Maidhen.html' }
+      { name: 'Maidhen', url: 'Maidhen.html' },
+      { name: 'Pies Frescos', url: 'PiesFrescos.html' }
     ]
   },
   {
     name: 'Mod',
+    'data-en': 'Mod',
+    'data-es': 'Mod',
     dropdown: [
       { name: 'UT99', url: 'UT99.html' }
+    ]
+  },
+  { name: 'Contact', url: 'contact.html', 'data-en': 'Contact', 'data-es': 'Contacto' },
+  {
+    name: 'Language',
+    'data-en': 'Language',
+    'data-es': 'Idioma',
+    dropdown: [
+      { name: 'English', url: '#', lang: 'en' },
+      { name: 'Español', url: '#', lang: 'es' }
     ]
   }
 ];
@@ -71,7 +83,14 @@ function createHorizontalMenu() {
       const a = document.createElement('a');
       a.href = '#';
       a.className = 'dropdown-toggle';
-      a.textContent = item.name + ' ▼';
+      a.textContent = item.name;
+      
+      // Add language attributes if available
+      if (item['data-en'] && item['data-es']) {
+        a.setAttribute('data-en', item['data-en']);
+        a.setAttribute('data-es', item['data-es']);
+      }
+      
       li.appendChild(a);
 
       const dropdownUl = document.createElement('ul');
@@ -80,8 +99,27 @@ function createHorizontalMenu() {
       item.dropdown.forEach(subItem => {
         const subLi = document.createElement('li');
         const subA = document.createElement('a');
-        subA.href = basePath + subItem.url;
+        
+        if (subItem.lang) {
+          subA.href = subItem.url;
+          subA.onclick = function(e) {
+            e.preventDefault();
+            if (typeof setLanguage === 'function') {
+              setLanguage(subItem.lang);
+            }
+          };
+        } else {
+          subA.href = basePath + subItem.url;
+        }
+        
         subA.textContent = subItem.name;
+        
+        // Add language attributes if available
+        if (subItem['data-en'] && subItem['data-es']) {
+          subA.setAttribute('data-en', subItem['data-en']);
+          subA.setAttribute('data-es', subItem['data-es']);
+        }
+        
         console.log('Dropdown item:', subItem.name, 'URL:', subA.href);
         subLi.appendChild(subA);
         dropdownUl.appendChild(subLi);
@@ -93,6 +131,13 @@ function createHorizontalMenu() {
       const a = document.createElement('a');
       a.href = basePath + item.url;
       a.textContent = item.name;
+      
+      // Add language attributes if available
+      if (item['data-en'] && item['data-es']) {
+        a.setAttribute('data-en', item['data-en']);
+        a.setAttribute('data-es', item['data-es']);
+      }
+      
       li.appendChild(a);
     }
 
