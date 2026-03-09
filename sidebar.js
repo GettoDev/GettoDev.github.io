@@ -13,7 +13,7 @@
 const menuItems = [
   { name: 'Home', url: 'index.html', 'data-en': 'Home', 'data-es': 'Inicio' },
   { name: 'About Us', url: 'AboutUs.html', 'data-en': 'About Us', 'data-es': 'Acerca de' },
-  { name: 'Guestbook', url: 'http://users3.smartgb.com/g/g.php?a=s&i=g36-37295-9b', external: true, 'data-en': 'Guestbook', 'data-es': 'Libro de Visitas' },
+  { name: 'Guestbook', url: 'https://gettodev.github.io/contact.html', external: false, 'data-en': 'Guestbook', 'data-es': 'Libro de Visitas' },
   {
     name: 'Legacy Games',
     'data-en': 'Legacy Games',
@@ -48,14 +48,20 @@ function getBasePath() {
   const path = window.location.pathname;
   const pathParts = path.split('/');
 
-  // Get the directory name (second to last part)
-  const dirName = pathParts[pathParts.length - 2];
-
+  // Remove empty strings from path parts
+  const cleanPathParts = pathParts.filter(part => part !== '');
+  
+  // Get the last directory name if we're in a subdirectory
+  const lastPart = cleanPathParts[cleanPathParts.length - 1];
+  
+  // Check if we're in a subdirectory (not the root)
+  const isInSubdirectory = cleanPathParts.length > 1 && lastPart.includes('.html') === false;
+  
   // Known subdirectories that need '../' prefix
-  const subdirs = ['runcatrun', 'selene', '_private'];
+  const subdirs = ['bubblenoid', 'gomafalda', 'neondirective', 'runsnowballrun', 'superrobotx', 'brumbrumcarrera', 'Maidhen', 'PiesFrescos'];
 
   // If we're in a known subdirectory, prepend '../' to relative URLs
-  if (subdirs.includes(dirName)) {
+  if (isInSubdirectory && subdirs.includes(lastPart)) {
     return '../';
   }
   return '';
@@ -101,7 +107,7 @@ function createHorizontalMenu() {
         const subA = document.createElement('a');
         
         if (subItem.lang) {
-          subA.href = subItem.url;
+          subA.href = '#';
           subA.onclick = function(e) {
             e.preventDefault();
             if (typeof setLanguage === 'function') {
@@ -151,6 +157,30 @@ const sidebar = document.getElementById("sidebar");
 sidebar.innerHTML = ''; // Clear any existing content
 sidebar.appendChild(createHorizontalMenu());
 console.log('Menu created successfully');
+
+// Add dropdown toggle functionality
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+  const toggle = dropdown.querySelector('.dropdown-toggle');
+  const menu = dropdown.querySelector('.dropdown-menu');
+  
+  if (toggle && menu) {
+    // Show dropdown on hover
+    dropdown.addEventListener('mouseenter', () => {
+      menu.style.display = 'block';
+    });
+    
+    // Hide dropdown on mouse leave
+    dropdown.addEventListener('mouseleave', () => {
+      menu.style.display = 'none';
+    });
+    
+    // Toggle dropdown on click (for mobile)
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+  }
+});
 
 // Force hide all dropdown menus on page load
 document.querySelectorAll('.dropdown-menu').forEach(menu => {

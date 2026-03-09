@@ -5,7 +5,7 @@
     <!-- Homepage -->
     <url>
         <loc>https://gettodev.github.io/</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-02-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -18,7 +18,7 @@
     <!-- About Us Page -->
     <url>
         <loc>https://gettodev.github.io/AboutUs.html</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-02-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -36,7 +36,7 @@
     <!-- Maidhen Game Page -->
     <url>
         <loc>https://gettodev.github.io/Maidhen.html</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-02-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -69,7 +69,7 @@
     <!-- Pies Frescos Game Page -->
     <url>
         <loc>https://gettodev.github.io/PiesFrescos.html</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-02-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -97,7 +97,7 @@
     <!-- RetroReviews Page -->
     <url>
         <loc>https://gettodev.github.io/RetroReviews.html</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-02-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -105,7 +105,7 @@
     <!-- Run Cat Run Game Page -->
     <url>
         <loc>https://gettodev.github.io/runcatrun.html</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-02-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -113,7 +113,7 @@
     <!-- Go Mafalda Game Page -->
     <url>
         <loc>https://gettodev.github.io/gomafalda.html</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-02-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -121,7 +121,7 @@
     <!-- Super Robot X Game Page -->
     <url>
         <loc>https://gettodev.github.io/SuperRobotX.html</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-02-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -129,7 +129,7 @@
     <!-- UT99 Game Page -->
     <url>
         <loc>https://gettodev.github.io/UT99.html</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-02-20</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -137,7 +137,7 @@
     <!-- BubbleNoid Game Page -->
     <url>
         <loc>https://gettodev.github.io/bubblenoid.html</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-02-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -147,10 +147,66 @@
         </image:image>
     </url>
     
+    <!-- Run Snowball Run Game Page -->
+    <url>
+        <loc>https://gettodev.github.io/runsnowballrun.html</loc>
+        <lastmod>2025-02-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Neon Directive Game Page -->
+    <url>
+        <loc>https://gettodev.github.io/neondirective.html</loc>
+        <lastmod>2025-02-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Brum Brum Carrera Game Page -->
+    <url>
+        <loc>https://gettodev.github.io/brumbrumcarrera.html</loc>
+        <lastmod>2025-02-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Super Robot X Game Page -->
+    <url>
+        <loc>https://gettodev.github.io/superrobotx.html</loc>
+        <lastmod>2025-02-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Contact Page -->
+    <url>
+        <loc>https://gettodev.github.io/contact.html</loc>
+        <lastmod>2025-02-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Not Found Page -->
+    <url>
+        <loc>https://gettodev.github.io/not_found.html</loc>
+        <lastmod>2025-02-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
+    
+    <!-- Super Robot X Game Page (Alternative URL) -->
+    <url>
+        <loc>https://gettodev.github.io/SuperRobotX.html</loc>
+        <lastmod>2025-02-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
     <!-- BubbleNoid Folder Game Page -->
     <url>
         <loc>https://gettodev.github.io/bubblenoid/</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-02-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>

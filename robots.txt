@@ -4,7 +4,7 @@
 User-agent: *
 Allow: /
 
-# Priority pages
+# Priority directories
 Allow: /assets/
 Allow: /games/
 Allow: /team/
@@ -12,13 +12,18 @@ Allow: /banners/
 Allow: /ui/
 Allow: /badges/
 
-# Sitemap
+# Disallow private directories
+Disallow: /_private/
+Disallow: /*.tmp$
+Disallow: /*.log$
+
+# Sitemap location
 Sitemap: https://gettodev.github.io/sitemap.xml
 
-# Crawl delay (optional, be nice to servers)
+# Crawl delay (optional)
 Crawl-delay: 1
 
-# Specific instructions for common bots
+# Specific instructions for major search engines
 User-agent: Googlebot
 Allow: /
 
@@ -27,8 +32,3 @@ Allow: /
 
 User-agent: Slurp
 Allow: /
-
-# Disallow temporary/private directories (if any)
-Disallow: /_private/
-Disallow: /*.tmp$
-Disallow: /*.log$
