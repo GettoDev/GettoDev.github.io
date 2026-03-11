@@ -707,21 +707,22 @@ footer img:hover {
     }
     
     nav ul, #sidebar ul {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: stretch;
     }
     
     nav li, #sidebar li {
-        flex: 1 1 50%;
+        width: 100%;
+        display: block;
     }
     
     nav a, #sidebar a {
         width: 100%;
         text-align: center;
         border-bottom: 1px solid #333333;
-    }
-    
-    nav li:nth-child(even) a, #sidebar li:nth-child(even) a {
-        border-right: none;
+        border-right: none !important;
+        display: block;
+        box-sizing: border-box;
     }
     
     main {
