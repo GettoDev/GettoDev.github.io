@@ -170,7 +170,7 @@ musicBar.innerHTML = `
         <button onclick="if(window.ytPlayer && typeof window.ytPlayer.nextVideo === 'function') window.ytPlayer.nextVideo()">NEXT</button>
     </div>
 `;
-sidebar.appendChild(musicBar);
+sidebar.insertBefore(musicBar, sidebar.firstChild);
 
 window.onYouTubeIframeAPIReady = function () {
   window.ytPlayer = new YT.Player('yt-player-container', {
@@ -229,12 +229,12 @@ document.querySelectorAll('.dropdown').forEach(dropdown => {
   if (toggle && menu) {
     // Show dropdown on hover
     dropdown.addEventListener('mouseenter', () => {
-      menu.style.display = 'block';
+      if (window.innerWidth > 768) menu.style.display = 'block';
     });
 
     // Hide dropdown on mouse leave
     dropdown.addEventListener('mouseleave', () => {
-      menu.style.display = 'none';
+      if (window.innerWidth > 768) menu.style.display = 'none';
     });
 
     // Toggle dropdown on click (for mobile)

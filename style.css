@@ -693,17 +693,34 @@ footer img:hover {
 }
 
 @media (max-width: 768px) {
+    #music-bar {
+        position: relative;
+        top: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
+        justify-content: center;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        z-index: 20;
+    }
+    
     nav ul, #sidebar ul {
         flex-wrap: wrap;
     }
     
-    nav a, #sidebar a {
+    nav li, #sidebar li {
         flex: 1 1 50%;
+    }
+    
+    nav a, #sidebar a {
+        width: 100%;
         text-align: center;
         border-bottom: 1px solid #333333;
     }
     
-    nav a:nth-child(even), #sidebar a:nth-child(even) {
+    nav li:nth-child(even) a, #sidebar li:nth-child(even) a {
         border-right: none;
     }
     
