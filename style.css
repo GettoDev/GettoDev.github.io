@@ -706,6 +706,37 @@ footer img:hover {
         z-index: 20;
     }
     
+    #hamburger-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background: #111111;
+        border: none;
+        border-bottom: 1px solid #333333;
+        color: #00ffff;
+        padding: 12px 20px;
+        font-family: 'Courier New', monospace;
+        font-size: 1em;
+        font-weight: bold;
+        letter-spacing: 2px;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+
+    #hamburger-btn:hover {
+        background-color: #1a1a1a;
+    }
+
+    #nav-links-wrapper {
+        display: none;
+        width: 100%;
+    }
+
+    #nav-links-wrapper.open {
+        display: block;
+    }
+
     nav ul, #sidebar ul {
         flex-direction: column;
         align-items: stretch;

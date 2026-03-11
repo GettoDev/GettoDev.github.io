@@ -155,8 +155,38 @@ function createHorizontalMenu() {
 
 const sidebar = document.getElementById("sidebar");
 sidebar.innerHTML = ''; // Clear any existing content
-sidebar.appendChild(createHorizontalMenu());
 sidebar.style.position = 'relative';
+
+// --- HAMBURGER BUTTON (mobile only) ---
+const hamburgerBtn = document.createElement('button');
+hamburgerBtn.id = 'hamburger-btn';
+hamburgerBtn.innerHTML = 'MENU <span id="hamburger-icon">☰</span>';
+sidebar.appendChild(hamburgerBtn);
+
+// Wrapper div that can be shown/hidden on mobile
+const navLinksWrapper = document.createElement('div');
+navLinksWrapper.id = 'nav-links-wrapper';
+navLinksWrapper.appendChild(createHorizontalMenu());
+sidebar.appendChild(navLinksWrapper);
+
+hamburgerBtn.addEventListener('click', function () {
+  navLinksWrapper.classList.toggle('open');
+  document.getElementById('hamburger-icon').textContent =
+    navLinksWrapper.classList.contains('open') ? '✕' : '☰';
+});
+
+// On desktop, always show the nav links
+function handleResize() {
+  if (window.innerWidth > 768) {
+    navLinksWrapper.style.display = 'flex';
+    hamburgerBtn.style.display = 'none';
+  } else {
+    navLinksWrapper.style.display = navLinksWrapper.classList.contains('open') ? 'block' : 'none';
+    hamburgerBtn.style.display = 'flex';
+  }
+}
+handleResize();
+window.addEventListener('resize', handleResize);
 
 // --- MUSIC PLAYER INTEGRATION ---
 const musicBar = document.createElement('div');
