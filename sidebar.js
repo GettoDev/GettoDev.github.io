@@ -249,3 +249,75 @@ document.querySelectorAll('.dropdown').forEach(dropdown => {
 document.querySelectorAll('.dropdown-menu').forEach(menu => {
   menu.style.display = 'none';
 });
+
+// --- SPA NAVIGATION ---
+document.addEventListener('click', function(e) {
+  const a = e.target.closest('a');
+  if (!a) return;
+  
+  const href = a.getAttribute('href');
+  
+  // Ignore links that shouldn't be intercepted
+  if (!href || 
+      href.startsWith('#') || 
+      a.target === '_blank' ||
+      href.startsWith('mailto:')) {
+    return;
+  }
+
+  // Cross-origin check
+  if (a.hostname && a.hostname !== window.location.hostname && window.location.protocol !== 'file:') {
+    return;
+  }
+
+  e.preventDefault();
+  navigateTo(a.href);
+});
+
+window.addEventListener('popstate', function(e) {
+  navigateTo(window.location.href, false);
+});
+
+async function navigateTo(url, push = true) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('Network response was not ok');
+    const htmlString = await response.text();
+    
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+    
+    const newMain = doc.querySelector('main');
+    const newTitle = doc.title;
+    
+    if (newMain) {
+      document.querySelector('main').innerHTML = newMain.innerHTML;
+      document.title = newTitle;
+      
+      if (push) {
+        window.history.pushState({}, newTitle, url);
+      }
+      
+      // Re-trigger language switcher if it exists globally
+      if (typeof updateContent === 'function') {
+         const currentLang = localStorage.getItem('language') || 'en';
+         updateContent(currentLang);
+      }
+
+      // Handle email protection script specific to About Us
+      const emailElement = document.getElementById('email-contact');
+      if (emailElement) {
+          const user = 'GettoDev';
+          const domain = 'proton.me';
+          emailElement.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
+      }
+      
+      window.scrollTo(0, 0);
+    } else {
+      window.location.href = url;
+    }
+  } catch (error) {
+    console.error('Error in SPA navigation:', error);
+    window.location.href = url; // Fallback for local file:// testing
+  }
+}
