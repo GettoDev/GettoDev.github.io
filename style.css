@@ -617,6 +617,57 @@ footer img:hover {
     opacity: 1;
 }
 
+/* Music Player Widget */
+#music-bar {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    background-color: #111111;
+    border: 2px solid #333333;
+    padding: 6px 15px;
+    z-index: 20;
+}
+
+#music-bar .status-lcd {
+    color: #555555;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-right: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#music-bar .status-lcd.playing {
+    color: #00ffff;
+    animation: blink-soft 2s infinite;
+}
+
+@keyframes blink-soft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+#music-bar button {
+    background-color: #000000;
+    color: #ff00ff;
+    border: 1px solid #ff00ff;
+    padding: 4px 10px;
+    margin-left: 5px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#music-bar button:hover {
+    background-color: #ff00ff;
+    color: #000000;
+}
+
 /* Responsive Structural Adjustments */
 @media (max-width: 1044px) {
     .game-container {

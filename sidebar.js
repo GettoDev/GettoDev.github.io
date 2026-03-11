@@ -50,13 +50,13 @@ function getBasePath() {
 
   // Remove empty strings from path parts
   const cleanPathParts = pathParts.filter(part => part !== '');
-  
+
   // Get the last directory name if we're in a subdirectory
   const lastPart = cleanPathParts[cleanPathParts.length - 1];
-  
+
   // Check if we're in a subdirectory (not the root)
   const isInSubdirectory = cleanPathParts.length > 1 && lastPart.includes('.html') === false;
-  
+
   // Known subdirectories that need '../' prefix
   const subdirs = ['bubblenoid', 'gomafalda', 'neondirective', 'runsnowballrun', 'superrobotx', 'brumbrumcarrera', 'Maidhen', 'PiesFrescos'];
 
@@ -90,13 +90,13 @@ function createHorizontalMenu() {
       a.href = '#';
       a.className = 'dropdown-toggle';
       a.textContent = item.name;
-      
+
       // Add language attributes if available
       if (item['data-en'] && item['data-es']) {
         a.setAttribute('data-en', item['data-en']);
         a.setAttribute('data-es', item['data-es']);
       }
-      
+
       li.appendChild(a);
 
       const dropdownUl = document.createElement('ul');
@@ -105,10 +105,10 @@ function createHorizontalMenu() {
       item.dropdown.forEach(subItem => {
         const subLi = document.createElement('li');
         const subA = document.createElement('a');
-        
+
         if (subItem.lang) {
           subA.href = '#';
-          subA.onclick = function(e) {
+          subA.onclick = function (e) {
             e.preventDefault();
             if (typeof setLanguage === 'function') {
               setLanguage(subItem.lang);
@@ -117,15 +117,15 @@ function createHorizontalMenu() {
         } else {
           subA.href = basePath + subItem.url;
         }
-        
+
         subA.textContent = subItem.name;
-        
+
         // Add language attributes if available
         if (subItem['data-en'] && subItem['data-es']) {
           subA.setAttribute('data-en', subItem['data-en']);
           subA.setAttribute('data-es', subItem['data-es']);
         }
-        
+
         console.log('Dropdown item:', subItem.name, 'URL:', subA.href);
         subLi.appendChild(subA);
         dropdownUl.appendChild(subLi);
@@ -137,13 +137,13 @@ function createHorizontalMenu() {
       const a = document.createElement('a');
       a.href = basePath + item.url;
       a.textContent = item.name;
-      
+
       // Add language attributes if available
       if (item['data-en'] && item['data-es']) {
         a.setAttribute('data-en', item['data-en']);
         a.setAttribute('data-es', item['data-es']);
       }
-      
+
       li.appendChild(a);
     }
 
@@ -156,24 +156,87 @@ function createHorizontalMenu() {
 const sidebar = document.getElementById("sidebar");
 sidebar.innerHTML = ''; // Clear any existing content
 sidebar.appendChild(createHorizontalMenu());
+sidebar.style.position = 'relative';
+
+// --- MUSIC PLAYER INTEGRATION ---
+const musicBar = document.createElement('div');
+musicBar.id = 'music-bar';
+musicBar.innerHTML = `
+    <div id="yt-player-container" style="display:none;"></div>
+    <div class="controls">
+        <span class="status-lcd" id="music-status">BGM: OFF</span>
+        <button onclick="if(window.ytPlayer && typeof window.ytPlayer.previousVideo === 'function') window.ytPlayer.previousVideo()">PREV</button>
+        <button onclick="toggleGlobalPlay()" id="playBtn">PLAY</button>
+        <button onclick="if(window.ytPlayer && typeof window.ytPlayer.nextVideo === 'function') window.ytPlayer.nextVideo()">NEXT</button>
+    </div>
+`;
+sidebar.appendChild(musicBar);
+
+window.onYouTubeIframeAPIReady = function () {
+  window.ytPlayer = new YT.Player('yt-player-container', {
+    height: '0',
+    width: '0',
+    playerVars: {
+      'listType': 'playlist',
+      'list': 'PLQYjFRxXA9z_hnZmpsvYZ_J0V9FJuJ6r0',
+      'autoplay': 0,
+      'controls': 0,
+      'origin': window.location.origin === "file://" ? "*" : window.location.origin
+    }
+  });
+};
+
+window.toggleGlobalPlay = function () {
+  if (!window.ytPlayer || typeof window.ytPlayer.getPlayerState !== 'function') return;
+  var state = window.ytPlayer.getPlayerState();
+  const statusLcd = document.getElementById('music-status');
+  const playBtn = document.getElementById('playBtn');
+
+  // 1 = playing, 2 = paused, -1 = unstarted, 0 = ended, 3 = buffering
+  if (state == 1) {
+    window.ytPlayer.pauseVideo();
+    playBtn.innerText = 'PLAY';
+    statusLcd.innerText = 'BGM: PAUSED';
+    statusLcd.classList.remove('playing');
+  } else {
+    window.ytPlayer.playVideo();
+    playBtn.innerText = 'PAUSE';
+    statusLcd.innerText = 'BGM: PLAYING';
+    statusLcd.classList.add('playing');
+  }
+};
+
+if (!document.getElementById('yt-api-script')) {
+  const tag = document.createElement('script');
+  tag.id = 'yt-api-script';
+  tag.src = 'https://www.youtube.com/iframe_api';
+  const firstScriptTag = document.getElementsByTagName('script')[0];
+  if (firstScriptTag) {
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  } else {
+    document.head.appendChild(tag);
+  }
+}
+// ---------------------------------
+
 console.log('Menu created successfully');
 
 // Add dropdown toggle functionality
 document.querySelectorAll('.dropdown').forEach(dropdown => {
   const toggle = dropdown.querySelector('.dropdown-toggle');
   const menu = dropdown.querySelector('.dropdown-menu');
-  
+
   if (toggle && menu) {
     // Show dropdown on hover
     dropdown.addEventListener('mouseenter', () => {
       menu.style.display = 'block';
     });
-    
+
     // Hide dropdown on mouse leave
     dropdown.addEventListener('mouseleave', () => {
       menu.style.display = 'none';
     });
-    
+
     // Toggle dropdown on click (for mobile)
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
