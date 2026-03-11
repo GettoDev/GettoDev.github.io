@@ -13,7 +13,7 @@
 const menuItems = [
   { name: 'Home', url: 'index.html', 'data-en': 'Home', 'data-es': 'Inicio' },
   { name: 'About Us', url: 'AboutUs.html', 'data-en': 'About Us', 'data-es': 'Acerca de' },
-  { name: 'Guestbook', url: 'https://gettodev.github.io/contact.html', external: false, 'data-en': 'Guestbook', 'data-es': 'Libro de Visitas' },
+  { name: 'Guestbook', url: 'guestbook.html', 'data-en': 'Guestbook', 'data-es': 'Libro de Visitas' },
   {
     name: 'Legacy Games',
     'data-en': 'Legacy Games',

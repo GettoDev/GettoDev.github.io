@@ -151,13 +151,13 @@
 
     <!-- Email protection script -->
     <script>
-        // Email protection against spam bots
+        // Simple email protection
         document.addEventListener('DOMContentLoaded', function () {
             const emailElement = document.getElementById('email-contact');
             const user = 'GettoDev';
             const domain = 'proton.me';
-
-            emailElement.innerHTML = `<a href="mailto:${user}@${domain}" style="color: #00f0ff; text-decoration: none; text-shadow: 0 0 5px #00f0ff;" onmouseover="this.style.color='#4bff21'; this.style.textShadow='0 0 10px #4bff21';" onmouseout="this.style.color='#00f0ff'; this.style.textShadow='0 0 5px #00f0ff';">${user}@${domain}</a>`;
+            
+            emailElement.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
         });
     </script>
 
