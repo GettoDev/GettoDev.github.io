@@ -171,8 +171,9 @@ sidebar.appendChild(navLinksWrapper);
 
 hamburgerBtn.addEventListener('click', function () {
   navLinksWrapper.classList.toggle('open');
-  document.getElementById('hamburger-icon').textContent =
-    navLinksWrapper.classList.contains('open') ? '✕' : '☰';
+  const isOpen = navLinksWrapper.classList.contains('open');
+  document.getElementById('hamburger-icon').textContent = isOpen ? '✕' : '☰';
+  navLinksWrapper.style.display = isOpen ? 'block' : 'none';
 });
 
 // On desktop, always show the nav links
