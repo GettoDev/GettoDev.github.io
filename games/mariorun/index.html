@@ -4,38 +4,6 @@
 	<meta charset='utf-8' />
 	<meta name='viewport' content='width=device-width, user-scalable=no' />
 	<title>Run Mario Run</title>
-	<script type="text/javascript">
-		window.SDK_OPTIONS = {
-			gameId: "xx6c12ib4b18r0xx8gt4jhg9kriltsjt",
-			onEvent: function (a) {
-				switch (a.name) {
-					case "SDK_GAME_PAUSE":
-						// pause game logic / mute audio
-						if (window.godotPauseGame) {
-							window.godotPauseGame();
-						}
-						break;
-					case "SDK_GAME_START":
-						// advertisement done, resume game logic and unmute audio
-						if (window.godotResumeGame) {
-							window.godotResumeGame();
-						}
-						break;
-					case "SDK_READY":
-						// when sdk is ready
-						window.isGameMonetizeReady = true;
-						if (window.godotSdkReady) {
-							window.godotSdkReady();
-						}
-						break;
-				}
-			}
-		};
-		(function (a, b, c) {
-			var d = a.getElementsByTagName(b)[0];
-			a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = "https://api.gamemonetize.com/sdk.js", d.parentNode.insertBefore(a, d))
-		})(document, "script", "gamemonetize-sdk"); 
-	</script>
 	<style type='text/css'>
 
 		body {
@@ -146,7 +114,6 @@
 	</style>
 <link id='-gd-engine-icon' rel='icon' type='image/png' href='index.icon.png' />
 <link rel='apple-touch-icon' href='index.apple-touch-icon.png'/>
-<link rel='manifest' href='index.manifest.json'>
 
 </head>
 <body>
@@ -172,7 +139,7 @@
 	<script type='text/javascript' src='index.js'></script>
 	<script type='text/javascript'>//<![CDATA[
 
-		const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":5974976,"index.wasm":19796835},"focusCanvas":true,"gdnativeLibs":[],"serviceWorker":"index.service.worker.js"};
+		const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":5975040,"index.wasm":19796835},"focusCanvas":true,"gdnativeLibs":[]};
 		var engine = new Engine(GODOT_CONFIG);
 
 		(function() {
@@ -278,5 +245,4 @@
 	//]]></script>
 </body>
 </html>
-
 
