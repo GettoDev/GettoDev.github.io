@@ -668,6 +668,106 @@ footer img:hover {
     color: #000000;
 }
 
+/* Fullscreen Button */
+.fullscreen-btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 15px auto 10px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #00ffff, #0088cc);
+    color: #000000;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0 10px rgba(0, 255, 255, 0.5),
+        0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.fullscreen-btn:hover {
+    background: linear-gradient(135deg, #00ff00, #00cc00);
+    border-color: #00ff00;
+    box-shadow: 
+        0 0 15px rgba(0, 255, 0, 0.7),
+        0 6px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.fullscreen-btn:active {
+    transform: translateY(0);
+}
+
+/* Fullscreen Mode Styles */
+.game-container:fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    aspect-ratio: none !important;
+}
+
+.game-container:-webkit-full-screen {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    aspect-ratio: none !important;
+}
+
+.game-container:-moz-full-screen {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    aspect-ratio: none !important;
+}
+
+.game-container:-ms-fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    aspect-ratio: none !important;
+}
+
+/* Hide elements in fullscreen */
+:fullscreen .controls-panel,
+:-webkit-full-screen .controls-panel,
+:-moz-full-screen .controls-panel,
+:-ms-fullscreen .controls-panel {
+    display: none;
+}
+
+:fullscreen header,
+:-webkit-full-screen header,
+:-moz-full-screen header,
+:-ms-fullscreen header {
+    display: none;
+}
+
+:fullscreen footer,
+:-webkit-full-screen footer,
+:-moz-full-screen footer,
+:-ms-fullscreen footer {
+    display: none;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .fullscreen-btn {
+        font-size: 1em;
+        padding: 10px 15px;
+        max-width: 250px;
+    }
+    
+    .game-controls {
+        text-align: center;
+    }
+}
+
 /* Responsive Structural Adjustments */
 @media (max-width: 1044px) {
     .game-container {

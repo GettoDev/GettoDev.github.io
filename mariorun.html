@@ -60,11 +60,16 @@
             
             <div class="game-wrapper">
                 <div class="game-container">
-                    <iframe src="games/mariorun/index.html" class="game-iframe" title="Mario Run"></iframe>
+                    <iframe src="games/mariorun/index.html" class="game-iframe" title="Mario Run" id="gameFrame"></iframe>
                 </div>
                 
-                <div style="text-align: center;">
-                    <a href="index.html" class="back-button" data-en="← Back to Games" data-es="← Volver a Juegos">← Back to Games</a>
+                <div class="game-controls">
+                    <button class="fullscreen-btn" id="fullscreenBtn" data-en="⛶ Fullscreen" data-es="⛶ Pantalla Completa">
+                        ⛶ Fullscreen
+                    </button>
+                    <div style="text-align: center;">
+                        <a href="index.html" class="back-button" data-en="← Back to Games" data-es="← Volver a Juegos">← Back to Games</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -94,6 +99,9 @@
     
     <!-- Language switching script -->
     <script type="text/javascript" src="language-switcher.js"></script>
+    
+    <!-- Fullscreen functionality -->
+    <script type="text/javascript" src="fullscreen.js"></script>
 
 </body>
 
