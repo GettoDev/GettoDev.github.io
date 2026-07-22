@@ -66,7 +66,7 @@ function getBasePath() {
   const isInSubdirectory = cleanPathParts.length > 1 && lastPart.includes('.html') === false;
 
   // Known subdirectories that need '../' prefix
-  const subdirs = ['bubblenoid', 'gomafalda', 'neondirective', 'runsnowballrun', 'superrobotx', 'brumbrumcarrera', 'Maidhen', 'PiesFrescos'];
+  const subdirs = ['bubblenoid', 'gomafalda', 'neondirective', 'runsnowballrun', 'superrobotx', 'brumbrumcarrera', 'Maidhen', 'PiesFrescos', 'vircon32web'];
 
   // If we're in a known subdirectory, prepend '../' to relative URLs
   if (isInSubdirectory && subdirs.includes(lastPart)) {
