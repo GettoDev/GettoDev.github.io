@@ -24,6 +24,14 @@ const menuItems = [
     ]
   },
   {
+    name: 'Emulators',
+    'data-en': 'Emulators',
+    'data-es': 'Emuladores',
+    dropdown: [
+      { name: 'VirCon32', url: 'vircon32web/VirCon32Web.html' }
+    ]
+  },
+  {
     name: 'Mod',
     'data-en': 'Mod',
     'data-es': 'Mod',
