@@ -132,7 +132,7 @@ function loadMemoryCardFile(event) {
     const reader = new FileReader();
     reader.onload = function(e) {
         const uint8Array = new Uint8Array(e.target.result);
-        writeAndLoad('/uploads/memorycard.v32', uint8Array, 'loadMemoryCardFromPath');
+        writeAndLoad('/uploads/memorycard.memc', uint8Array, 'loadMemoryCardFromPath');
     };
     reader.readAsArrayBuffer(file);
 }
@@ -151,13 +151,13 @@ function saveMemoryCard() {
         Module.ccall('flushMemoryCard', null, [], []);
 
         // Read the memory card file from Emscripten's virtual FS
-        const data = FS.readFile('/uploads/memorycard.v32', { encoding: 'binary' });
+        const data = FS.readFile('/uploads/memorycard.memc', { encoding: 'binary' });
         const blob = new Blob([data], { type: 'application/octet-stream' });
         const url = URL.createObjectURL(blob);
 
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'memorycard.v32';
+        a.download = 'memorycard.memc';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
