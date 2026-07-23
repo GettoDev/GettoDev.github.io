@@ -8,30 +8,232 @@
 
 <meta content="width=device-width,initial-scale=1"name=viewport>
 
-<title>Vircon32: Emulador Web</title>
+<title>VirCon32 Emulador Web | GettoDev</title>
 
-<link rel="icon" type="image/png" href="logo.png">
+<link rel="icon" type="image/webp" href="../assets/ui/favicon.webp">
 
-<style>*{margin:0;padding:0;box-sizing:border-box}body{background-color:#0d0d0d;color:#e0e0e0;font-family:'Courier New','Fira Code',monospace;font-size:16px;min-height:100vh;display:flex;flex-direction:column;align-items:center}.site-header{width:100%;background-color:#111111;border-bottom:2px solid #00ffff;padding:16px 30px;display:flex;align-items:baseline;gap:16px}.logo-text{font-family:'Courier New',monospace;font-size:1.75rem;font-weight:700;color:#00ffff;letter-spacing:1px;display:flex;align-items:center;gap:12px;text-decoration:none}.logo-text img{height:48px;width:auto;display:block}.header-sub{font-family:'Courier New',monospace;font-size:.9rem;color:#888;border-left:2px solid #00ffff;padding-left:14px}.main-content{width:100%;max-width:980px;padding:26px 30px 40px 30px}.page-title{font-family:'Courier New',monospace;font-size:1.35rem;font-weight:700;color:#00ffff;background-color:#111111;border-left:5px solid #ff00ff;padding:9px 18px;margin-bottom:22px}.section-title{font-family:'Courier New',monospace;font-size:.95rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid #00ffff;padding-bottom:5px;margin:20px 0 12px 0}.emulator-layout{display:grid;grid-template-columns:1fr 250px;gap:20px;align-items:start}.screen-wrap{background-color:#000;border:2px solid #00ffff;box-shadow:0 0 18px rgba(0,255,255,.18),inset 0 0 30px rgba(0,0,0,.8);position:relative}.screen-wrap canvas{width:100%;aspect-ratio:16/9;display:block;image-rendering:pixelated}.loading-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,.97);color:#00ffff;font-family:'Courier New',monospace;font-size:.95rem;gap:14px;z-index:20}.spinner{width:42px;height:42px;border:3px solid rgba(0,255,255,.12);border-top-color:#00ffff;border-radius:50%;animation:spin 1s linear infinite}.status-bar{margin-top:8px;background-color:#0a0a0a;border:1px solid #333;border-left:4px solid #00ffff;padding:8px 14px;font-family:'Courier New',Courier,monospace;font-size:.83rem;color:#00ffff;display:flex;align-items:center;gap:8px;min-height:36px}.status-cursor{color:#00ffff;font-size:.75rem;flex-shrink:0;animation:blink 1.2s step-end infinite}.power-row{margin-top:7px;display:flex;align-items:center;gap:8px;font-family:'Courier New',monospace;font-size:.78rem;color:#555}.led{width:9px;height:9px;border-radius:50%;background:#333;flex-shrink:0}.led.on{background:#00ff00;box-shadow:0 0 7px #00ff00,0 0 14px rgba(0,255,0,.45)}.controls-panel{background-color:#111111;border:1px solid #333;padding:16px}.ctrl-group{margin-bottom:16px}.ctrl-label{display:block;font-family:'Courier New',monospace;font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#00ffff;margin-bottom:6px}.file-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background-color:#1a1a1a;border:1px dashed rgba(0,255,255,.35);color:#aaa;font-family:'Courier New',monospace;font-size:.83rem;padding:10px 12px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}.file-btn:hover{background-color:rgba(0,255,255,.07);border-color:#00ffff;color:#fff}.file-btn input[type=file]{display:none}.file-btn svg{width:15px;height:15px;fill:currentColor;flex-shrink:0}.save-btn{display:block;width:100%;margin-top:7px;background-color:#000;border:1px solid rgba(0,255,255,.25);color:#00ffff;font-family:'Courier New',monospace;font-size:.82rem;padding:9px 12px;cursor:pointer;transition:background .2s,border-color .2s;text-align:center}.save-btn:hover{background-color:rgba(0,255,255,.07);border-color:#00ffff}.ctrl-note{font-family:'Courier New',monospace;font-size:.9rem;color:#777;line-height:1.5}.kbd-table{width:100%;border-collapse:collapse;font-family:'Courier New',monospace;font-size:.86rem;margin-top:4px}.kbd-table tr{border-bottom:1px solid #1a1a1a}.kbd-table tr:hover{background-color:rgba(0,255,255,.04)}.kbd-table td{padding:7px 10px;color:#777}.kbd-table td:first-child{color:#ccc;width:58%}kbd{background:#0a0a0a;border:1px solid #333;border-bottom-width:2px;border-radius:3px;color:#00ffff;font-family:'Courier New',Courier,monospace;font-size:.79rem;padding:2px 7px;white-space:nowrap}.site-footer{width:100%;background-color:#0a0a0a;border-top:2px solid #333;padding:12px 30px;text-align:center;font-family:'Courier New',monospace;font-size:.8rem;color:#555;margin-top:auto}.site-footer a{color:#00ffff;text-decoration:none}.site-footer a:hover{color:#ff00ff;text-decoration:underline}@keyframes spin{to{transform:rotate(360deg)}}@keyframes blink{50%{opacity:0}}@media (max-width:750px){.emulator-layout{grid-template-columns:1fr}.main-content{padding:18px 14px 30px 14px}.header-sub{display:none}}</style>
+<style>
+/* ════════════════════════════════════════════
+   BLOQUE 1: Nav/Header/Footer de GettoDev
+   (extraído de style.css — SIN .loading-overlay)
+   ════════════════════════════════════════════ */
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width:12px; height:12px; }
+::-webkit-scrollbar-track { background:#111111; border-left:2px solid #333333; }
+::-webkit-scrollbar-thumb { background:#00ffff; border:2px solid #111111; }
+::-webkit-scrollbar-thumb:hover { background:#ff00ff; }
+
+body {
+    font-family:'Courier New','Fira Code',monospace;
+    background-color:#0d0d0d;
+    color:#e0e0e0;
+    line-height:1.6;
+    overflow-x:hidden;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* Header / Banner */
+header {
+    background-color:#111111;
+    width:100%;
+    text-align:center;
+    border-bottom:2px solid #00ffff;
+}
+header img { max-width:100%; filter:grayscale(10%) contrast(1.1); }
+
+/* Nav */
+nav {
+    background-color:#0a0a0a;
+    border-bottom:2px solid #333333;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    width:100%;
+}
+nav ul, #sidebar ul {
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    padding:0; margin:0;
+}
+nav li, #sidebar li { margin:0; }
+nav a, #sidebar a {
+    display:block;
+    padding:15px 25px;
+    color:#cccccc;
+    text-decoration:none;
+    border-right:1px solid #333333;
+    transition:background 0.2s, color 0.2s;
+    font-weight:bold;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    font-size:0.9em;
+}
+nav a:hover, #sidebar a:hover, nav a.active {
+    background-color:#00ffff;
+    color:#000000;
+}
+nav a:last-child, #sidebar a:last-child { border-right:none; }
+
+/* Dropdown */
+.dropdown { position:relative; }
+.dropdown-toggle::after { content:' ▼'; font-size:0.8em; margin-left:5px; }
+.dropdown-menu {
+    display:none;
+    position:absolute;
+    top:100%; left:0;
+    background:#111111;
+    border:1px solid #333;
+    border-top:none;
+    min-width:200px;
+    z-index:1000;
+}
+.dropdown:hover .dropdown-menu { display:block; }
+.dropdown-menu li { border-bottom:1px solid #333; }
+.dropdown-menu li:last-child { border-bottom:none; }
+.dropdown-menu a { padding:12px 20px; color:#cccccc; text-decoration:none; display:block; border:none; }
+.dropdown-menu a:hover { background-color:#ff00ff; color:#000000; }
+
+/* Divider */
+.divider { height:1px; background-color:#333333; margin:40px 0; position:relative; width:100%; }
+.divider::before {
+    content:''; position:absolute; top:-1px; left:50%;
+    transform:translateX(-50%); width:60px; height:3px;
+    background-color:#ff00ff;
+}
+
+/* Music bar */
+#music-bar {
+    position:absolute; right:20px; top:50%; transform:translateY(-50%);
+    display:flex; align-items:center;
+    background-color:#111111; border:2px solid #333333;
+    padding:6px 15px; z-index:20;
+}
+#music-bar .status-lcd {
+    color:#555555; font-size:0.85em; font-weight:bold;
+    margin-right:15px; letter-spacing:1px; text-transform:uppercase;
+}
+#music-bar .status-lcd.playing { color:#00ffff; animation:blink-soft 2s infinite; }
+@keyframes blink-soft { 0%,100%{opacity:1} 50%{opacity:0.6} }
+#music-bar button {
+    background-color:#000000; color:#ff00ff; border:1px solid #ff00ff;
+    padding:4px 10px; margin-left:5px; font-family:inherit;
+    font-weight:bold; font-size:0.8em; cursor:pointer;
+    transition:background-color 0.2s, color 0.2s;
+}
+#music-bar button:hover { background-color:#ff00ff; color:#000000; }
+
+/* Hamburger (mobile) */
+#hamburger-btn {
+    display:none;
+    align-items:center; justify-content:space-between;
+    width:100%; background:#111111; border:none;
+    border-bottom:1px solid #333333; color:#00ffff;
+    padding:12px 20px; font-family:'Courier New',monospace;
+    font-size:1em; font-weight:bold; letter-spacing:2px;
+    cursor:pointer; text-transform:uppercase;
+}
+#hamburger-btn:hover { background-color:#1a1a1a; }
+#nav-links-wrapper { display:flex; width:100%; }
+
+/* Footer */
+footer {
+    background-color:#0a0a0a;
+    border-top:2px solid #333333;
+    padding:40px 20px;
+    text-align:center;
+    margin-top:auto;
+    width:100%;
+}
+footer p { margin-bottom:30px; color:#e0e0e0; font-family:'Courier New',monospace; }
+.neon-yellow { color:#ffff00; font-weight:bold; letter-spacing:1px; }
+footer img {
+    margin:0 10px 15px 10px; max-width:80px; height:auto;
+    filter:grayscale(100%); opacity:0.6;
+    transition:filter 0.2s, opacity 0.2s;
+}
+footer img:hover { filter:grayscale(0%); opacity:1; }
+
+/* Mobile nav */
+@media (max-width:768px) {
+    #music-bar { position:relative; top:0; right:0; transform:none; width:100%; justify-content:center; }
+    #hamburger-btn { display:flex; }
+    #nav-links-wrapper { display:none; }
+    #nav-links-wrapper.open { display:block; }
+    nav ul, #sidebar ul { flex-direction:column; align-items:stretch; }
+    nav li, #sidebar li { width:100%; display:block; }
+    nav a, #sidebar a { width:100%; text-align:center; border-bottom:1px solid #333; border-right:none !important; }
+    .dropdown-menu { position:static; width:100%; text-align:center; border:none; border-bottom:1px solid #333; }
+}
+
+/* ════════════════════════════════════════════
+   BLOQUE 2: CSS original del emulador 
+   ════════════════════════════════════════════ */
+
+.main-content{width:100%;max-width:980px;padding:26px 30px 40px 30px}
+.page-title{font-family:'Courier New',monospace;font-size:1.35rem;font-weight:700;color:#00ffff;background-color:#111111;border-left:5px solid #ff00ff;padding:9px 18px;margin-bottom:22px}
+.section-title{font-family:'Courier New',monospace;font-size:.95rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid #00ffff;padding-bottom:5px;margin:20px 0 12px 0}
+.emulator-layout{display:grid;grid-template-columns:1fr 250px;gap:20px;align-items:start}
+.screen-wrap{background-color:#000;border:2px solid #00ffff;box-shadow:0 0 18px rgba(0,255,255,.18),inset 0 0 30px rgba(0,0,0,.8);position:relative}
+.screen-wrap canvas{width:100%;aspect-ratio:16/9;display:block;image-rendering:pixelated}
+/* loading-overlay scoped dentro de .screen-wrap para evitar conflicto */
+.screen-wrap .loading-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,.97);color:#00ffff;font-family:'Courier New',monospace;font-size:.95rem;gap:14px;z-index:20}
+.spinner{width:42px;height:42px;border:3px solid rgba(0,255,255,.12);border-top-color:#00ffff;border-radius:50%;animation:emu-spin 1s linear infinite}
+@keyframes emu-spin{to{transform:rotate(360deg)}}
+@keyframes emu-blink{50%{opacity:0}}
+.status-bar{margin-top:8px;background-color:#0a0a0a;border:1px solid #333;border-left:4px solid #00ffff;padding:8px 14px;font-family:'Courier New',Courier,monospace;font-size:.83rem;color:#00ffff;display:flex;align-items:center;gap:8px;min-height:36px}
+.status-cursor{color:#00ffff;font-size:.75rem;flex-shrink:0;animation:emu-blink 1.2s step-end infinite}
+.power-row{margin-top:7px;display:flex;align-items:center;gap:8px;font-family:'Courier New',monospace;font-size:.78rem;color:#555}
+.led{width:9px;height:9px;border-radius:50%;background:#333;flex-shrink:0}
+.led.on{background:#00ff00;box-shadow:0 0 7px #00ff00,0 0 14px rgba(0,255,0,.45)}
+.controls-panel{background-color:#111111;border:1px solid #333;padding:16px}
+.ctrl-group{margin-bottom:16px}
+.ctrl-label{display:block;font-family:'Courier New',monospace;font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#00ffff;margin-bottom:6px}
+.file-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background-color:#1a1a1a;border:1px dashed rgba(0,255,255,.35);color:#aaa;font-family:'Courier New',monospace;font-size:.83rem;padding:10px 12px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.file-btn:hover{background-color:rgba(0,255,255,.07);border-color:#00ffff;color:#fff}
+.file-btn input[type=file]{display:none}
+.file-btn svg{width:15px;height:15px;fill:currentColor;flex-shrink:0}
+.save-btn{display:block;width:100%;margin-top:7px;background-color:#000;border:1px solid rgba(0,255,255,.25);color:#00ffff;font-family:'Courier New',monospace;font-size:.82rem;padding:9px 12px;cursor:pointer;transition:background .2s,border-color .2s;text-align:center}
+.save-btn:hover{background-color:rgba(0,255,255,.07);border-color:#00ffff}
+.ctrl-note{font-family:'Courier New',monospace;font-size:.9rem;color:#777;line-height:1.5}
+.kbd-table{width:100%;border-collapse:collapse;font-family:'Courier New',monospace;font-size:.86rem;margin-top:4px}
+.kbd-table tr{border-bottom:1px solid #1a1a1a}
+.kbd-table tr:hover{background-color:rgba(0,255,255,.04)}
+.kbd-table td{padding:7px 10px;color:#777}
+.kbd-table td:first-child{color:#ccc;width:58%}
+kbd{background:#0a0a0a;border:1px solid #333;border-bottom-width:2px;border-radius:3px;color:#00ffff;font-family:'Courier New',Courier,monospace;font-size:.79rem;padding:2px 7px;white-space:nowrap}
+.site-footer{width:100%;background-color:#0a0a0a;border-top:2px solid #333;padding:12px 30px;text-align:center;font-family:'Courier New',monospace;font-size:.8rem;color:#555;margin-top:auto}
+.site-footer a{color:#00ffff;text-decoration:none}
+.site-footer a:hover{color:#ff00ff;text-decoration:underline}
+@media (max-width:750px){
+    .emulator-layout{grid-template-columns:1fr}
+    .main-content{padding:18px 14px 30px 14px}
+}
+</style>
 
 </head>
 
 <body>
 
-<header class=site-header>
-
-<span class=logo-text>
-
-<img src="logo.png" alt="Vircon32">
-
-</span> 
-
-<span class=header-sub>Emulador Web — videoconsola virtual de 32 bits
-
-</span>
-
+<!-- ── Banner de GettoDev ── -->
+<header role="banner">
+    <img src="../assets/banners/getto-banner.webp" alt="GettoDev Banner - Cyberpunk Creative Studio" loading="lazy" decoding="async">
 </header>
 
+<!-- ── Menú de navegación compartido ── -->
+<nav role="navigation" aria-label="Main navigation">
+    <div id="sidebar"></div>
+</nav>
+
+<div class="divider"></div>
+
+<!-- ── Contenido del emulador ── -->
 <div class=main-content>
 
 <div class=page-title>Emulador Web de Vircon32
@@ -44,7 +246,7 @@
 
 <div class=screen-wrap>
 
-<div class=loading-overlay id=loading>
+<div class="loading-overlay" id=loading>
 
 <div class=spinner>
 
@@ -168,217 +370,13 @@
 
 <tbody>
 
-<tr>
-
-<td>Pausar / Reanudar
-
-</td>
-
-<td>
-
-<kbd>ESC
-
-</kbd>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Resetear consola
-
-</td>
-
-<td>
-
-<kbd>F5
-
-</kbd>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Encender / Apagar
-
-</td>
-
-<td>
-
-<kbd>CTRL+P
-
-</kbd>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Cargar cartucho
-
-</td>
-
-<td>
-
-<kbd>CTRL+L
-
-</kbd>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Quitar cartucho
-
-</td>
-
-<td>
-
-<kbd>CTRL+U
-
-</kbd>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Pantalla completa
-
-</td>
-
-<td>
-
-<kbd>CTRL+F
-
-</kbd>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Silenciar audio
-
-</td>
-
-<td>
-
-<kbd>CTRL+M
-
-</kbd>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Cargar memory card
-
-</td>
-
-<td>
-
-<kbd>CTRL+I
-
-</kbd>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Quitar memory card
-
-</td>
-
-<td>
-
-<kbd>CTRL+O
-
-</kbd>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Gamepad 1 — Direcciones
-
-</td>
-
-<td>
-
-<kbd>Flechas
-
-</kbd>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Gamepad 1 — A / B / X / Y
-
-</td>
-
-<td>
-
-<kbd>X
-
-</kbd> 
-
-<kbd>Z
-
-</kbd> 
-
-<kbd>S
-
-</kbd> 
-
-<kbd>A
-
-</kbd>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Gamepad 1 — L / R / Start
-
-</td>
-
-<td>
-
-<kbd>Q
-
-</kbd> 
-
-<kbd>W
-
-</kbd> 
-
-<kbd>Espacio
-
-</kbd>
-
-</td>
-
-</tr>
+<tr><td>Pausar / Reanudar</td><td><kbd>ESC</kbd></td></tr>
+<tr><td>Resetear consola</td><td><kbd>F5</kbd></td></tr>
+<tr><td>Encender / Apagar</td><td><kbd>CTRL+P</kbd></td></tr>
+<tr><td>Silenciar audio</td><td><kbd>CTRL+M</kbd></td></tr>
+<tr><td>Gamepad 1 — Direcciones</td><td><kbd>Flechas</kbd></td></tr>
+<tr><td>Gamepad 1 — A / B / X / Y</td><td><kbd>X</kbd> <kbd>Z</kbd> <kbd>S</kbd> <kbd>A</kbd></td></tr>
+<tr><td>Gamepad 1 — L / R / Start</td><td><kbd>Q</kbd> <kbd>W</kbd> <kbd>Espacio</kbd></td></tr>
 
 </tbody>
 
@@ -386,14 +384,40 @@
 
 </div>
 
-<footer class=site-footer>
-    Vircon32 &mdash; videoconsola virtual de 32 bits &mdash; proyecto libre y de codigo abierto &mdash;
-    <a href="https://www.vircon32.com" target="_blank">vircon32.com</a>
-    &mdash; Powered by <a href="https://gettodev.github.io/" target="_blank">GettoDev</a>
+<!-- ── Footer de GettoDev ── -->
+<footer>
+    <p class="neon-yellow">--Powered by GettoDev since 1998.--</p>
+    <div>
+        <img src="../assets/badges/a18.gif"  alt="ghost"         loading="lazy">
+        <img src="../assets/badges/b38.gif"  alt="loading"       loading="lazy">
+        <img src="../assets/badges/c6.gif"   alt="arkanoid"      loading="lazy">
+        <img src="../assets/badges/c8.gif"   alt="retrogamer"    loading="lazy">
+        <img src="../assets/badges/c11.gif"  alt="somanyideas"   loading="lazy">
+        <img src="../assets/badges/d11.gif"  alt="pcuser"        loading="lazy">
+        <img src="../assets/badges/d33.gif"  alt="thecomputer"   loading="lazy">
+        <img src="../assets/badges/d34.gif"  alt="system32"      loading="lazy">
+        <img src="../assets/badges/d57.gif"  alt="invaders"      loading="lazy">
+        <img src="../assets/badges/d64.gif"  alt="retrovideo"    loading="lazy">
+        <img src="../assets/badges/b56.png"  alt="oldelectronic" loading="lazy">
+        <img src="../assets/badges/d17.png"  alt="dukenukem"     loading="lazy">
+        <img src="../assets/badges/d56.png"  alt="what"          loading="lazy">
+    </div>
 </footer>
 
+<!-- Emulator status bridge — debe ejecutarse ANTES que Vircon32Web.js -->
 <script>function updateStatus(t){var u=document.getElementById("status");u&&(u.textContent=t)}window.updateEmulatorStatus=updateStatus</script>
 
+<!-- Scripts compartidos de GettoDev (paths con ../ desde vircon32web/) -->
+<script type="text/javascript" src="../sidebar.js"></script>
+<script type="text/javascript" src="../language-switcher.js"></script>
+
+<!-- Neutraliza el SPA navigator de sidebar.js para que los clicks
+     del canvas y los labels de carga de archivos funcionen normalmente -->
+<script>
+window.navigateTo = function(url) { window.location.href = url; };
+</script>
+
+<!-- Scripts del emulador (en este orden) -->
 <script src=web_interface.js></script>
 
 <script src=Vircon32Web.js async></script>

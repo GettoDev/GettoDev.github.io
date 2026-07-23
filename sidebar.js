@@ -28,7 +28,7 @@ const menuItems = [
     'data-en': 'Emulators',
     'data-es': 'Emuladores',
     dropdown: [
-      { name: 'VirCon32', url: 'vircon32web/VirCon32Web.html' }
+      { name: 'VirCon32', url: 'vircon32web/Vircon32Web.html' }
     ]
   },
   {
@@ -54,25 +54,38 @@ const menuItems = [
 // Detect if we're in a subdirectory and adjust paths accordingly
 function getBasePath() {
   const path = window.location.pathname;
-  const pathParts = path.split('/');
+  const pathParts = path.split('/').filter(part => part !== '');
+  if (pathParts.length === 0) return '';
 
-  // Remove empty strings from path parts
-  const cleanPathParts = pathParts.filter(part => part !== '');
+  const lastPart = pathParts[pathParts.length - 1];
+  let currentDir = '';
 
-  // Get the last directory name if we're in a subdirectory
-  const lastPart = cleanPathParts[cleanPathParts.length - 1];
-
-  // Check if we're in a subdirectory (not the root)
-  const isInSubdirectory = cleanPathParts.length > 1 && lastPart.includes('.html') === false;
+  if (lastPart.includes('.html')) {
+    if (pathParts.length > 1) {
+      currentDir = pathParts[pathParts.length - 2];
+    }
+  } else {
+    currentDir = lastPart;
+  }
 
   // Known subdirectories that need '../' prefix
   const subdirs = ['bubblenoid', 'gomafalda', 'neondirective', 'runsnowballrun', 'superrobotx', 'brumbrumcarrera', 'Maidhen', 'PiesFrescos', 'vircon32web'];
 
-  // If we're in a known subdirectory, prepend '../' to relative URLs
-  if (isInSubdirectory && subdirs.includes(lastPart)) {
+  if (subdirs.includes(currentDir)) {
     return '../';
   }
   return '';
+}
+
+function updateMenuHrefs() {
+  const basePath = getBasePath();
+  const menuLinks = document.querySelectorAll('#sidebar a[data-relative-url]');
+  menuLinks.forEach(a => {
+    const relativeUrl = a.getAttribute('data-relative-url');
+    if (relativeUrl && relativeUrl !== '#') {
+      a.setAttribute('href', basePath + relativeUrl);
+    }
+  });
 }
 
 function createHorizontalMenu() {
@@ -123,6 +136,7 @@ function createHorizontalMenu() {
             }
           };
         } else {
+          subA.setAttribute('data-relative-url', subItem.url);
           subA.href = basePath + subItem.url;
         }
 
@@ -143,6 +157,7 @@ function createHorizontalMenu() {
     } else {
       // Regular menu item
       const a = document.createElement('a');
+      a.setAttribute('data-relative-url', item.url);
       a.href = basePath + item.url;
       a.textContent = item.name;
 
@@ -336,6 +351,8 @@ async function navigateTo(url, push = true) {
       if (push) {
         window.history.pushState({}, newTitle, url);
       }
+      
+      updateMenuHrefs();
       
       // Re-trigger language switcher if it exists globally
       if (typeof updateContent === 'function') {
