@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="theme-color" content="#000000"/>
+<link rel="icon" href="data:image/x-icon;base64,AA==" />
+<title>NULLPOINTER.Type - PALUGO</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0;padding:0;background:#000;font-family:monospace;overflow:hidden}
+#palugo-window{width:640px;height:480px;background:#000;border:2px solid #306230;border-top:18px solid #306230;box-shadow:0 6px 20px rgba(0,0,0,0.6),inset 0 0 0 1px #0f380f;overflow:hidden;position:relative;flex-shrink:0;box-sizing:content-box;}
+</style>
+</head>
+<body>
+<div id="palugo-window"><div id="palugo-loader">LOADING...</div></div>
+<script>
+window.SDK_OPTIONS = {
+  gameId: "k573z71gvdx902ocvegl74uvgrwqsi73",
+  onEvent: function(a) {
+    switch (a.name) {
+      case "SDK_GAME_PAUSE": if (window.palugo) window.palugo.paused = true; break;
+      case "SDK_GAME_START": if (window.palugo) window.palugo.paused = false; break;
+    }
+  }
+};
+</script>
+<script src="https://api.gamemonetize.com/sdk.js"></script>
+<script src="game.js"></script>
+<script>
+const checkLoader = setInterval(function() {
+  if (document.getElementById('palugo-canvas')) {
+    const l = document.getElementById('palugo-loader');
+    if (l) l.remove();
+    clearInterval(checkLoader);
+  }
+}, 100);
+setTimeout(function() {
+  const l = document.getElementById('palugo-loader');
+  if (l) l.remove();
+}, 2000);
+</script>
+</body>
+</html>
