@@ -433,11 +433,11 @@ const BUNDLED_GAME_ID = "k573z71gvdx902ocvegl74uvgrwqsi73";
 const HudConfig = BUNDLED_HUD;
 
 // --- Palettes.js ---
-// Palettes.js - Paleta PALUGO (45 colores vectoriales neón)
-// Solo la paleta VECTOR es utilizada por el juego.
+// Palettes.js - Define la paleta cromática vectorial optimizada para la interfaz y el juego.
+// Aplica la paleta VECTOR de alto contraste como estándar cromático.
 const Palettes = {
-  // VECTOR - 45 colores vectoriales neón optimizados para interfaz y shmup
-  // Tonos vibrantes de Azul eléctrico, Amarillo neón, Verde neón y alto contraste
+  // VECTOR - Contiene los 45 colores vectoriales de alta visibilidad.
+  // Integra tonos neón de azul, amarillo, verde y acentos complementarios.
   VECTOR: [
     '#030712', // 0  Fondo espacio negro / void abisal
     '#071a30', // 1  Fondo UI contenedor / Azul navy profundo
@@ -495,7 +495,7 @@ function isValidHexColor(str) {
 }
 
 // --- Display.js ---
-// Display.js - Renderer PALUGO (640x480, 4:3, ASCII + Bitmap) - Vector Neon Advanced
+// Display.js - Sistema de renderizado gráfico vectorial y de texto para pantalla.
 const NEON = {
   PLAYER: '#24f2f2',
   PLAYER_ACCENT: '#24f249',
@@ -518,7 +518,7 @@ class Display {
     this.container = options.container || (typeof document !== 'undefined' ? (document.getElementById('palugo-window') || document.body) : null);
     this.crtEnabled = true;
     this.flickerEnabled = true;
-    this.vectorMode = true; // Modo vectorial neón permanente con paleta completa
+    this.vectorMode = true; // Mantiene activo el renderizado vectorial de alto contraste.
     this.canvas = typeof document !== 'undefined' ? document.createElement('canvas') : {};
     this.canvas.width = this.width;
     this.canvas.height = this.height;
@@ -671,23 +671,23 @@ class Display {
     this.ctx.stroke();
     this.ctx.restore();
   }
-  // -- Vector Neon Avanzado: Nave jugadora (Inspirada en Vic Viper de Gradius) --
+  // -- Renderizado Vectorial: Nave del Jugador -------------------------
   drawVectorShip(x, y, color = 18, scale = 1) {
     const ctx = this.ctx;
-    const neonCyan = '#24f2f2';       // Cian neón característico Gradius
-    const neonBlue = '#2481f2';       // Azul cobalto aerodinámico
-    const neonRed = '#f22454';        // Acentos rojo rubí Vic Viper
-    const white = '#ffffff';          // Chasís principal titanio puro
-    const glowGold = '#ffd040';       // Acento de energía
+    const neonCyan = '#24f2f2';       // Define el color de acento cian neón principal.
+    const neonBlue = '#2481f2';       // Define el color de cuerpo azul cobalto.
+    const neonRed = '#f22454';        // Define el color de franjas y marcas rojas.
+    const white = '#ffffff';          // Define el color blanco titanio del fuselaje.
+    const glowGold = '#ffd040';       // Define el color dorado del emisor láser.
     ctx.save();
     ctx.translate(x, y);
     ctx.scale(scale, scale);
-    // -- 1. Nivel Base: Relleno aerodinámico sutil --
+    // Renderiza la base aerodinámica y el relleno translúcido del fuselaje.
     ctx.save();
     ctx.globalAlpha = 0.14;
     ctx.fillStyle = neonCyan;
     ctx.beginPath();
-    // Fuselaje + alas barridas + doble punta frontal
+    // Dibuja el contorno exterior del fuselaje y las alas delta.
     ctx.moveTo(2, 14);
     ctx.lineTo(6, 2);    // Punta ala superior
     ctx.lineTo(22, 10);
@@ -700,7 +700,7 @@ class Display {
     ctx.closePath();
     ctx.fill();
     ctx.restore();
-    // -- 2. Nivel Exterior: Chasís Vic Viper con doble aguja (Twin Needles) --
+    // Renderiza las agujas dobles de proa y los estabilizadores alares.
     ctx.save();
     ctx.strokeStyle = white;
     ctx.lineWidth = 1.8;
@@ -708,7 +708,7 @@ class Display {
     ctx.shadowBlur = 10;
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
-    // Aguja frontal superior
+    // Traza la estructura de la aguja frontal superior.
     ctx.beginPath();
     ctx.moveTo(18, 11);
     ctx.lineTo(34, 10);
@@ -717,7 +717,7 @@ class Display {
     ctx.lineTo(32, 13.5);
     ctx.lineTo(22, 13.5);
     ctx.stroke();
-    // Aguja frontal inferior
+    // Traza la estructura de la aguja frontal inferior.
     ctx.beginPath();
     ctx.moveTo(18, 17);
     ctx.lineTo(34, 18);
@@ -726,14 +726,14 @@ class Display {
     ctx.lineTo(32, 14.5);
     ctx.lineTo(22, 14.5);
     ctx.stroke();
-    // Cañón láser central recedido
+    // Dibuja la cámara central del cañón de plasma.
     ctx.beginPath();
     ctx.strokeStyle = glowGold;
     ctx.lineWidth = 1.2;
     ctx.moveTo(20, 14);
     ctx.lineTo(34, 14);
     ctx.stroke();
-    // Alas delta barridas (Swept Wings) con estabilizadores verticales de punta
+    // Dibuja las alas delta y los estabilizadores verticales de punta.
     ctx.beginPath();
     ctx.strokeStyle = white;
     ctx.lineWidth = 1.8;
@@ -754,7 +754,7 @@ class Display {
     ctx.lineTo(12, 18);
     ctx.lineTo(4, 18);   // Entrada a tobera inf
     ctx.stroke();
-    // Toberas de propulsión dobles traseras (Twin Engine Bells)
+    // Dibuja las toberas de propulsión dobles traseras.
     ctx.beginPath();
     ctx.strokeStyle = neonBlue;
     ctx.lineWidth = 1.6;
@@ -764,7 +764,7 @@ class Display {
     ctx.moveTo(4, 15.5); ctx.lineTo(0, 15.5); ctx.lineTo(0, 19); ctx.lineTo(4, 19);
     ctx.stroke();
     ctx.restore();
-    // -- 3. Detalles de Fuselaje y Rayas Rojas Vic Viper --
+    // Renderiza los detalles internos del fuselaje y marcas tácticas rojas.
     ctx.save();
     ctx.strokeStyle = neonRed;
     ctx.shadowColor = neonRed;
@@ -786,7 +786,7 @@ class Display {
     ctx.moveTo(18, 17); ctx.lineTo(10, 15);
     ctx.stroke();
     ctx.restore();
-    // -- 4. Cabina / Canopy Alargada (Gradius Cockpit) --
+    // Renderiza la cúpula alargada de la cabina y el reflejo de luz.
     ctx.save();
     ctx.fillStyle = neonCyan;
     ctx.strokeStyle = white;
@@ -810,7 +810,7 @@ class Display {
     ctx.lineTo(24, 13.8);
     ctx.stroke();
     ctx.restore();
-    // -- 5. Nodos de Energía en Puntas y Alas --
+    // Dibuja los nodos luminosos de energía en los vértices del fuselaje.
     ctx.save();
     ctx.fillStyle = white;
     ctx.shadowColor = neonCyan;
@@ -826,7 +826,7 @@ class Display {
       ctx.fill();
     }
     ctx.restore();
-    // -- 6. Doble Llamarada de Plasma Iónico (Twin Plasma Thrusters) --
+    // Renderiza las llamaradas animadas de propulsión iónica.
     ctx.save();
     ctx.lineCap = 'round';
     const enginesY = [10.8, 17.2]; // Motores superior e inferior
@@ -858,7 +858,7 @@ class Display {
     ctx.restore();
     ctx.restore();
   }
-  // -- Vector Neon Avanzado: Enemigos por tipología --
+  // -- Renderizado Vectorial: Naves Enemigas ---------------------------
   drawVectorEnemy(x, y, typeKey, colorIdx, flipX = false) {
     const ctx = this.ctx;
     const t = typeKey || 'DRONE';
@@ -919,7 +919,7 @@ class Display {
         cores = 1;
         break;
       case 'BOMBER':
-        // Bombardero Pesado Ampliado (56x28) con alas delta y pods de plasma
+        // Dibuja la silueta acorazada y bahías de carga del bombardero.
         shipW = 56; shipH = 28;
         outer = [
           [2,14], [10,4], [28,5], [44,9], [56,14],
@@ -938,7 +938,7 @@ class Display {
         hasDoubleFin = true;
         break;
       case 'CRUISER':
-        // Crucero de Batalla Blindado Ampliado (66x26) con doble cubierta
+        // Dibuja el casco blindado y torretas del crucero de batalla.
         shipW = 66; shipH = 26;
         outer = [
           [0,13], [12,5], [36,4], [52,7], [66,13],
@@ -956,7 +956,7 @@ class Display {
         cores = 2;
         break;
       case 'HEAVY':
-        // Destructor Acorazado Ampliado (60x30) con púas de asalto
+        // Dibuja el blindaje angular y púas de asalto del destructor.
         shipW = 60; shipH = 30;
         outer = [
           [0,15], [8,4], [28,3], [46,6], [60,11],
@@ -973,7 +973,7 @@ class Display {
         cores = 2;
         break;
       case 'MOTHERSHIP':
-        // Nave Nodriza / Acorazado Insignia Ampliado (82x36) con hangar central
+        // Dibuja el hangar de lanzamiento y cubiertas de la nave nodriza.
         shipW = 82; shipH = 36;
         outer = [
           [0,18], [12,4], [46,4], [68,9], [82,18],
@@ -1278,7 +1278,7 @@ class Display {
     }
     ctx.restore();
   }
-  // -- Vector Neon: Miniboss Planeta-Pulpo Cósmico (8 Tentáculos, Cara Diabólica, Anillos) --
+  // -- Renderizado Vectorial: Miniboss Cósmico ---------------------------
   drawVectorMiniboss(cx, cy, b, t = 0, isFlash = false) {
     const ctx = this.ctx;
     const bossCol = isFlash ? '#ffffff' : '#ff2a55';       // Carmesí / Furia demoníaca
@@ -1289,7 +1289,7 @@ class Display {
     const white   = '#ffffff';
     const R = 48; // Radio del cuerpo planetario esférico (diámetro ~96px)
     ctx.save();
-    // -- 1. Aura cósmica exterior / Corona de calor --
+    // Renderiza el resplandor y corona térmica exterior.
     ctx.save();
     ctx.globalAlpha = 0.22;
     ctx.fillStyle = auraCol;
@@ -1299,7 +1299,7 @@ class Display {
     ctx.arc(cx, cy, R + 14, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
-    // -- 2. 8 Tentáculos Distribuidos a 360° Alrededor del Planeta --
+    // Renderiza los 8 tentáculos bioluminiscentes con ondulación dinámica.
     for (let k = 0; k < 8; k++) {
       const baseAngle = (k / 8) * Math.PI * 2;
       const wave1 = Math.sin(t * 3.2 + k * 1.2) * 0.35;
@@ -1352,7 +1352,7 @@ class Display {
       ctx.beginPath(); ctx.arc(x3, y3, 1.4, 0, Math.PI * 2); ctx.fill();
       ctx.restore();
     }
-    // -- 3. Anillos Planetarios Inclinados --
+    // Renderiza los anillos orbitales inclinados alrededor del planeta.
     ctx.save();
     ctx.strokeStyle = ringCol;
     ctx.shadowColor = ringCol;
@@ -1366,7 +1366,7 @@ class Display {
     ctx.ellipse(cx, cy, R * 1.5, R * 0.35, -0.22, 0, Math.PI * 2);
     ctx.stroke();
     ctx.restore();
-    // -- 4. Cuerpo Esférico del Planeta --
+    // Dibuja la esfera planetaria central con fisuras de energía.
     ctx.save();
     ctx.fillStyle = '#12041a'; // Núcleo abisal oscuro
     ctx.strokeStyle = bossCol;
@@ -1388,7 +1388,7 @@ class Display {
     ctx.moveTo(cx - 18, cy + 28); ctx.lineTo(cx - 8, cy + 34); ctx.lineTo(cx + 8, cy + 32); ctx.lineTo(cx + 18, cy + 38);
     ctx.stroke();
     ctx.restore();
-    // -- 5. Cara Diabólica: Cuernos y Tercer Ojo --
+    // Dibuja las cornamentas superiores y el tercer ojo místico.
     ctx.save();
     ctx.strokeStyle = bossCol;
     ctx.shadowColor = bossCol;
@@ -1411,7 +1411,7 @@ class Display {
     ctx.fill();
     ctx.stroke();
     ctx.restore();
-    // -- 6. Ojos Diabólicos Menazantes (Inclinados con Cejas Malvadas) --
+    // Dibuja los ojos rasgados con cejas angulares y pupilas incandescentes.
     ctx.save();
     ctx.strokeStyle = white;
     ctx.shadowColor = bossCol;
@@ -1453,7 +1453,7 @@ class Display {
     ctx.ellipse(cx + 20, cy - 11, 2.2, 5.5, -0.15, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
-    // -- 7. Fauces Diabólicas / Boca con Colmillos Afilados --
+    // Dibuja las fauces abiertas con colmillos afilados y emisor central.
     ctx.save();
     ctx.fillStyle = '#0a0008';
     ctx.strokeStyle = bossCol;
@@ -1561,8 +1561,8 @@ class Display {
 }
 
 // --- Audio.js ---
-// Audio.js - PALUGO NES-like 4-channel synth (Pulse1, Pulse2, Triangle, Noise) + buses música/SFX
-// v2.1 - Gesture-safe AudioContext (never auto-create before user input)
+// Audio.js - Sintetizador de audio de 4 canales con buses independientes de música y efectos.
+// Administra el ciclo de vida seguro del AudioContext mediante interacción del usuario.
 class PalugoAudio {
   constructor(options = {}) {
     this.masterVolume = options.masterVolume ?? 0.16;
@@ -1576,12 +1576,12 @@ class PalugoAudio {
     this._pulseDuty = options.pulseDuty ?? 0.5;
     this._readyCbs = [];
     this._unlockBound = this._unlock.bind(this);
-    // Register gesture listeners immediately - init() fires on first user action
+    // Registra escuchas de eventos de usuario para inicializar el contexto de audio.
     window.addEventListener('pointerdown', this._unlockBound, { once: true, passive: true });
     window.addEventListener('keydown',     this._unlockBound, { once: true, passive: true });
     window.addEventListener('touchstart',  this._unlockBound, { once: true, passive: true });
   }
-  // Called on first user gesture - creates AudioContext and fires queued callbacks
+  // Desbloquea el contexto de audio tras el primer gesto del usuario y procesa las llamadas en cola.
   _unlock() {
     window.removeEventListener('pointerdown', this._unlockBound);
     window.removeEventListener('keydown',     this._unlockBound);
@@ -1616,7 +1616,7 @@ class PalugoAudio {
         g.connect(this.sfxGain);
         this.channelGains[ch] = g;
       }
-      // Pre-generar buffers de ruido (1 segundo) para evitar allocs en cada golpe de batería
+      // Precalcula los búferes de ruido blanco y metálico para optimizar el rendimiento en tiempo de ejecución.
       const sr = this.ctx.sampleRate;
       this._noiseBuffer = this.ctx.createBuffer(1, sr, sr);
       const ndata = this._noiseBuffer.getChannelData(0);
@@ -1633,16 +1633,16 @@ class PalugoAudio {
       return false;
     }
   }
-  // Returns true only when AudioContext exists AND is actively running
+  // Comprueba si el AudioContext está activo y en ejecución.
   isReady() {
     return !!(this.ctx && this.ctx.state === 'running');
   }
-  // Calls cb() immediately if ready, or queues it for first gesture unlock
+  // Ejecuta el callback inmediatamente o lo encola hasta que el audio esté disponible.
   onReady(cb) {
     if (this.isReady()) { cb(); return; }
     this._readyCbs.push(cb);
   }
-  // NEVER calls init() - prevents AudioContext before user gesture
+  // Valida la disponibilidad del sistema de audio sin forzar inicialización prematura.
   _ensure() {
     return this.isReady();
   }
@@ -1673,7 +1673,7 @@ class PalugoAudio {
       } catch {}
     }
   }
-  // Compat: setVolumes 0-100
+  // Ajusta simultáneamente los volúmenes de música y efectos.
   setVolumes(music01, sfx01) {
     this.setMusicVolume(music01);
     this.setSfxVolume(sfx01);
@@ -1850,7 +1850,7 @@ class PalugoAudio {
 const PocketAudio = PalugoAudio;
 
 // --- Input.js ---
-// Input.js - Teclado PALUGO (sin táctil, táctil separado en TouchControls.js para Android)
+// Input.js - Gestiona la captura de eventos de teclado y el estado de entrada del usuario.
 class Input {
   constructor(options = {}) {
     this.turboRate = options.turboRate || 10;
@@ -1926,7 +1926,7 @@ class Input {
 }
 
 // --- SDK.js ---
-// SDK.js - Abstracción GameMonetize para PALUGO
+// SDK.js - Administra la integración con el SDK de anuncios y monetización.
 class SDKManager {
   constructor(options = {}) {
     this.gameId = options.gameId || null;
@@ -1937,8 +1937,8 @@ class SDKManager {
     this._onResume = options.onResume || (()=>{});
     this.debug = !!options.debug;
     this._lastAdTime = 0;
-    this._adCooldown = 30000; // 30s cooldown recomendado por AdSense/IMA para evitar VAST 303
-    // Silenciar WX VAST 303 en consola (no-fill es normal)
+    this._adCooldown = 30000; // Aplica un tiempo de espera de 30 segundos entre solicitudes de anuncios.
+    // Suprime advertencias no críticas de anuncios sin disponibilidad en la consola.
     try {
       window.addEventListener('error', (e) => {
         const msg = String(e.message || e.error?.message || '');
@@ -1965,12 +1965,12 @@ class SDKManager {
       return;
     }
     if (window.sdk) { this.ready = true; return; }
-    // Oficial GameMonetize: window.SDK_OPTIONS + gamemonetize-sdk
+    // Configura los parámetros globales requeridos por el SDK de GameMonetize.
     window.SDK_OPTIONS = {
       gameId: this.gameId,
       onEvent: (event) => this._handleEvent(event)
     };
-    // Evitar duplicado
+    // Evita la inyección duplicada de la etiqueta de script en el documento.
     if (document.getElementById('gamemonetize-sdk')) return;
     const script = document.createElement('script');
     script.id = 'gamemonetize-sdk';
@@ -1981,7 +1981,7 @@ class SDKManager {
     const first = document.getElementsByTagName('script')[0];
     if (first && first.parentNode) first.parentNode.insertBefore(script, first);
     else document.head.appendChild(script);
-    // Timeout fallback: si no responde en 5s, marcar ready para no bloquear juego
+    // Establece un tiempo límite de seguridad para no bloquear el flujo de ejecución.
     setTimeout(() => { if (!this.ready) { this.ready = true; this._flushQueue(); } }, 5000);
   }
   _handleEvent(event) {
@@ -1995,7 +1995,7 @@ class SDKManager {
       case 'SDK_GAME_PAUSE':
         this.paused = true;
         this._onPause();
-        // Watchdog de seguridad: no permitir que una pausa de anuncio cuelgue el juego más de 3.5s si no hay respuesta de IMA
+        // Supervisa las pausas por anuncios y reanuda el juego automáticamente si expira el tiempo límite.
         clearTimeout(this._pauseWatchdog);
         this._pauseWatchdog = setTimeout(() => {
           if (this.paused) {
@@ -2035,13 +2035,13 @@ class SDKManager {
     if (this.ready) fn();
     else this._queue.push(fn);
   }
-  // Forzar reanudación si quedó pausado
+  // Fuerza la reanudación del estado del juego si la publicidad finaliza de forma irregular.
   forceResume() {
     clearTimeout(this._pauseWatchdog);
     this.paused = false;
     try { this._onResume(); } catch {}
   }
-  // Interstitial (entre niveles / game over / continue)
+  // Solicita y reproduce un anuncio intersticial en transiciones clave del juego.
   showInterstitial({ onClose, onError } = {}) {
     let closed = false;
     const safeClose = () => {
@@ -2050,7 +2050,7 @@ class SDKManager {
       this.forceResume();
       try { onClose?.(); } catch {}
     };
-    // Si se activa muy rápido en sucesión (< 15s), omitir llamada directa para evitar error VAST 303 de IMA
+    // Omite llamadas consecutivas muy rápidas para prevenir errores de carga.
     const now = Date.now();
     if (this._lastAdTime && (now - this._lastAdTime < this._adCooldown)) {
       if (this.debug) console.log('PALUGO SDK: Anuncio en cooldown (< 15s), reanudando directamente para evitar VAST 303.');
@@ -2058,7 +2058,7 @@ class SDKManager {
       return;
     }
     this._lastAdTime = now;
-    // Watchdog de 1.8s garantizado para que nunca se cuelgue el loop
+    // Aplica un temporizador de seguridad que asegura la continuidad del bucle principal.
     const timer = setTimeout(safeClose, 1800);
     this._whenReady(() => {
       try {
@@ -2081,7 +2081,7 @@ class SDKManager {
       }
     });
   }
-  // Rewarded (continuar, monedas)
+  // Muestra un anuncio bonificado y otorga la recompensa al usuario tras completarlo.
   showRewarded({ onRewarded, onClose, onError } = {}) {
     let handled = false;
     const safeEnd = () => {
@@ -2113,19 +2113,19 @@ class SDKManager {
       }
     });
   }
-  // Alias legado
+  // Mantiene compatibilidad con versiones previas de la API.
   showBanner(...args) { return this.showInterstitial(...args); }
 }
 
 // --- Hud.js ---
-// Hud.js - HUD genérico PALUGO (barra superior/inferior reutilizable)
-// Los juegos pueden instanciarlo o usar el del menú. Mantiene estilo consistente 640x480.
+// Hud.js - Proporciona componentes reutilizables de interfaz de usuario en pantalla.
+// Mantiene la coherencia visual del marco y los indicadores de estado.
 class Hud {
   constructor(engine, options={}) {
     this.engine = engine;
     this.title = options.title || '';
   }
-  // Dibuja marco HUD (barras)
+  // Renderiza el marco estructural del HUD.
   drawFrame() {
     const e = this.engine;
     e.drawRect(0,0,640,28,1,true);
@@ -2142,22 +2142,22 @@ class Hud {
 }
 
 // --- ObjectPool.js ---
-// ObjectPool.js - Implementación del patrón Object Pool para reutilizar enemigos y proyectiles
-// basado en Game Programming Patterns de Robert Nystrom
-// Objetivo: evitar la presión del recolector de basura en JavaScript al reutilizar objetos
+// ObjectPool.js - Implementa el patrón Object Pool para optimizar la gestión de memoria.
+// Reduce la recolección de basura reutilizando instancias de enemigos, proyectiles y partículas.
+// Maximiza el rendimiento y la estabilidad de cuadros por segundo en JavaScript.
 class ObjectPool {
   constructor(factory, initialSize = 10, maxSize = 100) {
-    this.factory = factory;           // función que crea nuevos objetos
-    this.pool = [];                    // array de objetos disponibles
-    this.active = [];                  // array de objetos en uso
-    this.initialSize = initialSize;    // tamaño inicial del pool
-    this.maxSize = maxSize;            // tamaño máximo del pool
-    // Pre-popular el pool con objetos iniciales
+    this.factory = factory;           // Almacena la función fábrica constructora de instancias.
+    this.pool = [];                    // Mantiene la colección de objetos listos para su uso.
+    this.active = [];                  // Mantiene la colección de objetos actualmente activos en escena.
+    this.initialSize = initialSize;    // Determina la cantidad inicial de objetos preasignados.
+    this.maxSize = maxSize;            // Establece el límite superior de instancias concurrentes.
+    // Preasigna los objetos iniciales en el grupo disponible.
     for (let i = 0; i < initialSize; i++) {
       this.pool.push(factory());
     }
   }
-  // Obtener un objeto del pool (crear uno nuevo si está vacío y no hay límite)
+  // Obtiene un objeto disponible o instancia uno nuevo si el grupo está vacío.
   acquire() {
     let obj;
     if (this.pool.length > 0) {
@@ -2165,13 +2165,13 @@ class ObjectPool {
     } else if (this.active.length < this.maxSize) {
       obj = this.factory();
     } else {
-      // Pool lleno, crear uno nuevo temporalmente (mejor que fallar)
+      // Crea una instancia adicional si se supera la capacidad máxima.
       obj = this.factory();
     }
     this.active.push(obj);
     return obj;
   }
-  // Devolver un objeto al pool para reutilización
+  // Devuelve una instancia activa al grupo de objetos disponibles.
   release(obj) {
     const index = this.active.indexOf(obj);
     if (index !== -1) {
@@ -2179,13 +2179,13 @@ class ObjectPool {
       this.pool.push(obj);
     }
   }
-  // Devolver todos los objetos activos al pool
+  // Devuelve todas las instancias activas al grupo de objetos disponibles.
   releaseAll() {
     while (this.active.length > 0) {
       this.pool.push(this.active.pop());
     }
   }
-  // Eliminar objetos específicos (útil para objetos destruidos en el juego)
+  // Libera un objeto específico y lo reincorpora al grupo disponible.
   remove(obj) {
     const index = this.active.indexOf(obj);
     if (index !== -1) {
@@ -2193,7 +2193,7 @@ class ObjectPool {
       this.pool.push(obj);
     }
   }
-  // Obtener estadísticas del pool
+  // Retorna las métricas operativas del estado del grupo de objetos.
   getStats() {
     return {
       available: this.pool.length,
@@ -2202,7 +2202,7 @@ class ObjectPool {
       maxSize: this.maxSize
     };
   }
-  // Limpiar el pool (útil para resetear el juego)
+  // Restablece el grupo de objetos liberando todas las referencias.
   clear() {
     this.pool = [];
     this.active = [];
@@ -2211,10 +2211,10 @@ class ObjectPool {
     }
   }
 }
-// Pool especializado para enemigos con reset de propiedades
+// Implementa el pool especializado para entidades enemigas.
 class EnemyPool extends ObjectPool {
   constructor(enemyDefs, initialSize = 20, maxSize = 150) {
-    // Llamar a super con una factory function simple
+    // Inicializa el grupo base con la función fábrica de enemigos.
     super(() => EnemyPool.createEnemyTemplate(), initialSize, maxSize);
     this.enemyDefs = enemyDefs;
   }
@@ -2232,7 +2232,7 @@ class EnemyPool extends ObjectPool {
       score: 0,
       amp: 0, freq: 0,
       isCarrier: false,
-      // Propiedades para formación interceptor_worm
+      // Inicializa los parámetros de trayectoria para formaciones en cadena.
       wormRole: 0,
       wormLeader: null,
       wormPhase: 'enter',
@@ -2240,15 +2240,15 @@ class EnemyPool extends ObjectPool {
       FOLLOW_DELAY: 30,
       HISTORY_MAX: 600,
       pathHistory: null,
-      // Bandera para marcar como activo/inactivo
+      // Marca el estado activo de la entidad dentro del sistema.
       active: false
     };
   }
-  // Obtener enemigo del pool y configurarlo
+  // Extrae y configura una entidad enemiga para su aparición en pantalla.
   acquire(typeKey, y, opts = {}) {
     const enemy = super.acquire();
     const def = this.enemyDefs[typeKey];
-    // Resetear propiedades básicas
+    // Restablece los atributos principales de posición, vida y estado.
     enemy.type = typeKey;
     enemy.x = 680 + (opts.delay || 0) * 155;
     enemy.y = y;
@@ -2268,7 +2268,7 @@ class EnemyPool extends ObjectPool {
     enemy.freq = def.freq || 0;
     enemy.isCarrier = !!def.isCarrier;
     enemy.active = true;
-    // Resetear propiedades especiales
+    // Restablece los temporizadores y banderas de comportamiento.
     enemy.wormRole = 0;
     enemy.wormLeader = null;
     enemy.wormPhase = 'enter';
@@ -2279,7 +2279,7 @@ class EnemyPool extends ObjectPool {
     }
     return enemy;
   }
-  // Configurar enemigo para formación interceptor_worm
+  // Configura los atributos requeridos para el comportamiento en formación ondulante.
   acquireInterceptorWorm(typeKey, startX, startY, wormRole, wormLeader, pathHistory) {
     const enemy = super.acquire();
     const def = this.enemyDefs[typeKey];
@@ -2302,7 +2302,7 @@ class EnemyPool extends ObjectPool {
     enemy.freq = 0;
     enemy.isCarrier = false;
     enemy.active = true;
-    // Propiedades específicas del gusano
+    // Aplica los parámetros de movimiento ondulatorio.
     enemy.wormRole = wormRole;
     enemy.wormLeader = wormLeader;
     enemy.wormPhase = 'enter';
@@ -2313,7 +2313,7 @@ class EnemyPool extends ObjectPool {
     return enemy;
   }
 }
-// Pool especializado para proyectiles (balas y misiles)
+// Implementa el pool especializado para proyectiles del jugador y enemigos.
 class ProjectilePool extends ObjectPool {
   constructor(initialSize = 50, maxSize = 200) {
     super(() => ProjectilePool.createProjectileTemplate(), initialSize, maxSize);
@@ -2330,7 +2330,7 @@ class ProjectilePool extends ObjectPool {
       active: false
     };
   }
-  // Obtener proyectil del pool y configurarlo
+  // Extrae y configura un proyectil según su origen y trayectoria.
   acquire(x, y, vx, vy, opts = {}) {
     const projectile = super.acquire();
     projectile.x = x;
@@ -2347,7 +2347,7 @@ class ProjectilePool extends ObjectPool {
     return projectile;
   }
 }
-// Pool especializado para partículas
+// Implementa el pool especializado para partículas y efectos de explosión.
 class ParticlePool extends ObjectPool {
   constructor(initialSize = 30, maxSize = 100) {
     super(() => ParticlePool.createParticleTemplate(), initialSize, maxSize);
@@ -2377,9 +2377,9 @@ class ParticlePool extends ObjectPool {
 }
 
 // --- GameMath.js ---
-// GameMath.js - Sistema matemático para el juego SHMUP
-// Incluye vectores, interpolación (Lerp), curvas Bézier y funciones trigonométricas
-// Aplicación de conceptos matemáticos para movimiento de enemigos y patrones
+// GameMath.js - Proporciona cálculos matemáticos, vectoriales y curvas para el juego.
+// Implementa operaciones con vectores 2D, interpolaciones, trayectorias y formaciones.
+// Optimiza el cálculo de físicas y trayectorias orgánicas en tiempo real.
 // -- Vector2D: Clase para operaciones vectoriales en 2D -----------------------
 class Vector2D {
   constructor(x = 0, y = 0) {
@@ -2393,19 +2393,19 @@ class Vector2D {
       Math.sin(angle) * magnitude
     );
   }
-  // Suma de vectores
+  // Retorna la suma de este vector con otro.
   add(v) {
     return new Vector2D(this.x + v.x, this.y + v.y);
   }
-  // Resta de vectores
+  // Retorna la resta entre este vector y otro.
   subtract(v) {
     return new Vector2D(this.x - v.x, this.y - v.y);
   }
-  // Multiplicación por escalar
+  // Retorna el vector multiplicado por un valor escalar.
   multiply(scalar) {
     return new Vector2D(this.x * scalar, this.y * scalar);
   }
-  // División por escalar
+  // Retorna el vector dividido por un valor escalar.
   divide(scalar) {
     return new Vector2D(this.x / scalar, this.y / scalar);
   }
@@ -2431,7 +2431,7 @@ class Vector2D {
     if (mag === 0) return new Vector2D(0, 0);
     return this.divide(mag);
   }
-  // Distancia a otro vector
+  // Calcula la distancia euclidiana hacia otro punto o vector.
   distanceTo(v) {
     return this.subtract(v).magnitude();
   }
@@ -2463,7 +2463,7 @@ class Vector2D {
       this.y + (v.y - this.y) * t
     );
   }
-  // Clonar vector
+  // Retorna una copia independiente de la instancia vectorial.
   clone() {
     return new Vector2D(this.x, this.y);
   }
@@ -2552,7 +2552,7 @@ function bezierPoints(points, numSegments = 20) {
 function sineWave(t, amplitude, frequency, phase = 0) {
   return amplitude * Math.sin(frequency * t + phase);
 }
-// Onda cosenoidal con parámetros
+// Calcula la posición oscilatoria según amplitud, frecuencia y fase cosenoidal. con parámetros
 function cosineWave(t, amplitude, frequency, phase = 0) {
   return amplitude * Math.cos(frequency * t + phase);
 }
@@ -2563,7 +2563,7 @@ function circularMotion(centerX, centerY, radius, angle) {
     centerY + Math.sin(angle) * radius
   );
 }
-// Movimiento en espiral
+// Calcula una trayectoria en espiral que varía su radio con el tiempo.
 function spiralMotion(centerX, centerY, initialRadius, radiusGrowth, angle) {
   const currentRadius = initialRadius + radiusGrowth * angle;
   return new Vector2D(
@@ -3365,7 +3365,7 @@ class EnemySpawnSystem {
   releaseParticle(p){ this.particlePool.release(p); }
 }
 // ════════════════════════════════════════════════════════════
-// ProceduralWaveGenerator - timing basado en dt, no performance.now
+// ProceduralWaveGenerator - Genera oleadas progresivas con progresión adaptativa.
 // ════════════════════════════════════════════════════════════
 class ProceduralWaveGenerator {
   constructor(spawnSystem){
@@ -3374,7 +3374,7 @@ class ProceduralWaveGenerator {
     this.waveCount = 0;
     this.cooldown = 0; // segundos hasta próxima oleada
   }
-  // secuencia curada estilo Gradius stage 1 / R-Type stage 1
+  // Secuencia inicial estructurada para introducir las mecánicas progresivamente.
   _pickPattern(){
     this.waveCount++;
     this.difficulty = 1.0 + this.waveCount * 0.06;
@@ -3425,20 +3425,20 @@ class ProceduralWaveGenerator {
 }
 
 // --- Palugo.js ---
-// Palugo.js - Orquestador principal PALUGO (Pocket ASCII Logic & User Graphics Operator)
-// Vanilla ES6, sin frameworks. Separa Core del juego.
+// Palugo.js - Orquesta los subsistemas centrales de renderizado, audio, entrada y lógica.
+// Proporciona el núcleo del motor desacoplado de la lógica específica del juego.
 class Palugo {
   constructor(options = {}) {
     this.width = options.width || 640;
     this.height = options.height || 480;
-    this.fps = options.fps === 30 ? 30 : 60; // solo 60/30
+    this.fps = options.fps === 30 ? 30 : 60; // Establece la tasa de actualización fija a 60 o 30 cuadros por segundo.
     this.fixedDt = 1 / this.fps;
     this.paused = false;
     this._running = false;
-    // Sub-sistemas - ventana si existe #palugo-window en el DOM o si windowed: true
+    // Inicializa los componentes según la configuración de visualización.
     const hasWindowElem = !!document.getElementById('palugo-window');
     const windowed = options.windowed !== undefined ? !!options.windowed : hasWindowElem;
-    const enableTouch = options.touchControls === true; // solo true explícito
+    const enableTouch = options.touchControls === true; // Habilita controles táctiles únicamente cuando se solicita explícitamente.
     this.display = new Display({
       width: this.width,
       height: this.height,
@@ -3452,7 +3452,7 @@ class Palugo {
       turboRate: options.turboRate,
       windowed
     });
-    // TouchControls separado - solo para Android builds
+    // Asigna la capa de controles táctiles si está habilitada.
     this.touchControls = null;
     if (enableTouch) {
       this.touchControls = new TouchControls(this.input, { windowed });
@@ -3465,25 +3465,25 @@ class Palugo {
       onPause: () => { this.paused = true; },
       onResume: () => { this.paused = false; }
     });
-    // Atajos para compatibilidad con PocketArcade
+    // Expone referencias de compatibilidad en el objeto global.
     window.palugo = this;
     this.canvas = this.display.canvas;
     this.ctx = this.display.ctx;
     this.palette = this.display.palette;
-    this.inputs = this.input.state; // legacy getter polled
-    this.sdkReady = false; // se actualiza via tick
-    // FPS counter opcional
+    this.inputs = this.input.state; // Proporciona acceso directo al estado de entrada.
+    this.sdkReady = false; // Indica si el SDK de publicidad se encuentra listo para operar.
+    // Controla la visualización del contador de rendimiento por cuadro.
     this.showFPS = !!options.showFPS;
     this._frameCount = 0;
     this._fpsValue = this.fps;
-    // Pausa por visibilidad
+    // Gestiona la pausa automática al cambiar la visibilidad de la pestaña.
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) this.paused = true;
       else if (!this.sdk.paused) this.paused = false;
     });
-    // Audio unlock is handled inside PalugoAudio constructor via gesture listeners
+    // El sistema de audio gestiona su propio desbloqueo mediante interacción del usuario.
   }
-  // --- Fachada Display (para que game haga engine.drawText etc) ---
+  // -- Fachada de Renderizado ------------------------------------------
   clear(c) { this.display.clear(c); }
   drawText(...a) { return this.display.drawText(...a); }
   drawTextASCII(...a) { return this.display.drawText(...a); }
@@ -3503,7 +3503,7 @@ class Palugo {
   setPalettePreset(n) { this.display.setPalettePreset(n); this.palette = this.display.palette; }
   getPalette() { return this.display.getPalette(); }
   measureText(...a) { return this.display.measureText(...a); }
-  // SDK fachada
+  // -- Fachada de SDK y Servicios --------------------------------------
   showBanner(o) { return this.sdk.showInterstitial(o); }
   showInterstitial(o) { return this.sdk.showInterstitial(o); }
   showRewarded(o) { return this.sdk.showRewarded(o); }
@@ -3515,7 +3515,7 @@ class Palugo {
     this.paused = false;
     if (this.sdk) this.sdk.forceResume();
   }
-  // --- Game Loop Fixed Timestep ---
+  // -- Bucle de Juego con Intervalo de Tiempo Fijo ---------------------
   start(gameInstance) {
     if (!gameInstance || typeof gameInstance.update !== 'function' || typeof gameInstance.render !== 'function') {
       throw new Error('PALUGO: gameInstance debe implementar update(inputs, dt) y render(engine)');
@@ -3523,7 +3523,7 @@ class Palugo {
     if (this._running) return;
     this._running = true;
     this.game = gameInstance;
-    // Hook opcional init
+    // Ejecuta la inicialización opcional del juego.
     if (typeof gameInstance.init === 'function') gameInstance.init(this);
     let last = performance.now();
     let acc = 0;
@@ -3533,26 +3533,26 @@ class Palugo {
       requestAnimationFrame(loop);
       let frameDt = (now - last) / 1000;
       last = now;
-      // Clamp para evitar spiral tras pestaña inactiva
+      // Limita el acumulador de tiempo para evitar sobrecarga tras pausas prolongadas.
       frameDt = Math.min(frameDt, 0.1);
-      // Sync estado SDK
+      // Sincroniza el estado de disponibilidad del SDK.
       this.sdkReady = this.sdk.ready;
       if (this.paused) return;
       acc += frameDt;
       fpsTimer += frameDt;
       this._frameCount++;
-      // Fixed update - puede hacer varios ticks si va lento
+      // Ejecuta las actualizaciones de física y lógica a paso constante.
       let ticks = 0;
       while (acc >= this.fixedDt && ticks < 4) {
         this.input.update(this.fixedDt);
         const inputs = this.input.getState();
-        // Mantener compat: this.inputs = resolved
+        // Actualiza el estado de entrada resuelto para compatibilidad.
         this.inputs = inputs;
         this.game.update(inputs, this.fixedDt);
         acc -= this.fixedDt;
         ticks++;
       }
-      // Render una vez por frame (interpolación no necesaria para ASCII)
+      // Renderiza un cuadro visual por cada ciclo de animación.
       this.display.clear(0);
       this.game.render(this);
       if (this.showFPS && fpsTimer >= 0.5) {
@@ -3571,19 +3571,19 @@ class Palugo {
       this.touchControls = null;
     }
   }
-  // Cambiar FPS en caliente
+  // Modifica dinámicamente la frecuencia de actualización del motor.
   setFPS(fps) {
     this.fps = fps === 30 ? 30 : 60;
     this.fixedDt = 1 / this.fps;
   }
 }
-// Aliases retro-compatibles
+// Define alias de compatibilidad con versiones previas.
 const PocketArcade = Palugo;
 const PocketArcadeEngine = Palugo;
 
 // --- Menu.js ---
-// Menu.js - Menu and HUD System PALUGO
-// Controls: up/down, ENTER/SPACE to select, ESC to back, START also
+// Menu.js - Administra las pantallas de inicio, opciones, ranking y pausa del juego.
+// Procesa la navegación del usuario mediante controles de dirección y selección.
 function hud(key, fallback){ return (HudConfig && HudConfig[key]) ? HudConfig[key] : fallback; }
 class PalugoMenu {
   constructor(engine, options = {}) {
@@ -3597,10 +3597,10 @@ class PalugoMenu {
     this.selTitle = 0; // 0:Play 1:Options 2:Ranking 3:Credits
     this.selOptions = 0; // 0:music 1:sfx 2:back
     this.selPause = 0; // 0:resume 1:options 2:quit
-    // Opciones persistidas
+    // Almacena los ajustes de audio y volumen configurados por el usuario.
     this.musicVol = 8; // 0-10
     this.sfxVol = 8;
-    // Ranking placeholder (aún sin efecto real, solo visual)
+    // Mantiene la tabla de puntuaciones destacadas para la pantalla de récords.
     this.ranking = [
       { rank:1, name:'ACE', score:12500 },
       { rank:2, name:'NOVA', score:9800 },
@@ -3612,7 +3612,7 @@ class PalugoMenu {
     ];
     this._applyVolumes();
     this._applyPalette();
-    // Loop musical menú 165 BPM
+    // Gestiona la reproducción en bucle de la melodía de introducción.
     this.menuBpm = 165;
     this.menuMusicId = null;
     this.engine.audio.onReady(() => {
@@ -3856,7 +3856,7 @@ class PalugoMenu {
       } else {
         engine.drawText(txt, 320, y + 4, 2, 17, { align: 'center' });
       }
-      // Barra de nivel vectorial para volumen Music/SFX
+      // Renderiza la barra gráfica indicadora del nivel de volumen seleccionado.
       if (i === 0 || i === 1) {
         const val = i === 0 ? this.musicVol : this.sfxVol;
         const barX = 390, barY = y + 8, barW = 120, barH = 10;
@@ -3876,7 +3876,7 @@ class PalugoMenu {
     engine.drawLine(220, 52, 420, 52, 5, 1.5);
     const rSub = hud("ranking_sub", {x:320,y:68,size:13,font:'Consolas',align:'center',text:"(placeholder - no effect yet)"});
     engine.drawText(rSub.text, rSub.x, rSub.y, 2, rSub.size, { align: rSub.align, font: rSub.font });
-    // Cabecera
+    // Renderiza la cabecera superior y el título principal de la pantalla.
     engine.drawRect(90, 88, 460, 26, 1, true);
     engine.drawRect(90, 88, 460, 26, 2, false);
     const rHead = hud("ranking_header", {x:320,y:92,size:15,font:'Consolas',align:'center',text:"RANK  NAME      SCORE"});
@@ -4605,14 +4605,14 @@ class ShmupGame {
     this.engine.audio.playNoise({ duration:0.13, volume:0.15, isMusic:false });
     this.engine.audio.playPulse1(110, { duration:0.09, volume:0.19, isMusic:false });
   }
-  // -- Spawn cápsula de power-up al morir un CARRIER --
+  // Despliega una cápsula de mejora al ser destruido un enemigo portador.
   spawnCapsule(x, y) {
     this.capsules.push({
       x, y: y - 8,
       vx: -48,        // va lentamente hacia la izquierda
       t: 0,           // timer para animación de bote
     });
-    // SFX especial al soltar cápsula
+    // Reproduce el efecto sonoro característico de aparición de cápsula.
     this.engine.audio.playPulse1(1046, { duration:0.12, volume:0.20, slide:200, duty:0.125, isMusic:false });
   }
   killShip() {
@@ -4622,14 +4622,14 @@ class ShmupGame {
     this.explode(cx, cy, 25, 24);
     this.engine.audio.sfxExplosion();
     this.lives--;
-    this.pwr.reset(); // Power-ups se pierden al morir estilo Gradius
-    // Atenuar / pausar música de inmediato al morir
+    this.pwr.reset(); // Restablece el equipamiento de mejoras al destruirse la nave.
+    // Silencia la música y efectos de audio inmediatamente tras la destrucción.
     if (this._adPrevMusic === undefined) {
       this._adPrevMusic = (this.engine.audio && this.engine.audio.musicVolume !== undefined) ? this.engine.audio.musicVolume : 0.18;
       this._adPrevSfx = (this.engine.audio && this.engine.audio.sfxVolume !== undefined) ? this.engine.audio.sfxVolume : 0.24;
     }
     try {
-      this.engine.audio.setMusicVolume(0.0); // Mute música
+      this.engine.audio.setMusicVolume(0.0); // Ajusta el volumen del canal de música a cero.
     } catch(e) {}
     if (this.lives <= 0) {
       this.gameOver = true;
@@ -4645,16 +4645,16 @@ class ShmupGame {
     }
   }
   _doContinueRespawn() {
-    // Forzar despausado del motor y del SDK para que nunca se congele el game loop
+    // Asegura que el bucle del motor continúe sin bloqueos tras la publicidad.
     if (this.engine) {
       this.engine.paused = false;
       if (this.engine.sdk) this.engine.sdk.forceResume();
     }
-    // Restaurar volumen de música y SFX tras la publicidad
+    // Restaura los niveles originales de volumen de música y efectos de sonido.
     const prevMusic = this._adPrevMusic !== undefined ? this._adPrevMusic : 0.18;
     const prevSfx   = this._adPrevSfx   !== undefined ? this._adPrevSfx   : 0.24;
     try {
-      // Asegurar que el contexto de audio esté activo
+      // Comprueba y reactiva el contexto de audio si se encontraba suspendido.
       if (this.engine.audio.ctx && this.engine.audio.ctx.state === 'suspended') {
         this.engine.audio.ctx.resume().catch(() => {});
       }
@@ -4665,7 +4665,7 @@ class ShmupGame {
     this._adPrevSfx   = undefined;
     this.awaitingContinue = false;
     this.respawnTimer = 3.0;
-    this.ship.iframes = 2.8; // 2.8s de invencibilidad post-respawn
+    this.ship.iframes = 2.8; // Asigna el tiempo de invulnerabilidad temporal tras la reaparición.
     this.ship.x = 80;
     this.ship.y = 240;
     if (this.miniboss) {
@@ -4700,7 +4700,7 @@ class ShmupGame {
       }
       return;
     }
-    // Cuenta regresiva de 3 segundos tras perder una vida
+    // Gestiona el intervalo de espera e invulnerabilidad al reaparecer.
     if (this.respawnTimer > 0) {
       this.respawnTimer -= dt;
       for (const s of this.stars) { s.x -= s.s * 70 * dt; if (s.x < 0) { s.x = 640; s.y = Math.random() * 480; } }
@@ -4717,7 +4717,7 @@ class ShmupGame {
         this.animTimer += dt;
         if (this.engine.input.justPressed('btnA') || this.engine.input.justPressed('btnB') || this.engine.input.justPressed('btnStart')) {
           this.awaitingContinue = 'ad';
-          // Solo silenciar volumen de música y SFX (no suspender ctx para que el anuncio pueda reproducirse)
+          // Silencia temporalmente el audio del juego para permitir el sonido del anuncio.
           try {
             this.engine.audio.setMusicVolume(0.0);
             this.engine.audio.setSfxVolume(0.0);
@@ -4732,7 +4732,7 @@ class ShmupGame {
       }
       return;
     }
-    // 1. Movimiento nave
+    // 1. Actualiza la posición y desplazamiento de la nave del jugador.
     let mx = 0, my = 0;
     if (inputs.left)  mx -= 1;
     if (inputs.right) mx += 1;
@@ -4741,14 +4741,14 @@ class ShmupGame {
     this.ship.x += mx * this.speed * dt;
     this.ship.y += my * this.speed * dt;
     this.ship.x = Math.max(8, Math.min(640 - this.ship.w - 8, this.ship.x));
-    // Colisión con muros: clamp al gap real de las estructuras en la posición actual de la nave
+    // Restringe el movimiento vertical de la nave dentro del corredor libre entre muros.
     {
       const gap = this.getGapAtX(this.ship.x + this.ship.w / 2);
       this.ship.y = Math.max(gap.top + 1, Math.min(gap.bottom - this.ship.h - 1, this.ship.y));
     }
-    // Invencibilidad post-respawn
+    // Reduce el contador de invulnerabilidad tras reaparecer.
     if ((this.ship.iframes || 0) > 0) this.ship.iframes -= dt;
-    // 2. Disparo principal (J / turboA)
+    // 2. Procesa la entrada y cadencia del disparo principal de la nave.
     this.fireCooldown -= dt;
     const wantFire = inputs.btnA || inputs.turboA;
     const rate = inputs.turboA ? this.turboRate : this.fireRate;
@@ -4756,24 +4756,24 @@ class ShmupGame {
       this.fireBullet();
       this.fireCooldown = rate;
     }
-    // 3. Activar Power-up (K / btnB)
+    // 3. Aplica la mejora correspondiente al slot actualmente seleccionado.
     if (this.engine.input.justPressed('btnB')) {
       this.pwr.activate(this);
     }
-    // 4. Auto-misil
+    // 4. Gestiona el lanzamiento automático de misiles guiados de superficie.
     if (this.pwr.shouldFireMissile()) {
       const tip = this.getShipTip();
       this.pwr.spawnMissile(tip.x, tip.y);
       this.engine.audio.playPulse1(330, { duration: 0.10, volume: 0.14, slide: 100, duty: 0.5, isMusic: false });
     }
-    // 5. Actualizar sistema de power-ups
+    // 5. Actualiza el estado de las opciones de apoyo y proyectiles auxiliares.
     this.pwr.update(dt, this.ship);
-    // 6. Fondo: Estrellas
+    // 6. Desplaza las capas de estrellas del fondo para crear efecto de paralaje.
     for (const s of this.stars) {
       s.x -= s.s * 70 * dt;
       if (s.x < 0) { s.x = 640; s.y = Math.random() * 480; }
     }
-    // 7. Fondo: Planetas y Soles
+    // 7. Actualiza y desplaza los cuerpos celestes decorativos del fondo.
     for (const p of this.planets) {
       p.x -= 20 * dt;
     }
@@ -4788,7 +4788,7 @@ class ShmupGame {
       this.spawnSun();
       this.sunTimer = 50 + Math.random() * 25;
     }
-    // 8. Estructuras del terreno
+    // 8. Desplaza y genera las formaciones alienígenas del terreno.
     for (const seg of this.structures) {
       seg.x -= this.structSpeed * dt;
     }
@@ -4798,9 +4798,9 @@ class ShmupGame {
       this.spawnStructure();
       this.structTimer = 4.2 + Math.random() * 3.5;
     }
-    // 9. Progresión temporal y Spawn de oleadas / Miniboss
+    // 9. Controla el avance temporal, aparición de oleadas y activación del jefe.
     this.gameTime += dt;
-    const BOSS_TRIGGER = 120; // 2 minutos para miniboss
+    const BOSS_TRIGGER = 120; // Establece el tiempo límite tras el cual aparece el jefe de zona.
     if (this.minibossState === 'waves') {
       if (this.gameTime >= BOSS_TRIGGER) {
         this.minibossState = 'warning';
@@ -4833,7 +4833,7 @@ class ShmupGame {
       this.spawnInterceptorWorm();
       this.wormTimer = 18 + Math.random() * 12;
     }
-    // 10. Actualización de Enemigos
+    // 10. Actualiza la posición, patrones de vuelo y ataques de los enemigos.
     if (this.spawnSystem) {
       this.spawnSystem.update(dt);
     }
@@ -4878,18 +4878,18 @@ class ShmupGame {
     }
     this.enemies = this.enemies.filter(e => e.x > -100 && e.hp > 0);
     this._applyEnemySeparation(dt);
-    // 11. Actualización de Balas del jugador
+    // 11. Desplaza y valida la vigencia de los proyectiles disparados por el jugador.
     for (const b of this.bullets) {
       b.x += b.vx * dt;
       b.y += (b.vy || 0) * dt;
     }
     this.bullets = this.bullets.filter(b => b.x < 680 && b.x > -20 && b.y > 0 && b.y < 480);
-    // 12. Actualización de Balas enemigas
+    // 12. Desplaza los proyectiles enemigos y evalúa colisiones con el jugador.
     for (const eb of this.enemyBullets) {
       eb.x += eb.vx * dt;
       eb.y += eb.vy * dt;
       eb.life = (eb.life || 5) - dt;
-      // Colisión bala enemiga vs Nave
+      // Evalúa si un proyectil hostil impacta contra el fuselaje de la nave.
       const shipBox = { x: this.ship.x + 4, y: this.ship.y + 2, w: this.ship.w - 8, h: this.ship.h - 4 };
       if (eb.x < shipBox.x + shipBox.w && eb.x + eb.w > shipBox.x &&
           eb.y < shipBox.y + shipBox.h && eb.y + eb.h > shipBox.y) {
@@ -4898,7 +4898,7 @@ class ShmupGame {
       }
     }
     this.enemyBullets = this.enemyBullets.filter(eb => eb.life > 0 && eb.x > -30 && eb.x < 680 && eb.y > -20 && eb.y < 500);
-    // 13. Colisión Balas del jugador vs Enemigos
+    // 13. Evalúa el impacto de los disparos del jugador contra las naves enemigas.
     for (let bi = this.bullets.length - 1; bi >= 0; bi--) {
       const b = this.bullets[bi];
       let hit = false;
@@ -4934,7 +4934,7 @@ class ShmupGame {
         this.bullets.splice(bi, 1);
       }
     }
-    // 14. Colisión Misiles PowerUp vs Enemigos
+    // 14. Evalúa el impacto de los misiles de soporte contra las naves enemigas.
     for (let mi = this.pwr.missiles.length - 1; mi >= 0; mi--) {
       const m = this.pwr.missiles[mi];
       for (const e of this.enemies) {
@@ -4953,7 +4953,7 @@ class ShmupGame {
         }
       }
     }
-    // 15. Colisión Nave vs Enemigos
+    // 15. Evalúa la colisión física directa entre la nave del jugador y los enemigos.
     if ((this.ship.iframes || 0) <= 0 && !this.gameOver) {
       const shipBox = { x: this.ship.x + 4, y: this.ship.y + 2, w: this.ship.w - 8, h: this.ship.h - 4 };
       for (const e of this.enemies) {
@@ -4964,7 +4964,7 @@ class ShmupGame {
         }
       }
     }
-    // 16. Cápsulas de Power-Up
+    // 16. Actualiza la recolección y movimiento de las cápsulas de mejora.
     for (let ci = this.capsules.length - 1; ci >= 0; ci--) {
       const cap = this.capsules[ci];
       cap.x += (cap.vx || -48) * dt;
@@ -4978,7 +4978,7 @@ class ShmupGame {
       }
     }
     this.capsules = this.capsules.filter(c => c.x > -30);
-    // 17. Partículas
+    // 17. Actualiza la física y desvanecimiento de las partículas de explosión.
     for (const p of this.particles) {
       p.x += p.vx * dt;
       p.y += p.vy * dt;
@@ -4989,7 +4989,7 @@ class ShmupGame {
     this.particles = this.particles.filter(p => p.life > 0);
     this.animTimer += dt;
   }
-  // -- RENDER (Puro Vector) --------------------------------------------------
+  // -- Renderizado Principal de Escena ----------------------------------
   render(engine) {
     // Estrellas
     for (const s of this.stars) {
@@ -5008,11 +5008,11 @@ class ShmupGame {
         });
       }
     }
-    // Estructuras Alienígenas Vivas (Biomasa Orgánica, Cilios y Venas Pulsantes)
+    // Renderiza la biomasa orgánica, membranas y cilios de las estructuras vivas.
     for (const seg of this.structures) {
       this._renderAlienBiomeSegment(engine, seg, this.animTimer);
     }
-// -- Barras HUD superiores e inferiores --
+// Renderiza las barras contenedoras de interfaz superior e inferior.
     engine.drawRect(0, 0, 640, 32, 1, true);
     engine.drawLine(0, 32, 640, 32, 2, 1.5);
     engine.drawRect(0, 442, 640, 38, 1, true);
@@ -5029,7 +5029,7 @@ class ShmupGame {
     engine.drawText(`${livesLabel}${this.lives}`, livesCfg.x, livesCfg.y, 5, livesCfg.size, { font:livesCfg.font, align:livesCfg.align, shadow:true, shadowColor:1 });
     const scorePrefix = hs.text ? (hs.text.replace(/\d+.*$/, '').trim() || 'SCORE') : 'SCORE';
     engine.drawText(`${scorePrefix} ${this.score}`, hs.x, hs.y, 25, hs.size, { font:hs.font, align:hs.align, shadow:true, shadowColor:1 });
-    // Boss status y contador en el lado derecho
+    // Muestra el estado del combate y temporizador del jefe en el lateral derecho.
     {
       const bossCfg = hud("hud_boss", { x:626, y:8, size:15, font:'Consolas', align:'right' });
       const BOSS_TOTAL = 120;
@@ -5051,7 +5051,7 @@ class ShmupGame {
       }
       if (bossText) engine.drawText(bossText, bossCfg.x, bossCfg.y, bossCol, bossCfg.size, { font:bossCfg.font, align:bossCfg.align, shadow:true, shadowColor:1 });
     }
-    // -- Barra inferior: Power-Up estilo Gradius ------------------------------
+    // -- Renderizado de Barra de Mejoras ---------------------------------
     this._renderPowerBar(engine);
     // Enemigos 
     for (const e of this.enemies) {
@@ -5098,8 +5098,8 @@ class ShmupGame {
         engine.drawLine(eb.x|0,eb.y|0,(eb.x+8)|0,eb.y|0,24,2);
       }
     }
-    // -- Barra de vida MINIBOSS + aviso (solo WARNING) - configurable via palugo_conf
-    // -- Barra de vida MINIBOSS + aviso (solo WARNING) - configurable via palugo_conf
+    // Renderiza la barra de salud y advertencia de proximidad del jefe.
+    // Renderiza la barra de salud y advertencia de proximidad del jefe.
     if (this.minibossState==='warning') {
       const wt = hud("hud_warning_title", {x:320,y:198,size:28,font:'Consolas',align:'center',text:"WARNING"});
       const ws = hud("hud_warning_sub", {x:320,y:224,size:13,font:'Consolas',align:'center',text:"MINIBOSS APPROACHING"});
@@ -5176,7 +5176,7 @@ class ShmupGame {
       engine.drawRect(170, 195, 300, 70, 5, false);
       engine.drawText(loadAd.text, loadAd.x, loadAd.y, 25, loadAd.size, {align:loadAd.align, shadow:true, shadowColor:1, font:loadAd.font});
     }
-    // Cuenta regresiva de 3 segundos tras perder una vida
+    // Gestiona el intervalo de espera e invulnerabilidad al reaparecer.
     if (this.respawnTimer > 0 && !this.gameOver) {
       const count = Math.ceil(this.respawnTimer);
       const rc  = hud("hud_ready",       {x:320, y:198, size:26, font:'Consolas', align:'center', text:`READY IN ${count}`});
@@ -5292,7 +5292,7 @@ class ShmupGame {
       }
     }
   }
-  // -- Renderizado de Estructuras Alienígenas Vivas (Biomasa Orgánica, Cilios y Venas Pulsantes) --
+  // -- Renderizado de Estructuras Alienígenas Vivas ---------------------
   _renderAlienBiomeSegment(engine, seg, t) {
     const ctx = engine.ctx;
     if (!ctx) return;
@@ -5302,7 +5302,7 @@ class ShmupGame {
     const bioLime = '#39ff14';
     const bioGold = '#ffe600';
     const bioViolet = '#b5179e';
-    // -- Muro Superior Alienígena Vivo --
+    // Renderiza la biomasa orgánica y tentáculos del muro superior.
     if (seg.topH > 4) {
       const topBaseY = 32;
       const step = 16;
@@ -5393,7 +5393,7 @@ class ShmupGame {
       }
       ctx.restore();
     }
-    // -- Muro Inferior Alienígena Vivo --
+    // Renderiza la biomasa orgánica y tentáculos del muro inferior.
     if (seg.bottomH > 4) {
       const botBaseY = 440;
       const step = 16;
