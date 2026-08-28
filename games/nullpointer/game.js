@@ -433,118 +433,9 @@ const BUNDLED_GAME_ID = "k573z71gvdx902ocvegl74uvgrwqsi73";
 const HudConfig = BUNDLED_HUD;
 
 // --- Palettes.js ---
-// Palettes.js - Paletas PALUGO (hasta 45 colores)
-// Inspiradas en Game Boy, escalas de grises y variantes verdosas
+// Palettes.js - Paleta PALUGO (45 colores vectoriales neón)
+// Solo la paleta VECTOR es utilizada por el juego.
 const Palettes = {
-  // 4 colores GB original verdoso (DMG)
-  GB_GREEN: [
-    '#0f380f', // 0 darkest
-    '#306230', // 1 dark
-    '#8bac0f', // 2 light
-    '#9bbc0f'  // 3 lightest
-  ],
-  // Blanco y negro puro 4 tonos (renombrado de GRAY_4 que se veía blanco)
-  BW_4: [
-    '#000000',
-    '#555555',
-    '#AAAAAA',
-    '#FFFFFF'
-  ],
-  // Alias legacy (mantiene compat)
-  GRAY_4: [
-    '#000000',
-    '#555555',
-    '#AAAAAA',
-    '#FFFFFF'
-  ],
-  // Ámbar CRT - monitores tubo ámbar vintage (fondo oscuro ámbar)
-  AMBER: [
-    '#0a0400', // 0 negro ámbar
-    '#5a3000', // 1 ámbar oscuro
-    '#ff9d00', // 2 ámbar brillante
-    '#ffdd88'  // 3 ámbar claro
-  ],
-  // Demo por defecto (usado por engine sin configurar)
-  DEMO: [
-    '#0f380f', '#306230', '#8bac0f', '#9bbc0f'
-  ],
-  // Gray Game Boy Pocket (grisáceo)
-  GB_POCKET: [
-    '#1a1a1a',
-    '#6b6b6b',
-    '#a8a8a8',
-    '#ffffff'
-  ],
-  // Game Boy Light (turquesa)
-  GB_LIGHT: [
-    '#002b2b',
-    '#006666',
-    '#4a9e9e',
-    '#a0d8d8'
-  ],
-  // Escala de grises 16 pasos
-  GRAYSCALE_16: [
-    '#000000','#111111','#222222','#333333',
-    '#444444','#555555','#666666','#777777',
-    '#888888','#999999','#AAAAAA','#BBBBBB',
-    '#CCCCCC','#DDDDDD','#EEEEEE','#FFFFFF'
-  ],
-  // Verdoso extendido 16 pasos
-  GREEN_16: [
-    '#071a07','#0f380f','#183d18','#205020',
-    '#306230','#3a743a','#4a8a4a','#5a9a3a',
-    '#6bac4a','#7dba5a','#8bac0f','#9bbc0f',
-    '#b0d45a','#c8e67a','#dff5a0','#f0ffd0'
-  ],
-  // PALUGO_45 STAR BLAST - 45 colores optimizados para shmup (máximo uso: naves, espacio, FX)
-  // 0: fondo, 1: HUD oscuro, 2-6: azules espacio, 7-11: verdes/cian player, 12-18: grises/estrellas, 19-26: rojos/naranjas/amarillos FX, 27-32: púrpuras enemigos, 36-44: teals/olivas extras
-  PALUGO_45: [
-    '#01010a', // 0  space black (clear)
-    '#0f1f2e', // 1  hud navy dark
-    '#1e3a5a', // 2  dark blue
-    '#2e6a8a', // 3  steel blue (enemies STEEL)
-    '#4a9ac0', // 4  sky blue (CRUISER)
-    '#7ad0e0', // 5  cyan light (player highlight)
-    '#c0f0ff', // 6  pale cyan (stars bright)
-    '#081e12', // 7  dark green shadow
-    '#1a5a2e', // 8  forest green
-    '#2e8a4a', // 9  emerald
-    '#5ac07a', // 10 mint
-    '#a0e8b0', // 11 light mint (player)
-    '#1a1a1a', // 12 charcoal
-    '#3a3a3a', // 13 dark gray
-    '#5a5a5a', // 14 mid gray
-    '#7a7a7a', // 15 gray
-    '#9a9a9a', // 16 silver
-    '#c8c8c8', // 17 light silver
-    '#ffffff', // 18 white (bullets, estrellas)
-    '#4a0a0a', // 19 crimson dark (HEAVY shadow)
-    '#7a1a1a', // 20 crimson (HUNTER)
-    '#b03030', // 21 red (DRONE)
-    '#d85030', // 22 vermillion (SCOUT)
-    '#e88030', // 23 tangerine (BOMBER)
-    '#f0a030', // 24 amber
-    '#ffd040', // 25 gold (bullets, DART)
-    '#ffe880', // 26 pale gold (explosión)
-    '#2e0a3a', // 27 deep purple (WAVE shadow)
-    '#4a1a6a', // 28 indigo (WAVE)
-    '#6a2a9a', // 29 violet
-    '#8a4ac0', // 30 amethyst (INTERCEPTOR)
-    '#aa70e0', // 31 lavender (MOTHERSHIP)
-    '#3a2a4a', // 32 muted plum
-    '#5a3a5a', // 33 plum
-    '#7a5a6a', // 34 dusty rose
-    '#9a7a8a', // 35 mauve
-    '#0a3a3a', // 36 teal dark
-    '#1a6a5a', // 37 teal
-    '#2a9a7a', // 38 aqua
-    '#5ac0a0', // 39 aqua light
-    '#0a2a5a', // 40 navy deep
-    '#1e4a7a', // 41 navy mid (bg detail)
-    '#2e6a3a', // 42 olive dark
-    '#6a7a2a', // 43 olive
-    '#a0a030', // 44 lime olive (FX)
-  ],
   // VECTOR - 45 colores vectoriales neón optimizados para interfaz y shmup
   // Tonos vibrantes de Azul eléctrico, Amarillo neón, Verde neón y alto contraste
   VECTOR: [
@@ -596,7 +487,7 @@ const Palettes = {
   ]
 };
 function clampPalette(palette, max = 45) {
-  if (!Array.isArray(palette)) return Palettes.GB_GREEN;
+  if (!Array.isArray(palette)) return Palettes.VECTOR;
   return palette.slice(0, max);
 }
 function isValidHexColor(str) {
@@ -4850,7 +4741,11 @@ class ShmupGame {
     this.ship.x += mx * this.speed * dt;
     this.ship.y += my * this.speed * dt;
     this.ship.x = Math.max(8, Math.min(640 - this.ship.w - 8, this.ship.x));
-    this.ship.y = Math.max(32, Math.min(440 - this.ship.h, this.ship.y));
+    // Colisión con muros: clamp al gap real de las estructuras en la posición actual de la nave
+    {
+      const gap = this.getGapAtX(this.ship.x + this.ship.w / 2);
+      this.ship.y = Math.max(gap.top + 1, Math.min(gap.bottom - this.ship.h - 1, this.ship.y));
+    }
     // Invencibilidad post-respawn
     if ((this.ship.iframes || 0) > 0) this.ship.iframes -= dt;
     // 2. Disparo principal (J / turboA)
