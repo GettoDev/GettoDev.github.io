@@ -1,9 +1,8 @@
 // Game Runner Engine for play.html
-(async function() {
+window.initGameRunner = async function() {
     const params = new URLSearchParams(window.location.search);
     const gameId = params.get('id') || params.get('game');
 
-    // Loading overlay helper
     const titleElem = document.getElementById('gameTitleHeading');
     const iframeElem = document.getElementById('gameFrame');
     const controlsContainer = document.getElementById('controlsContent');
@@ -15,14 +14,15 @@
     }
 
     let games = [];
-    try {
-        const response = await fetch('data/games.json');
-        if (!response.ok) throw new Error('Network error');
-        games = await response.json();
-    } catch (e) {
-        console.warn("Could not fetch data/games.json via HTTP, checking inline fallback:", e);
-        if (window.GAMES_DATA) {
-            games = window.GAMES_DATA;
+    if (window.GAMES_DATA && Array.isArray(window.GAMES_DATA)) {
+        games = window.GAMES_DATA;
+    } else {
+        try {
+            const response = await fetch('data/games.json');
+            if (!response.ok) throw new Error('Network error');
+            games = await response.json();
+        } catch (e) {
+            console.warn("Could not fetch data/games.json via HTTP:", e);
         }
     }
 
@@ -87,9 +87,11 @@
         });
     }
 
-    // Set iframe src
+    // Set iframe src immediately
     if (iframeElem) {
-        iframeElem.src = game.iframe;
+        if (iframeElem.src !== game.iframe && !iframeElem.src.endsWith(game.iframe)) {
+            iframeElem.src = game.iframe;
+        }
         iframeElem.title = `${game.title} Game`;
     }
 
@@ -111,4 +113,11 @@
             `;
         }
     }
-})();
+};
+
+// Initialize on load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', window.initGameRunner);
+} else {
+    window.initGameRunner();
+}
