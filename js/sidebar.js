@@ -6,7 +6,7 @@
 |_____|_| \_|_| |_/_/   \_\_| \_|\____|_____|____/ 
                                                 
     POWERED BY GETTODEV SINCE 1998
-    Cyberpunk Gaming Studio - Retro Indie Games
+    Indie Game Development Studio - Retro Indie Games
 */
 
 // Horizontal Navigation Menu

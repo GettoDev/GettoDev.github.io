@@ -6,7 +6,7 @@
 |_____|_| \_|_| |_/_/   \_\_| \_|\____|_____|____/ 
                                                 
     POWERED BY GETTODEV SINCE 1998
-    Cyberpunk Gaming Studio - Retro Indie Games
+    Indie Game Development Studio - Retro Indie Games
     
     ===== MINIMALIST RETRO ARCADE STYLE =====
 */
@@ -292,15 +292,17 @@ a:hover {
     text-align: center;
 }
 
-/* Sharp, Flat Gaming Buttons */
+/* Gaming Thumbnails */
 .game-button {
     display: block;
     position: relative;
-    border: 2px solid #333333;
-    background-color: #111111;
-    padding: 10px;
+    border: none;
+    background: transparent;
+    padding: 0;
     margin-bottom: 15px;
-    transition: border-color 0.2s, background-color 0.2s;
+    overflow: visible;
+    text-decoration: none;
+    z-index: 1;
 }
 
 .game-button img {
@@ -310,11 +312,16 @@ a:hover {
     height: auto;
     margin: 0 auto;
     image-rendering: pixelated; /* Enhances retro feel */
+    transition: transform 0.25s ease;
+    transform-origin: center center;
 }
 
 .game-button:hover {
-    border-color: #00ffff;
-    background-color: rgba(0, 255, 255, 0.1);
+    z-index: 5;
+}
+
+.game-button:hover img {
+    transform: scale(1.05);
 }
 
 .play-overlay {
