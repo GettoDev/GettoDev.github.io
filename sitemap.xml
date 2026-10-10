@@ -163,6 +163,19 @@
         <priority>0.8</priority>
     </url>
     
+    <!-- NullPointer.Type Game Page -->
+    <url>
+        <loc>https://gettodev.github.io/nullpointer.html</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://gettodev.github.io/assets/thumbs/nullpointer.png</image:loc>
+            <image:title>NullPointer.Type - Cyberpunk Space Shooter</image:title>
+            <image:caption>NullPointer.Type - Juego de disparos espacial retro cyberpunk con gráficos vectoriales</image:caption>
+        </image:image>
+    </url>
+    
     <!-- Brum Brum Carrera Game Page -->
     <url>
         <loc>https://gettodev.github.io/brumbrumcarrera.html</loc>

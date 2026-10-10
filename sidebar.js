@@ -69,7 +69,7 @@ function getBasePath() {
   }
 
   // Known subdirectories that need '../' prefix
-  const subdirs = ['bubblenoid', 'gomafalda', 'neondirective', 'runsnowballrun', 'superrobotx', 'brumbrumcarrera', 'Maidhen', 'PiesFrescos', 'vircon32web'];
+  const subdirs = ['bubblenoid', 'gomafalda', 'neondirective', 'runsnowballrun', 'superrobotx', 'brumbrumcarrera', 'Maidhen', 'PiesFrescos', 'vircon32web', 'nullpointer'];
 
   if (subdirs.includes(currentDir)) {
     return '../';

@@ -1,0 +1,26 @@
+{
+  "name": "PALUGO",
+  "version": "1.0.0",
+  "description": "Advanced SHMUP with Vector Graphics",
+  "author": "GettoDev",
+  "genre": "Action, Arcade, Shooter",
+  "orientation": "landscape",
+  "resolution": "640x480",
+  "entryPoint": "index.html",
+  "mainFile": "game.js",
+  "requirements": {
+    "webgl": false,
+    "webaudio": true,
+    "localstorage": true,
+    "gamepad": true
+  },
+  "monetization": {
+    "interstitial": [
+      "gameover"
+    ],
+    "rewarded": [
+      "continue"
+    ],
+    "leaderboard": true
+  }
+}
