@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Play Game | GettoDev" data-es="Jugar Juego | GettoDev">Play Game | GettoDev</title>
+    <meta name="description"
+        data-en="Play retro indie games by GettoDev for free in your browser!"
+        data-es="¡Juega gratis a los juegos retro indie de GettoDev en tu navegador!"
+        content="Play retro indie games by GettoDev for free in your browser!">
+    <meta name="keywords"
+        data-en="retro games, indie games, browser games, html5 games, gettodev, arcade, cyberpunk"
+        data-es="juegos retro, juegos indie, juegos de navegador, juegos html5, gettodev, arcade, cyberpunk"
+        content="retro games, indie games, browser games, html5 games, gettodev, arcade, cyberpunk">
+    <meta name="author" content="GettoDev">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Play Game | GettoDev">
+    <meta property="og:description" content="Play retro indie games by GettoDev for free in your browser!">
+    <meta property="og:image" content="https://gettodev.github.io/assets/banners/getto-banner.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Play Game | GettoDev">
+    <meta property="twitter:description" content="Play retro indie games by GettoDev for free in your browser!">
+    <meta property="twitter:image" content="https://gettodev.github.io/assets/banners/getto-banner.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/ui/favicon.webp">
+    <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.webp">
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header role="banner">
+        <img src="assets/banners/getto-banner.webp" alt="GettoDev Banner - Cyberpunk Gaming Studio" loading="lazy">
+    </header>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <div id="sidebar"></div>
+    </nav>
+
+    <div class="divider"></div>
+
+    <main role="main">
+        <div class="game-layout">
+            <div class="controls-panel">
+                <h3 data-en="Game Controls" data-es="Controles del Juego">Game Controls</h3>
+                
+                <div class="controls-content" id="controlsContent">
+                    <!-- Controls are dynamically injected here by js/game-runner.js -->
+                </div>
+            </div>
+            
+            <div class="game-wrapper">
+                <div class="game-container">
+                    <iframe src="" class="game-iframe" id="gameFrame" title="Game"></iframe>
+                </div>
+                
+                <div class="game-controls">
+                    <button class="fullscreen-btn" id="fullscreenBtn" data-en="⛶ Fullscreen" data-es="⛶ Pantalla Completa">
+                        ⛶ Fullscreen
+                    </button>
+                    <div style="text-align: center;">
+                        <a href="index.html" class="back-button" data-en="← Back to Games" data-es="← Volver a Juegos">← Back to Games</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="neon-yellow">--Powered by GettoDev since 1998.--</p>
+        <div>
+            <img src="assets/badges/a18.gif" alt="ghost" />
+            <img src="assets/badges/b38.gif" alt="loading" />
+            <img src="assets/badges/c6.gif" alt="arkanoid" />
+            <img src="assets/badges/c8.gif" alt="retrogamer" />
+            <img src="assets/badges/c11.gif" alt="somanyideas" />
+            <img src="assets/badges/d11.gif" alt="pcuser" />
+            <img src="assets/badges/d33.gif" alt="thecomputer" />
+            <img src="assets/badges/d34.gif" alt="system32" />
+            <img src="assets/badges/d57.gif" alt="invaders" />
+            <img src="assets/badges/d64.gif" alt="retrovideo" />
+            <img src="assets/badges/b56.png" alt="oldelectronic" />
+            <img src="assets/badges/d17.png" alt="dukenukem" />
+            <img src="assets/badges/d56.png" alt="what" />
+        </div>
+    </footer>
+
+    <!-- Core Scripts -->
+    <script type="text/javascript" src="js/sidebar.js"></script>
+    <script type="text/javascript" src="js/language-switcher.js"></script>
+    <script type="text/javascript" src="js/fullscreen.js"></script>
+    <script type="text/javascript" src="data/games.js"></script>
+    <script type="text/javascript" src="js/game-runner.js"></script>
+
+</body>
+
+</html>

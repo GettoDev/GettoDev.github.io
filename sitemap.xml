@@ -5,7 +5,7 @@
     <!-- Homepage -->
     <url>
         <loc>https://gettodev.github.io/</loc>
-        <lastmod>2025-02-20</lastmod>
+        <lastmod>2026-10-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -17,8 +17,8 @@
     
     <!-- About Us Page -->
     <url>
-        <loc>https://gettodev.github.io/AboutUs.html</loc>
-        <lastmod>2025-02-20</lastmod>
+        <loc>https://gettodev.github.io/about-us.html</loc>
+        <lastmod>2026-10-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -35,8 +35,8 @@
     
     <!-- Maidhen Game Page -->
     <url>
-        <loc>https://gettodev.github.io/Maidhen.html</loc>
-        <lastmod>2025-02-20</lastmod>
+        <loc>https://gettodev.github.io/maidhen.html</loc>
+        <lastmod>2026-10-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -68,8 +68,8 @@
     
     <!-- Pies Frescos Game Page -->
     <url>
-        <loc>https://gettodev.github.io/PiesFrescos.html</loc>
-        <lastmod>2025-02-20</lastmod>
+        <loc>https://gettodev.github.io/pies-frescos.html</loc>
+        <lastmod>2026-10-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -96,71 +96,57 @@
     
     <!-- RetroReviews Page -->
     <url>
-        <loc>https://gettodev.github.io/RetroReviews.html</loc>
-        <lastmod>2025-02-20</lastmod>
+        <loc>https://gettodev.github.io/retro-reviews.html</loc>
+        <lastmod>2026-10-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
-    </url>
-    
-    <!-- Run Cat Run Game Page -->
-    <url>
-        <loc>https://gettodev.github.io/runcatrun.html</loc>
-        <lastmod>2025-02-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
     
     <!-- Go Mafalda Game Page -->
     <url>
         <loc>https://gettodev.github.io/gomafalda.html</loc>
-        <lastmod>2025-02-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Super Robot X Game Page -->
-    <url>
-        <loc>https://gettodev.github.io/SuperRobotX.html</loc>
-        <lastmod>2025-02-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- UT99 Game Page -->
-    <url>
-        <loc>https://gettodev.github.io/UT99.html</loc>
-        <lastmod>2025-02-20</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <!-- BubbleNoid Game Page -->
-    <url>
-        <loc>https://gettodev.github.io/bubblenoid.html</loc>
-        <lastmod>2025-02-20</lastmod>
+        <lastmod>2026-10-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
-            <image:loc>https://gettodev.github.io/assets/banners/getto-banner.webp</image:loc>
-            <image:title>BubbleNoid - Arcade Breakout Game</image:title>
-            <image:caption>BubbleNoid - Juego arcade breakout retro con gráficos pixel art</image:caption>
+            <image:loc>https://gettodev.github.io/assets/thumbs/gomafalda.png</image:loc>
+            <image:title>Go Mafalda</image:title>
+            <image:caption>Go Mafalda - Retro Arcade Game</image:caption>
         </image:image>
     </url>
     
-    <!-- Run Snowball Run Game Page -->
+    <!-- Unified Game Runner -->
     <url>
-        <loc>https://gettodev.github.io/runsnowballrun.html</loc>
-        <lastmod>2025-02-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <loc>https://gettodev.github.io/play.html</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
     </url>
     
+    <!-- Bubbla Boing Game Page -->
+    <url>
+        <loc>https://gettodev.github.io/bubblaboing.html</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://gettodev.github.io/assets/thumbs/bubblaboing.png</image:loc>
+            <image:title>Bubbla Boing - Arcade Game</image:title>
+            <image:caption>Bubbla Boing - Juego arcade clásico de romper burbujas</image:caption>
+        </image:image>
+    </url>
+
     <!-- Neon Directive Game Page -->
     <url>
         <loc>https://gettodev.github.io/neondirective.html</loc>
-        <lastmod>2025-02-20</lastmod>
+        <lastmod>2026-10-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://gettodev.github.io/assets/thumbs/neondirective.png</image:loc>
+            <image:title>Neon Directive</image:title>
+            <image:caption>Neon Directive - Cyberpunk Action Game</image:caption>
+        </image:image>
     </url>
     
     <!-- NullPointer.Type Game Page -->
@@ -175,27 +161,105 @@
             <image:caption>NullPointer.Type - Juego de disparos espacial retro cyberpunk con gráficos vectoriales</image:caption>
         </image:image>
     </url>
+
+    <!-- Run Snowball Run Game Page -->
+    <url>
+        <loc>https://gettodev.github.io/runsnowballrun.html</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://gettodev.github.io/assets/thumbs/runsnowballrun.png</image:loc>
+            <image:title>Run Snowball Run</image:title>
+            <image:caption>Run Snowball Run - Retro Endless Runner</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Sonic Speed Run Game Page -->
+    <url>
+        <loc>https://gettodev.github.io/sonicspeed.html</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://gettodev.github.io/assets/thumbs/sonicspeed.png</image:loc>
+            <image:title>Sonic Speed Run</image:title>
+            <image:caption>Sonic Speed Run - Pixel Endless Runner</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Mario Run Game Page -->
+    <url>
+        <loc>https://gettodev.github.io/mariorun.html</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://gettodev.github.io/assets/thumbs/mariorun.png</image:loc>
+            <image:title>Mario Run</image:title>
+            <image:caption>Mario Run - Retro Pixel Endless Runner</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Memory Match Game Page -->
+    <url>
+        <loc>https://gettodev.github.io/memory.html</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://gettodev.github.io/assets/thumbs/memory.png</image:loc>
+            <image:title>Dandys World Memory</image:title>
+            <image:caption>Dandys World Memory - Retro Puzzle Game</image:caption>
+        </image:image>
+    </url>
     
     <!-- Brum Brum Carrera Game Page -->
     <url>
         <loc>https://gettodev.github.io/brumbrumcarrera.html</loc>
-        <lastmod>2025-02-20</lastmod>
+        <lastmod>2026-10-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://gettodev.github.io/assets/thumbs/brumbrumcarrera.png</image:loc>
+            <image:title>Brum Brum Carrera</image:title>
+            <image:caption>Brum Brum Carrera - Retro Racing Game</image:caption>
+        </image:image>
     </url>
     
     <!-- Super Robot X Game Page -->
     <url>
         <loc>https://gettodev.github.io/superrobotx.html</loc>
-        <lastmod>2025-02-20</lastmod>
+        <lastmod>2026-10-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://gettodev.github.io/assets/thumbs/superrobotx.png</image:loc>
+            <image:title>Super Robot X</image:title>
+            <image:caption>Super Robot X - Retro Mecha Action Game</image:caption>
+        </image:image>
+    </url>
+
+    <!-- UT99 MOD Page -->
+    <url>
+        <loc>https://gettodev.github.io/ut99.html</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Guestbook Page -->
+    <url>
+        <loc>https://gettodev.github.io/guestbook.html</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
     </url>
     
     <!-- Contact Page -->
     <url>
         <loc>https://gettodev.github.io/contact.html</loc>
-        <lastmod>2025-02-20</lastmod>
+        <lastmod>2026-10-10</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -203,30 +267,9 @@
     <!-- Not Found Page -->
     <url>
         <loc>https://gettodev.github.io/not_found.html</loc>
-        <lastmod>2025-02-20</lastmod>
+        <lastmod>2026-10-10</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.1</priority>
-    </url>
-    
-    <!-- Super Robot X Game Page (Alternative URL) -->
-    <url>
-        <loc>https://gettodev.github.io/SuperRobotX.html</loc>
-        <lastmod>2025-02-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- BubbleNoid Folder Game Page -->
-    <url>
-        <loc>https://gettodev.github.io/bubblenoid/</loc>
-        <lastmod>2025-02-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <image:image>
-            <image:loc>https://gettodev.github.io/assets/banners/getto-banner.webp</image:loc>
-            <image:title>BubbleNoid - Arcade Breakout Game</image:title>
-            <image:caption>BubbleNoid - Juego arcade breakout retro con gráficos pixel art</image:caption>
-        </image:image>
     </url>
     
 </urlset>

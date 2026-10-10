@@ -12,15 +12,15 @@
 // Horizontal Navigation Menu
 const menuItems = [
   { name: 'Home', url: 'index.html', 'data-en': 'Home', 'data-es': 'Inicio' },
-  { name: 'About Us', url: 'AboutUs.html', 'data-en': 'About Us', 'data-es': 'Acerca de' },
+  { name: 'About Us', url: 'about-us.html', 'data-en': 'About Us', 'data-es': 'Acerca de' },
   { name: 'Guestbook', url: 'guestbook.html', 'data-en': 'Guestbook', 'data-es': 'Libro de Visitas' },
   {
     name: 'Legacy Games',
     'data-en': 'Legacy Games',
     'data-es': 'Juegos Legacy',
     dropdown: [
-      { name: 'Maidhen', url: 'Maidhen.html' },
-      { name: 'Pies Frescos', url: 'PiesFrescos.html' }
+      { name: 'Maidhen', url: 'maidhen.html' },
+      { name: 'Pies Frescos', url: 'pies-frescos.html' }
     ]
   },
   {
@@ -28,7 +28,7 @@ const menuItems = [
     'data-en': 'Emulators',
     'data-es': 'Emuladores',
     dropdown: [
-      { name: 'VirCon32', url: 'vircon32web/Vircon32Web.html' }
+      { name: 'VirCon32', url: 'emulators/vircon32web/Vircon32Web.html' }
     ]
   },
   {
@@ -36,7 +36,7 @@ const menuItems = [
     'data-en': 'Mod',
     'data-es': 'Mod',
     dropdown: [
-      { name: 'UT99', url: 'UT99.html' }
+      { name: 'UT99', url: 'ut99.html' }
     ]
   },
   { name: 'Contact', url: 'contact.html', 'data-en': 'Contact', 'data-es': 'Contacto' },
@@ -53,7 +53,10 @@ const menuItems = [
 
 // Detect if we're in a subdirectory and adjust paths accordingly
 function getBasePath() {
-  const path = window.location.pathname;
+  const path = window.location.pathname.replace(/\\/g, '/');
+  if (path.includes('/emulators/vircon32web')) {
+    return '../../';
+  }
   const pathParts = path.split('/').filter(part => part !== '');
   if (pathParts.length === 0) return '';
 
@@ -69,7 +72,7 @@ function getBasePath() {
   }
 
   // Known subdirectories that need '../' prefix
-  const subdirs = ['bubblenoid', 'gomafalda', 'neondirective', 'runsnowballrun', 'superrobotx', 'brumbrumcarrera', 'Maidhen', 'PiesFrescos', 'vircon32web', 'nullpointer'];
+  const subdirs = ['bubblaboing', 'gomafalda', 'neondirective', 'runsnowballrun', 'superrobotx', 'brumbrumcarrera', 'maidhen', 'pies-frescos', 'vircon32web', 'nullpointer', 'emulators'];
 
   if (subdirs.includes(currentDir)) {
     return '../';
