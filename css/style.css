@@ -131,6 +131,31 @@ nav a:last-child, #sidebar a:last-child {
     border-right: none;
 }
 
+/* Cafecito Button */
+.menu-cafecito {
+    display: flex;
+    align-items: center;
+}
+
+.menu-cafecito a.cafecito-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    border-right: none;
+}
+
+.menu-cafecito a.cafecito-link:hover {
+    background-color: transparent;
+    opacity: 0.85;
+}
+
+.menu-cafecito img {
+    height: 32px;
+    width: auto;
+    vertical-align: middle;
+}
+
 /* Dropdown Menu */
 .dropdown {
     position: relative;

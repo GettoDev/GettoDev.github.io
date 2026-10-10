@@ -48,6 +48,10 @@ const menuItems = [
       { name: 'English', url: '#', lang: 'en' },
       { name: 'Español', url: '#', lang: 'es' }
     ]
+  },
+  {
+    name: 'Cafecito',
+    cafecito: true
   }
 ];
 
@@ -100,7 +104,10 @@ function createHorizontalMenu() {
   menuItems.forEach(item => {
     const li = document.createElement('li');
 
-    if (item.external) {
+    if (item.cafecito) {
+      li.className = 'menu-cafecito';
+      li.innerHTML = "<a href='https://cafecito.app/gettodev' rel='noopener' target='_blank' class='cafecito-link'><img srcset='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x' src='https://cdn.cafecito.app/imgs/buttons/button_6.png' alt='Invitame un café en cafecito.app' /></a>";
+    } else if (item.external) {
       const a = document.createElement('a');
       a.href = item.url;
       a.target = '_blank';
