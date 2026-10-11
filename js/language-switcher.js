@@ -10,7 +10,7 @@ function setLanguage(lang) {
         console.log('Changing content from', element.textContent, 'to', newContent);
         
         // Handle HTML content properly
-        if (newContent.includes('<a')) {
+        if (newContent.includes('<')) {
             element.innerHTML = newContent;
         } else {
             element.textContent = newContent;

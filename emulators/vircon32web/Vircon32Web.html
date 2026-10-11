@@ -177,6 +177,9 @@ footer img:hover { filter:grayscale(0%); opacity:1; }
    ════════════════════════════════════════════ */
 
 .main-content{width:100%;max-width:980px;padding:26px 30px 40px 30px}
+.vircon-note{background-color:#111111;border:1px solid #333333;border-left:4px solid #00ffff;padding:12px 18px;margin-bottom:20px;font-family:'Courier New',monospace;font-size:0.95rem;color:#cccccc;line-height:1.6}
+.vircon-note a{color:#00ffff;text-decoration:underline;font-weight:bold;transition:color 0.2s}
+.vircon-note a:hover{color:#ff00ff}
 .page-title{font-family:'Courier New',monospace;font-size:1.35rem;font-weight:700;color:#00ffff;background-color:#111111;border-left:5px solid #ff00ff;padding:9px 18px;margin-bottom:22px}
 .section-title{font-family:'Courier New',monospace;font-size:.95rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid #00ffff;padding-bottom:5px;margin:20px 0 12px 0}
 .emulator-layout{display:grid;grid-template-columns:1fr 250px;gap:20px;align-items:start}
@@ -223,7 +226,7 @@ kbd{background:#0a0a0a;border:1px solid #333;border-bottom-width:2px;border-radi
 
 <!-- ── Banner de GettoDev ── -->
 <header role="banner">
-    <img src="../assets/banners/getto-banner.webp" alt="GettoDev Banner - Indie Game Development Studio" loading="lazy" decoding="async">
+    <img src="../../assets/banners/getto-banner.webp" alt="GettoDev Banner - Indie Game Development Studio" loading="lazy" decoding="async">
 </header>
 
 <!-- ── Menú de navegación compartido ── -->
@@ -236,9 +239,13 @@ kbd{background:#0a0a0a;border:1px solid #333;border-bottom-width:2px;border-radi
 <!-- ── Contenido del emulador ── -->
 <div class=main-content>
 
-<div class=page-title>Emulador Web de Vircon32
-
+<div class="vircon-note"
+     data-en="This is my web version of the 32-bit virtual console <a href='https://www.vircon32.com/' target='_blank' rel='noopener'>Vircon32</a>."
+     data-es="Esta es mi versión web de la consola virtual de 32 bits <a href='https://www.vircon32.com/' target='_blank' rel='noopener'>Vircon32</a>.">
+    Esta es mi versión web de la consola virtual de 32 bits <a href="https://www.vircon32.com/" target="_blank" rel="noopener">Vircon32</a>.
 </div>
+
+<div class=page-title data-en="Vircon32 Web Emulator" data-es="Emulador Web de Vircon32">Emulador Web de Vircon32</div>
 
 <div class=emulator-layout>
 
@@ -252,9 +259,7 @@ kbd{background:#0a0a0a;border:1px solid #333;border-bottom-width:2px;border-radi
 
 </div>
 
-<span>Inicializando WebAssembly...
-
-</span>
+<span data-en="Initializing WebAssembly..." data-es="Inicializando WebAssembly...">Inicializando WebAssembly...</span>
 
 </div>
 
@@ -266,25 +271,17 @@ kbd{background:#0a0a0a;border:1px solid #333;border-bottom-width:2px;border-radi
 
 <div class=status-bar>
 
-<span class=status-cursor>>
+<span class=status-cursor>></span> 
 
-</span> 
-
-<span id=status>Esperando cartucho ROM (.v32)...
-
-</span>
+<span id=status data-en="Waiting for ROM cartridge (.v32)..." data-es="Esperando cartucho ROM (.v32)...">Esperando cartucho ROM (.v32)...</span>
 
 </div>
 
 <div class=power-row>
 
-<span class="led on"id=powerLed>
+<span class="led on" id=powerLed></span> 
 
-</span> 
-
-<span>Consola encendida — sistema en linea
-
-</span>
+<span data-en="Console ON — system online" data-es="Consola encendida — sistema en linea">Consola encendida — sistema en linea</span>
 
 </div>
 
@@ -292,15 +289,11 @@ kbd{background:#0a0a0a;border:1px solid #333;border-bottom-width:2px;border-radi
 
 <div class=controls-panel>
 
-<div class=section-title>Consola
-
-</div>
+<div class=section-title data-en="Console" data-es="Consola">Consola</div>
 
 <div class=ctrl-group>
 
-<span class=ctrl-label>Ranura de cartucho
-
-</span> 
+<span class=ctrl-label data-en="Cartridge Slot" data-es="Ranura de cartucho">Ranura de cartucho</span> 
 
 <label class=file-btn>
 
@@ -310,7 +303,7 @@ kbd{background:#0a0a0a;border:1px solid #333;border-bottom-width:2px;border-radi
 
 <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
 
-</svg> Insertar cartucho (.v32)
+</svg> <span data-en="Insert Cartridge (.v32)" data-es="Insertar cartucho (.v32)">Insertar cartucho (.v32)</span>
 
 </label>
 
@@ -318,9 +311,7 @@ kbd{background:#0a0a0a;border:1px solid #333;border-bottom-width:2px;border-radi
 
 <div class=ctrl-group>
 
-<span class=ctrl-label>Memory Card
-
-</span> 
+<span class=ctrl-label data-en="Memory Card" data-es="Memory Card">Memory Card</span> 
 
 <label class=file-btn>
 
@@ -330,31 +321,19 @@ kbd{background:#0a0a0a;border:1px solid #333;border-bottom-width:2px;border-radi
 
 <path d="M20 6H4v12h16V6zm-2 10H6v-2h12v2zm0-4H6v-2h12v2z"/>
 
-</svg> Cargar tarjeta (.memc)
+</svg> <span data-en="Load Card (.memc)" data-es="Cargar tarjeta (.memc)">Cargar tarjeta (.memc)</span>
 
 </label> 
 
-<button class=save-btn onclick=saveMemoryCard()>Guardar tarjeta (.memc)
-
-</button>
+<button class=save-btn onclick=saveMemoryCard() data-en="Save Card (.memc)" data-es="Guardar tarjeta (.memc)">Guardar tarjeta (.memc)</button>
 
 </div>
 
 <div class=ctrl-group>
 
-<span class=ctrl-label>Audio
+<span class=ctrl-label data-en="Audio" data-es="Audio">Audio</span>
 
-</span>
-
-<p class=ctrl-note>Se inicia con el juego.
-
-<br>Usa 
-
-<kbd>CTRL+M
-
-</kbd> para silenciar.
-
-</p>
+<p class=ctrl-note data-en="Starts with the game.<br>Use <kbd>CTRL+M</kbd> to mute." data-es="Se inicia con el juego.<br>Usa <kbd>CTRL+M</kbd> para silenciar.">Se inicia con el juego.<br>Usa <kbd>CTRL+M</kbd> para silenciar.</p>
 
 </div>
 
@@ -362,21 +341,19 @@ kbd{background:#0a0a0a;border:1px solid #333;border-bottom-width:2px;border-radi
 
 </div>
 
-<div class=section-title>Controles de teclado
-
-</div>
+<div class=section-title data-en="Keyboard Controls" data-es="Controles de teclado">Controles de teclado</div>
 
 <table class=kbd-table>
 
 <tbody>
 
-<tr><td>Pausar / Reanudar</td><td><kbd>ESC</kbd></td></tr>
-<tr><td>Resetear consola</td><td><kbd>F5</kbd></td></tr>
-<tr><td>Encender / Apagar</td><td><kbd>CTRL+P</kbd></td></tr>
-<tr><td>Silenciar audio</td><td><kbd>CTRL+M</kbd></td></tr>
-<tr><td>Gamepad 1 — Direcciones</td><td><kbd>Flechas</kbd></td></tr>
-<tr><td>Gamepad 1 — A / B / X / Y</td><td><kbd>X</kbd> <kbd>Z</kbd> <kbd>S</kbd> <kbd>A</kbd></td></tr>
-<tr><td>Gamepad 1 — L / R / Start</td><td><kbd>Q</kbd> <kbd>W</kbd> <kbd>Espacio</kbd></td></tr>
+<tr><td data-en="Pause / Resume" data-es="Pausar / Reanudar">Pausar / Reanudar</td><td><kbd>ESC</kbd></td></tr>
+<tr><td data-en="Reset Console" data-es="Resetear consola">Resetear consola</td><td><kbd>F5</kbd></td></tr>
+<tr><td data-en="Power On / Off" data-es="Encender / Apagar">Encender / Apagar</td><td><kbd>CTRL+P</kbd></td></tr>
+<tr><td data-en="Mute Audio" data-es="Silenciar audio">Silenciar audio</td><td><kbd>CTRL+M</kbd></td></tr>
+<tr><td data-en="Gamepad 1 — Directions" data-es="Gamepad 1 — Direcciones">Gamepad 1 — Direcciones</td><td><kbd data-en="Arrows" data-es="Flechas">Flechas</kbd></td></tr>
+<tr><td data-en="Gamepad 1 — A / B / X / Y" data-es="Gamepad 1 — A / B / X / Y">Gamepad 1 — A / B / X / Y</td><td><kbd>X</kbd> <kbd>Z</kbd> <kbd>S</kbd> <kbd>A</kbd></td></tr>
+<tr><td data-en="Gamepad 1 — L / R / Start" data-es="Gamepad 1 — L / R / Start">Gamepad 1 — L / R / Start</td><td><kbd>Q</kbd> <kbd>W</kbd> <kbd data-en="Space" data-es="Espacio">Espacio</kbd></td></tr>
 
 </tbody>
 
