@@ -7,7 +7,6 @@ class FullscreenManager {
     init() {
         this.fullscreenBtn = document.getElementById('fullscreenBtn');
         this.gameContainer = document.querySelector('.game-container');
-        this.gameFrame = document.querySelector('.game-iframe');
         
         if (this.fullscreenBtn && this.gameContainer) {
             this.showButtonImmediately();
@@ -20,60 +19,6 @@ class FullscreenManager {
         this.fullscreenBtn.style.display = 'block';
         this.fullscreenBtn.style.position = 'relative';
         this.fullscreenBtn.style.zIndex = '1000';
-        
-        // Add loading overlay to game
-        this.createLoadingOverlay();
-    }
-    
-    createLoadingOverlay() {
-        // Create overlay that covers the game while loading
-        const overlay = document.createElement('div');
-        overlay.className = 'loading-overlay';
-        overlay.style.cssText = `
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 999;
-            border-radius: 8px;
-        `;
-        
-        // Add loading text
-        const loadingText = document.createElement('div');
-        loadingText.textContent = 'Loading Game...';
-        loadingText.style.cssText = `
-            color: #00ffff;
-            font-family: 'Courier New', monospace;
-            font-size: 1.2em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
-        `;
-        
-        overlay.appendChild(loadingText);
-        this.gameContainer.appendChild(overlay);
-        this.loadingOverlay = overlay;
-        
-        // Hide overlay when game loads
-        if (this.gameFrame) {
-            this.gameFrame.addEventListener('load', () => {
-                setTimeout(() => {
-                    if (this.loadingOverlay) {
-                        this.loadingOverlay.style.opacity = '0';
-                        setTimeout(() => {
-                            if (this.loadingOverlay && this.loadingOverlay.parentNode) {
-                                this.loadingOverlay.parentNode.removeChild(this.loadingOverlay);
-                            }
-                        }, 300);
-                    }
-                }, 1000); // Give game 1 second to initialize
-            });
-        }
     }
     
     bindEvents() {
