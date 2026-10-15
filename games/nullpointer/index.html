@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="theme-color" content="#000" />
   <link rel="icon" href="data:image/x-icon;base64,AA==" />
-  <title>NullPointer.Type</title>
+  <title>PALUGO GAME</title>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     html, body { width:100%; height:100%; background:#000; overflow:hidden; }
@@ -40,14 +40,13 @@
    
   <script src="game.js"></script>
     <script>
-    if (typeof PalugoGame !== "undefined") { document.getElementById("palugo-loader")?.remove(); } else { const check = setInterval(() => {
+    const check = setInterval(() => {
       if (document.getElementById('palugo-canvas')) {
         document.getElementById('palugo-loader')?.remove();
         clearInterval(check);
       }
     }, 100);
     setTimeout(() => document.getElementById('palugo-loader')?.remove(), 2000);
-    }
   </script>
 </body>
 </html>
