@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#000" />
+  <link rel="icon" href="data:image/x-icon;base64,AA==" />
+  <title>PALUGO GAME</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body { width:100%; height:100%; background:#000; overflow:hidden; }
+    body {
+      display:flex; align-items:center; justify-content:center;
+    }
+    #palugo-window {
+      background:#000;
+      position:relative;
+      overflow:hidden;
+      width: 100vw;
+      height: 100vh;
+    }
+    #palugo-window canvas {
+      display: block;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+    :fullscreen #palugo-window {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="palugo-window">
+    <div id="palugo-loader">LOADING...</div>
+  </div>
+   
+  <script src="game.js"></script>
+    <script>
+    const check = setInterval(() => {
+      if (document.getElementById('palugo-canvas')) {
+        document.getElementById('palugo-loader')?.remove();
+        clearInterval(check);
+      }
+    }, 100);
+    setTimeout(() => document.getElementById('palugo-loader')?.remove(), 2000);
+  </script>
+</body>
+</html>
