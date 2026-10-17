@@ -112,6 +112,34 @@
                         <a href="contact.html" class="text-secondary hover:text-accent transition-colors text-lg">Contact</a>
                     </div>
                 </div>
+                <button id="mobile-menu-btn" class="md:hidden text-secondary hover:text-accent transition-colors">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-dark/95 backdrop-blur-sm border-t border-primary/30">
+            <div class="px-4 py-4 space-y-2">
+                <a href="index.html" class="block text-secondary hover:text-accent transition-colors text-lg py-2">Home</a>
+                <a href="about-us.html" class="block text-secondary hover:text-accent transition-colors text-lg py-2">About</a>
+                <div class="py-2">
+                    <span class="text-secondary text-lg font-semibold">Legacy Games</span>
+                    <div class="pl-4 mt-2 space-y-2">
+                        <a href="maidhen.html" class="block text-secondary hover:text-accent transition-colors text-lg">Maidhen</a>
+                        <a href="pies-frescos.html" class="block text-secondary hover:text-accent transition-colors text-lg">Pies Frescos</a>
+                    </div>
+                </div>
+                <a href="retro-reviews.html" class="block text-secondary hover:text-accent transition-colors text-lg py-2">Retro Reviews</a>
+                <div class="py-2">
+                    <span class="text-secondary text-lg font-semibold">Emulators</span>
+                    <div class="pl-4 mt-2 space-y-2">
+                        <a href="emulators/vircon32web/Vircon32Web.html" class="block text-secondary hover:text-accent transition-colors text-lg">Vircon32</a>
+                    </div>
+                </div>
+                <a href="ut99.html" class="block text-secondary hover:text-accent transition-colors text-lg py-2">UT99 Mod</a>
+                <a href="guestbook.html" class="block text-secondary hover:text-accent transition-colors text-lg py-2">Guestbook</a>
+                <a href="contact.html" class="block text-secondary hover:text-accent transition-colors text-lg py-2">Contact</a>
             </div>
         </div>
     </nav>
@@ -172,6 +200,14 @@
 
     <!-- Language switching script -->
     <script type="text/javascript" src="js/language-switcher.js"></script>
+
+    <!-- Mobile menu toggle -->
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 
