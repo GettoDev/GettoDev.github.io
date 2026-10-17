@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
     <meta name="description"
         data-en="RetroReviews - Detailed analysis of classic games. Reviews of legendary titles, hidden gems and forgotten classics that shaped gaming history."
         data-es="RetroReviews - Análisis detallados de juegos clásicos. Reseñas de títulos legendarios, joyas ocultas y clásicos olvidados que moldearon la historia del gaming."
-        content="RetroReviews - Análisis detallados de juegos clásicos. Reseñas de títulos legendarios, joyas ocultas y clásicos olvidados que moldearon la historia del gaming.">
+        content="RetroReviews - Detailed analysis of classic games. Reviews of legendary titles, hidden gems and forgotten classics that shaped gaming history.">
     <meta name="keywords"
         data-en="retro reviews, game reviews, classic games, video game analysis, retro gaming, game criticism"
         data-es="retro reviews, reseñas de juegos, juegos clásicos, análisis de videojuegos, retro gaming, crítica de juegos"
@@ -24,7 +24,7 @@
     <meta property="og:description" 
         data-en="Detailed analysis of classic games and retro gaming"
         data-es="Análisis detallados de juegos clásicos y retro gaming"
-        content="Análisis detallados de juegos clásicos y retro gaming">
+        content="Detailed analysis of classic games and retro gaming">
     <meta property="og:image" content="https://gettodev.github.io/assets/banners/getto-banner.webp">
 
     <!-- Twitter -->
@@ -34,14 +34,14 @@
     <meta property="twitter:description" 
         data-en="Detailed analysis of classic games and retro gaming"
         data-es="Análisis detallados de juegos clásicos y retro gaming"
-        content="Análisis detallados de juegos clásicos y retro gaming">
+        content="Detailed analysis of classic games and retro gaming">
     <meta property="twitter:image" content="https://gettodev.github.io/assets/banners/getto-banner.webp">
 
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="assets/ui/favicon.webp">
     <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.webp">
 
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="output.css">
 
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
@@ -71,65 +71,69 @@
     </script>
 </head>
 
-<body>
-    <header role="banner">
-        <img src="assets/banners/getto-banner.webp" alt="GettoDev Banner - Indie Game Development Studio" loading="lazy" decoding="async">
-    </header>
-
-    <nav role="navigation" aria-label="Main navigation">
-        <div id="sidebar">
-            <script type="text/javascript" src="js/sidebar.js"></script>
+<body class="bg-dark text-secondary font-sans">
+    <!-- Navigation -->
+    <nav class="bg-dark/95 backdrop-blur-sm sticky top-0 z-50 border-b border-primary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="text-secondary font-bold text-2xl hover:text-accent transition-colors">GettoDev</a>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="index.html" class="text-secondary hover:text-accent transition-colors text-lg">Home</a>
+                        <a href="about-us.html" class="text-secondary hover:text-accent transition-colors text-lg">About</a>
+                        <div class="relative group">
+                            <button class="text-secondary hover:text-accent transition-colors text-lg">Legacy Games</button>
+                            <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="maidhen.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Maidhen</a>
+                                <a href="pies-frescos.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Pies Frescos</a>
+                            </div>
+                        </div>
+                        <a href="retro-reviews.html" class="text-secondary hover:text-accent transition-colors text-lg">Retro Reviews</a>
+                        <div class="relative group">
+                            <button class="text-secondary hover:text-accent transition-colors text-lg">Emulators</button>
+                            <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="emulators/vircon32web/Vircon32Web.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Vircon32</a>
+                            </div>
+                        </div>
+                        <a href="ut99.html" class="text-secondary hover:text-accent transition-colors text-lg">UT99 Mod</a>
+                        <a href="guestbook.html" class="text-secondary hover:text-accent transition-colors text-lg">Guestbook</a>
+                        <a href="contact.html" class="text-secondary hover:text-accent transition-colors text-lg">Contact</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <div class="divider"></div>
-
-    <main role="main">
-        <h1 class="neon-yellow" data-en="RetroReviews" data-es="RetroReviews" style="text-align: center;">RetroReviews</h1>
-        <h3 class="neon-cyan" data-en="Classic Games, Modern Reviews" data-es="Juegos Clásicos, Reseñas Modernas" style="text-align: center;">Classic Games, Modern Reviews</h3>
-
-        <section class="team-hero">
-            <div class="team-hero__content" style="text-align: center;">
-                <h3 class="neon-yellow" data-en="Coming Soon" data-es="Próximamente">Coming Soon</h3>
-                <p style="font-size: 1.2em; color: #00f0ff;" data-en="We're working on bringing you the best retro game reviews!" data-es="¡Estamos trabajando para traerte las mejores reseñas de juegos retro!">We're working on bringing you the best retro game reviews!
-                </p>
-                <p data-en="Get ready to dive into nostalgia with detailed analysis of classic games from the golden age of gaming." data-es="Prepárate para sumergirte en la nostalgia con análisis detallados de juegos clásicos de la edad dorada del gaming.">Get ready to dive into nostalgia with detailed analysis of classic games from the golden age of
-                    gaming.</p>
-                <div style="margin-top: 30px;">
-                    <img src="assets/ui/divider.webp" alt="divider" />
-                </div>
-                <p style="margin-top: 30px;" data-en="Stay tuned for reviews of legendary titles, hidden gems, and forgotten classics that shaped gaming history." data-es="Mantente atento a las reseñas de títulos legendarios, joyas ocultas y clásicos olvidados que moldearon la historia del gaming.">Stay tuned for reviews of legendary titles, hidden gems, and forgotten
-                    classics that shaped gaming history.</p>
-            </div>
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <section class="text-center mb-20">
+            <h1 data-en="RetroReviews" data-es="RetroReviews" class="text-6xl font-bold text-secondary mb-6 bg-gradient-to-r from-red-500 via-yellow-400 to-green-400 bg-clip-text text-transparent">RetroReviews</h1>
+            <p data-en="Classic Games, Modern Reviews" data-es="Juegos Clásicos, Reseñas Modernas" class="text-2xl text-light">Classic Games, Modern Reviews</p>
         </section>
 
-        <div class="divider"></div>
+        <section class="bg-primary/20 backdrop-blur-sm rounded-3xl p-16 text-center border border-primary/30 hover:bg-primary/40 transition-all shadow-xl">
+            <h2 data-en="Coming Soon" data-es="Próximamente" class="text-4xl font-bold text-secondary mb-6">Coming Soon</h2>
+            <p data-en="We're working on bringing you the best retro game reviews!" data-es="¡Estamos trabajando para traerte las mejores reseñas de juegos retro!" class="text-xl text-light mb-4">We're working on bringing you the best retro game reviews!</p>
+            <p data-en="Get ready to dive into nostalgia with detailed analysis of classic games from the golden age of gaming." data-es="Prepárate para sumergirte en la nostalgia con análisis detallados de juegos clásicos de la edad dorada del gaming." class="text-light mb-4">Get ready to dive into nostalgia with detailed analysis of classic games from the golden age of
+                gaming.</p>
+            <p data-en="Stay tuned for reviews of legendary titles, hidden gems, and forgotten classics that shaped gaming history." data-es="Mantente atento a las reseñas de títulos legendarios, joyas ocultas y clásicos olvidados que moldearon la historia del gaming." class="text-light">Stay tuned for reviews of legendary titles, hidden gems, and forgotten
+                classics that shaped gaming history.</p>
+        </section>
     </main>
 
-    <footer>
-        <p class="neon-yellow">--Powered by GettoDev since 1998.--</p>
-        <div>
-            <img src="assets/badges/a18.gif" alt="badge" />
-            <img src="assets/badges/b38.gif" alt="badge" />
-            <img src="assets/badges/c6.gif" alt="badge" />
-            <img src="assets/badges/c8.gif" alt="badge" />
-            <img src="assets/badges/c11.gif" alt="badge" />
-            <img src="assets/badges/d11.gif" alt="badge" />
-            <img src="assets/badges/d33.gif" alt="badge" />
-            <img src="assets/badges/d34.gif" alt="badge" />
-            <img src="assets/badges/d57.gif" alt="badge" />
-            <img src="assets/badges/d64.gif" alt="badge" />
-            <img src="assets/badges/b56.png" alt="badge" />
-            <img src="assets/badges/d17.png" alt="badge" />
-            <img src="assets/badges/d56.png" alt="badge" />
+    <footer class="bg-dark border-t border-primary/30 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-light">&copy; 2026 GettoDev. All rights reserved.</p>
+                <p class="text-light">Powered by GettoDev since 1998</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Sidebar script loaded from external file -->
-    <script type="text/javascript" src="js/sidebar.js"></script>
-    
     <!-- Language switching script -->
     <script type="text/javascript" src="js/language-switcher.js"></script>
+
+    <!-- SPA Navigation with Music Player -->
+    <script type="text/javascript" src="js/spa-navigation.js"></script>
 
 </body>
 

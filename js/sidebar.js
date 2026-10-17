@@ -322,11 +322,10 @@ document.addEventListener('click', function(e) {
   const href = a.getAttribute('href');
   
   // Ignore links that shouldn't be intercepted
-  if (!href || 
-      href.startsWith('#') || 
+  if (!href ||
+      href.startsWith('#') ||
       a.target === '_blank' ||
       href.startsWith('mailto:') ||
-      href.includes('play.html') ||
       a.classList.contains('game-button') ||
       a.classList.contains('back-button')) {
     return;
@@ -346,10 +345,6 @@ window.addEventListener('popstate', function(e) {
 });
 
 async function navigateTo(url, push = true) {
-  if (url.includes('play.html')) {
-    window.location.href = url;
-    return;
-  }
   try {
     const response = await fetch(url);
     if (!response.ok) throw new Error('Network response was not ok');

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-en="Maidhen - Retro Space Shooter | GettoDev" data-es="Maidhen - Shooter Espacial Retro | GettoDev">Maidhen - Shooter Espacial Retro | GettoDev</title>
+    <title data-en="Maidhen - Retro Space Shooter | GettoDev" data-es="Maidhen - Shooter Espacial Retro | GettoDev">Maidhen - Retro Space Shooter | GettoDev</title>
     <meta name="description"
         data-en="Play Maidhen for free! The ultimate retro space shooter. Control the Maidhen spacecraft in epic battles. Fight bosses and upgrade your weapons. Available online!"
         data-es="¡Juega Maidhen gratis! El shooter espacial retro definitivo. Controla la nave Maidhen en batallas épicas. Combate jefes y mejora tus armas. ¡Disponible online!"
-        content="¡Juega Maidhen gratis! El shooter espacial retro definitivo. Controla la nave Maidhen en batallas épicas. Combate jefes y mejora tus armas. ¡Disponible online!">
+        content="Play Maidhen for free! The ultimate retro space shooter. Control the Maidhen spacecraft in epic battles. Fight bosses and upgrade your weapons. Available online!">
     <meta name="keywords"
         data-en="maidhen, space shooter, retro game, arcade shooter, pixel art, indie game, spaceships, shmup"
         data-es="maidhen, shooter espacial, juego retro, arcade shooter, pixel art, juego indie, naves espaciales, shmup"
-        content="maidhen, shooter espacial, juego retro, arcade shooter, pixel art, juego indie, naves espaciales, shmup">
+        content="maidhen, space shooter, retro game, arcade shooter, pixel art, indie game, spaceships, shmup">
     <meta name="author" content="GettoDev">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://gettodev.github.io/maidhen.html">
@@ -20,22 +20,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gettodev.github.io/maidhen.html">
-    <meta property="og:title" data-en="Maidhen - Retro Space Shooter" data-es="Maidhen - Shooter Espacial Retro" content="Maidhen - Shooter Espacial Retro">
+    <meta property="og:title" data-en="Maidhen - Retro Space Shooter" data-es="Maidhen - Shooter Espacial Retro" content="Maidhen - Retro Space Shooter">
     <meta property="og:description"
         data-en="Play for free! The ultimate retro space shooter with pixel art graphics and intense arcade action"
         data-es="¡Juega gratis! El shooter espacial retro definitivo con gráficos pixel art y acción arcade intensa"
-        content="¡Juega gratis! El shooter espacial retro definitivo con gráficos pixel art y acción arcade intensa">
+        content="Play for free! The ultimate retro space shooter with pixel art graphics and intense arcade action">
     <meta property="og:image" content="https://gettodev.github.io/assets/games/maidhen-spacecraft.webp">
     <meta property="og:image:alt" content="Maidhen spacecraft firing lasers in retro pixel art style">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://gettodev.github.io/maidhen.html">
-    <meta property="twitter:title" data-en="Maidhen - Retro Space Shooter" data-es="Maidhen - Shooter Espacial Retro" content="Maidhen - Shooter Espacial Retro">
+    <meta property="twitter:title" data-en="Maidhen - Retro Space Shooter" data-es="Maidhen - Shooter Espacial Retro" content="Maidhen - Retro Space Shooter">
     <meta property="twitter:description" 
         data-en="Play for free! The ultimate retro space shooter with pixel art graphics"
         data-es="¡Juega gratis! El shooter espacial retro definitivo con gráficos pixel art"
-        content="¡Juega gratis! El shooter espacial retro definitivo con gráficos pixel art">
+        content="Play for free! The ultimate retro space shooter with pixel art graphics">
     <meta property="twitter:image" content="https://gettodev.github.io/assets/games/maidhen-spacecraft.webp">
 
     <!-- VideoGame Schema.org -->
@@ -80,89 +80,98 @@
     <link rel="icon" type="image/webp" href="assets/ui/favicon.webp">
     <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.webp">
 
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="output.css">
+</head>
 
-    </head>
-
-<body>
-    <header role="banner">
-        <img src="assets/banners/getto-banner.webp" alt="GettoDev Banner - Indie Game Development Studio" loading="lazy" decoding="async">
-    </header>
-
-    <nav role="navigation" aria-label="Main navigation">
-        <div id="sidebar">
-            <script type="text/javascript" src="js/sidebar.js"></script>
+<body class="bg-dark text-secondary font-sans">
+    <!-- Navigation -->
+    <nav class="bg-dark/95 backdrop-blur-sm sticky top-0 z-50 border-b border-primary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="text-secondary font-bold text-2xl hover:text-accent transition-colors">GettoDev</a>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="index.html" class="text-secondary hover:text-accent transition-colors text-lg">Home</a>
+                        <a href="about-us.html" class="text-secondary hover:text-accent transition-colors text-lg">About</a>
+                        <div class="relative group">
+                            <button class="text-secondary hover:text-accent transition-colors text-lg">Legacy Games</button>
+                            <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="maidhen.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Maidhen</a>
+                                <a href="pies-frescos.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Pies Frescos</a>
+                            </div>
+                        </div>
+                        <a href="retro-reviews.html" class="text-secondary hover:text-accent transition-colors text-lg">Retro Reviews</a>
+                        <div class="relative group">
+                            <button class="text-secondary hover:text-accent transition-colors text-lg">Emulators</button>
+                            <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="emulators/vircon32web/Vircon32Web.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Vircon32</a>
+                            </div>
+                        </div>
+                        <a href="ut99.html" class="text-secondary hover:text-accent transition-colors text-lg">UT99 Mod</a>
+                        <a href="guestbook.html" class="text-secondary hover:text-accent transition-colors text-lg">Guestbook</a>
+                        <a href="contact.html" class="text-secondary hover:text-accent transition-colors text-lg">Contact</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <div class="divider"></div>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <section class="text-center mb-20">
+            <h1 data-en="Maidhen" data-es="Maidhen" class="text-6xl font-bold text-secondary mb-6 bg-gradient-to-r from-red-500 via-yellow-400 to-green-400 bg-clip-text text-transparent">Maidhen</h1>
+            <p data-en="a pixelated space odyssey" data-es="una odisea espacial pixelada" class="text-2xl text-light">a pixelated space odyssey</p>
+            <p data-en="Currently, Maidhen's source code and assets were recovered by decompiling an old APK; they await in a drawer the day they will be reassembled to bring the game back to life." data-es="Actualmente el codigo fuente y assets de Maidhen fueron recuperados decompilando un viejo apk, aguardan en un cajon el dia en que sean reenzamblados para volver a la vida el juego" class="text-sm text-light/70 mt-4 italic">Currently, Maidhen's source code and assets were recovered by decompiling an old APK; they await in a drawer the day they will be reassembled to bring the game back to life.</p>
+        </section>
 
-    <main role="main">
-        <h1 class="neon-yellow" data-en="Maidhen" data-es="Maidhen" style="text-align: center;">Maidhen</h1>
-        <h3 class="neon-cyan" data-en="a pixelated space odyssey" data-es="una odisea espacial pixelada" style="text-align: center;">a pixelated space odyssey</h3>
-
-        <section class="game-hero game-hero-landscape">
-            <img class="game-hero__image" src="assets/games/maidhen-spacecraft.webp"
-                alt="Maidhen spacecraft in action" />
-            <div class="game-hero__content card-content">
-                <h3 class="neon-yellow" data-en="Maidhen, the ultimate retro space shooter." data-es="Maidhen, el shooter espacial retro definitivo.">Maidhen, the ultimate retro space shooter.</h3>
-                <p data-en="Take control of the Maidhen spacecraft and travel through a hostile and pixelated universe. Combat a great variety of enemy ships and epic bosses in this fast-paced arcade experience." data-es="Toma el control de la nave Maidhen y viaja a través de un universo hostil y pixelado. Combate una gran variedad de naves enemigas y jefes épicos en esta experiencia arcade de ritmo rápido.">Take control of the Maidhen spacecraft and travel through a hostile and pixelated universe. Combat a
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+            <img src="assets/games/maidhen-spacecraft.webp" alt="Maidhen spacecraft in action" class="rounded-3xl shadow-2xl shadow-accent/20 hover:scale-105 transition-transform">
+            <div class="bg-primary/20 backdrop-blur-sm rounded-3xl p-10 border border-primary/30 hover:bg-primary/40 transition-all shadow-xl">
+                <h3 data-en="Maidhen, the ultimate retro space shooter." data-es="Maidhen, el shooter espacial retro definitivo." class="text-3xl font-bold text-secondary mb-6">Maidhen, the ultimate retro space shooter.</h3>
+                <p data-en="Take control of the Maidhen spacecraft and travel through a hostile and pixelated universe. Combat a great variety of enemy ships and epic bosses in this fast-paced arcade experience." data-es="Toma el control de la nave Maidhen y viaja a través de un universo hostil y pixelado. Combate una gran variedad de naves enemigas y jefes épicos en esta experiencia arcade de ritmo rápido." class="text-light leading-relaxed text-lg">Take control of the Maidhen spacecraft and travel through a hostile and pixelated universe. Combat a
                     great variety of enemy ships and epic bosses in this fast-paced arcade experience.</p>
             </div>
         </section>
 
-        <div class="divider"></div>
-
-        <section class="feature-grid">
-            <article class="feature-card">
-                <img src="assets/games/maidhen-gameplay.webp" alt="Maidhen gameplay screenshot" />
-                <h4 data-en="Epic Space Battles" data-es="Batallas Espaciales Épicas">Epic Space Battles</h4>
-                <p data-en="Face waves of enemies in intense shoot-em-up action. Master your weapons and dodge patterns to survive to cosmic onslaught." data-es="Enfrenta olas de enemigos en intensa acción shoot-em-up. Domina tus armas y esquiva patrones para sobrevivir al asalto cósmico.">Face waves of enemies in intense shoot-em-up action. Master your weapons and dodge patterns to survive to
-                    cosmic onslaught.</p>
-            </article>
-            <article class="feature-card">
-                <img src="assets/games/maidhen-boss.webp" alt="Maidhen boss fight" />
-                <h4 data-en="Challenging Bosses" data-es="Jefes Desafiantes">Challenging Bosses</h4>
-                <p data-en="Test your skills against massive boss encounters. Learn their attack patterns and strike at the perfect moment to claim victory." data-es="Pon a prueba tus habilidades contra encuentros masivos con jefes. Aprende sus patrones de ataque y ataca en el momento perfecto para reclamar la victoria.">Test your skills against massive boss encounters. Learn their attack patterns and strike at the
-                    perfect moment to claim victory.</p>
-            </article>
-                <article class="feature-card">
-                <img src="assets/games/maidhen-graphics.webp" alt="Maidhen retro graphics" />
-                <h4 data-en="Retro Pixel Art" data-es="Pixel Art Retro">Retro Pixel Art</h4>
-                <p data-en="Experience authentic pixel art graphics that pay homage to classic arcade shooters. Every sprite crafted with nostalgic detail." data-es="Experimenta gráficos auténticos de pixel art que rinden homenaje a los shooters arcade clásicos. Cada sprite creado con detalle nostálgico.">Experience authentic pixel art graphics that pay homage to classic arcade shooters. Every sprite
-                    crafted with nostalgic detail.</p>
-            </article>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-primary/20 backdrop-blur-sm rounded-3xl overflow-hidden border border-primary/30 hover:bg-primary/40 transition-all hover:scale-105 shadow-xl w-[320px]">
+                <img src="assets/games/maidhen-gameplay.webp" alt="Maidhen gameplay screenshot" class="w-full h-[498px] object-contain bg-dark/50 p-4">
+                <div class="p-8">
+                    <h4 data-en="Epic Space Battles" data-es="Batallas Espaciales Épicas" class="text-2xl font-bold text-secondary mb-4">Epic Space Battles</h4>
+                    <p data-en="Face waves of enemies in intense shoot-em-up action. Master your weapons and dodge patterns to survive to cosmic onslaught." data-es="Enfrenta olas de enemigos en intensa acción shoot-em-up. Domina tus armas y esquiva patrones para sobrevivir al asalto cósmico." class="text-light">Face waves of enemies in intense shoot-em-up action. Master your weapons and dodge patterns to survive to
+                        cosmic onslaught.</p>
+                </div>
+            </div>
+            <div class="bg-primary/20 backdrop-blur-sm rounded-3xl overflow-hidden border border-primary/30 hover:bg-primary/40 transition-all hover:scale-105 shadow-xl w-[320px]">
+                <img src="assets/games/maidhen-boss.webp" alt="Maidhen boss fight" class="w-full h-[498px] object-contain bg-dark/50 p-4">
+                <div class="p-8">
+                    <h4 data-en="Challenging Bosses" data-es="Jefes Desafiantes" class="text-2xl font-bold text-secondary mb-4">Challenging Bosses</h4>
+                    <p data-en="Test your skills against massive boss encounters. Learn their attack patterns and strike at the perfect moment to claim victory." data-es="Pon a prueba tus habilidades contra encuentros masivos con jefes. Aprende sus patrones de ataque y ataca en el momento perfecto para reclamar la victoria." class="text-light">Test your skills against massive boss encounters. Learn their attack patterns and strike at the
+                        perfect moment to claim victory.</p>
+                </div>
+            </div>
+            <div class="bg-primary/20 backdrop-blur-sm rounded-3xl overflow-hidden border border-primary/30 hover:bg-primary/40 transition-all hover:scale-105 shadow-xl w-[320px]">
+                <img src="assets/games/maidhen-graphics.webp" alt="Maidhen retro graphics" class="w-full h-[498px] object-contain bg-dark/50 p-4">
+                <div class="p-8">
+                    <h4 data-en="Retro Pixel Art" data-es="Pixel Art Retro" class="text-2xl font-bold text-secondary mb-4">Retro Pixel Art</h4>
+                    <p data-en="Experience authentic pixel art graphics that pay homage to classic arcade shooters. Every sprite crafted with nostalgic detail." data-es="Experimenta gráficos auténticos de pixel art que rinden homenaje a los shooters arcade clásicos. Cada sprite creado con detalle nostálgico." class="text-light">Experience authentic pixel art graphics that pay homage to classic arcade shooters. Every sprite
+                        crafted with nostalgic detail.</p>
+                </div>
+            </div>
         </section>
-
-        <div class="divider"></div>
     </main>
 
-    <footer>
-        <p class="neon-yellow">--Powered by GettoDev since 1998.--</p>
-        <div>
-            <img src="assets/badges/a18.gif" alt="badge" />
-            <img src="assets/badges/b38.gif" alt="badge" />
-            <img src="assets/badges/c6.gif" alt="badge" />
-            <img src="assets/badges/c8.gif" alt="badge" />
-            <img src="assets/badges/c11.gif" alt="badge" />
-            <img src="assets/badges/d11.gif" alt="badge" />
-            <img src="assets/badges/d33.gif" alt="badge" />
-            <img src="assets/badges/d34.gif" alt="badge" />
-            <img src="assets/badges/d57.gif" alt="badge" />
-            <img src="assets/badges/d64.gif" alt="badge" />
-            <img src="assets/badges/b56.png" alt="badge" />
-            <img src="assets/badges/d17.png" alt="badge" />
-            <img src="assets/badges/d56.png" alt="badge" />
+    <footer class="bg-dark border-t border-primary/30 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-light">&copy; 2026 GettoDev. All rights reserved.</p>
+                <p class="text-light">Powered by GettoDev since 1998</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Sidebar script loaded from external file -->
-    <script type="text/javascript" src="js/sidebar.js"></script>
-    
     <!-- Language switching script -->
     <script type="text/javascript" src="js/language-switcher.js"></script>
 
 </body>
 
 </html>
-

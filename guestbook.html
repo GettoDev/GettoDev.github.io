@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,86 +7,73 @@
     <title data-en="Guestbook | GettoDev" data-es="Libro de Visitas | GettoDev">Guestbook | GettoDev</title>
     <meta name="description" data-en="Leave a message in our retro guestbook!"
         data-es="¡Deja un mensaje en nuestro libro de visitas retro!"
-        content="¡Deja un mensaje en nuestro libro de visitas retro!">
+        content="Leave a message in our retro guestbook!">
 
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="assets/ui/favicon.webp">
     <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.webp">
 
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-
-    <style>
-        .guestbook-container {
-            border: 2px solid #333333;
-            background-color: #111111;
-            padding: 20px;
-            max-width: 900px;
-            margin: 40px auto;
-            text-align: center;
-        }
-
-        .guestbook-iframe {
-            width: 100%;
-            height: 800px;
-            min-height: 800px;
-            border: 2px solid #00ffff;
-            background-color: transparent;
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="output.css">
 </head>
 
-<body>
-    <header role="banner">
-        <img src="assets/banners/getto-banner.webp" alt="GettoDev Banner" loading="lazy">
-    </header>
-
-    <nav role="navigation" aria-label="Main navigation">
-        <div id="sidebar"></div>
+<body class="bg-dark text-secondary font-sans">
+    <!-- Navigation -->
+    <nav class="bg-dark/95 backdrop-blur-sm sticky top-0 z-50 border-b border-primary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="text-secondary font-bold text-2xl hover:text-accent transition-colors">GettoDev</a>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="index.html" class="text-secondary hover:text-accent transition-colors text-lg">Home</a>
+                        <a href="about-us.html" class="text-secondary hover:text-accent transition-colors text-lg">About</a>
+                        <div class="relative group">
+                            <button class="text-secondary hover:text-accent transition-colors text-lg">Legacy Games</button>
+                            <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="maidhen.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Maidhen</a>
+                                <a href="pies-frescos.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Pies Frescos</a>
+                            </div>
+                        </div>
+                        <a href="retro-reviews.html" class="text-secondary hover:text-accent transition-colors text-lg">Retro Reviews</a>
+                        <div class="relative group">
+                            <button class="text-secondary hover:text-accent transition-colors text-lg">Emulators</button>
+                            <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="emulators/vircon32web/Vircon32Web.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Vircon32</a>
+                            </div>
+                        </div>
+                        <a href="ut99.html" class="text-secondary hover:text-accent transition-colors text-lg">UT99 Mod</a>
+                        <a href="guestbook.html" class="text-secondary hover:text-accent transition-colors text-lg">Guestbook</a>
+                        <a href="contact.html" class="text-secondary hover:text-accent transition-colors text-lg">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
 
-    <div class="divider"></div>
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <section class="text-center mb-20">
+            <h1 data-en="Guestbook" data-es="Libro de Visitas" class="text-6xl font-bold text-secondary mb-6 bg-gradient-to-r from-red-500 via-yellow-400 to-green-400 bg-clip-text text-transparent">Guestbook</h1>
+            <p data-en="Leave your mark!" data-es="¡Deja tu marca!" class="text-2xl text-light">Leave your mark!</p>
+        </section>
 
-    <main role="main">
-        <h1 class="neon-yellow" data-en="Guestbook" data-es="Libro de Visitas" style="text-align: center;">Guestbook
-        </h1>
-        <h3 class="neon-cyan" data-en="Leave your mark!" data-es="¡Deja tu marca!" style="text-align: center;">Leave
-            your mark!</h3>
-
-        <div class="guestbook-container">
-            <iframe src="https://users3.smartgb.com/g/g.php?a=s&i=g36-37295-9b" class="guestbook-iframe"
-                frameborder="0">
+        <div class="bg-primary/20 backdrop-blur-sm rounded-3xl p-8 border border-primary/30 shadow-xl">
+            <iframe src="https://users3.smartgb.com/g/g.php?a=s&i=g36-37295-9b"
+                class="w-full h-[800px] border border-primary/30 rounded-xl bg-dark/50">
             </iframe>
         </div>
 
-        <div class="divider"></div>
-        <div style="text-align: center;">
-            <a href="index.html" class="back-button" data-en="← Back to Home" data-es="← Volver al Inicio">← Back to
-                Home</a>
+        <div class="text-center mt-12">
+            <a href="index.html" class="inline-block bg-primary/30 text-secondary px-8 py-4 rounded-xl font-semibold hover:bg-primary/50 hover:text-accent transition-all hover:scale-105 border border-primary/30" data-en="← Back to Home" data-es="← Volver al Inicio">← Back to Home</a>
         </div>
     </main>
 
-    <footer>
-        <p class="neon-yellow">--Powered by GettoDev since 1998.--</p>
-        <div>
-            <img src="assets/badges/a18.gif" alt="badge" />
-            <img src="assets/badges/b38.gif" alt="badge" />
-            <img src="assets/badges/c6.gif" alt="badge" />
-            <img src="assets/badges/c8.gif" alt="badge" />
-            <img src="assets/badges/c11.gif" alt="badge" />
-            <img src="assets/badges/d11.gif" alt="badge" />
-            <img src="assets/badges/d33.gif" alt="badge" />
-            <img src="assets/badges/d34.gif" alt="badge" />
-            <img src="assets/badges/d57.gif" alt="badge" />
-            <img src="assets/badges/d64.gif" alt="badge" />
-            <img src="assets/badges/b56.png" alt="badge" />
-            <img src="assets/badges/d17.png" alt="badge" />
-            <img src="assets/badges/d56.png" alt="badge" />
+    <footer class="bg-dark border-t border-primary/30 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-light">&copy; 2026 GettoDev. All rights reserved.</p>
+                <p class="text-light">Powered by GettoDev since 1998</p>
+            </div>
         </div>
     </footer>
-
-    <!-- Sidebar script loaded from external file -->
-    <script type="text/javascript" src="js/sidebar.js"></script>
 
     <!-- Language switching script -->
     <script type="text/javascript" src="js/language-switcher.js"></script>

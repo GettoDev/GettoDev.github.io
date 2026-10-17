@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-en="About Us - GettoDev Team | Retro Game Developers" data-es="About Us - GettoDev Team | Desarrolladores de Juegos Retro">About Us - GettoDev Team | Desarrolladores de Juegos Retro</title>
+    <title data-en="About Us - GettoDev Team | Retro Game Developers" data-es="About Us - GettoDev Team | Desarrolladores de Juegos Retro">About Us - GettoDev Team</title>
     <meta name="description"
         data-en="Meet the GettoDev team - Getto and Bash, the developers behind retro games like Maidhen and Pies Frescos. Specialists in arcade shooters and endless runners."
         data-es="Conoce al equipo GettoDev - Getto y Bash, los desarrolladores detrás de juegos retro como Maidhen y Pies Frescos. Especialistas en arcade shooters y endless runners."
-        content="Conoce al equipo GettoDev - Getto y Bash, los desarrolladores detrás de juegos retro como Maidhen y Pies Frescos. Especialistas en arcade shooters y endless runners.">
+        content="Meet the GettoDev team - Getto and Bash, the developers behind retro games like Maidhen and Pies Frescos. Specialists in arcade shooters and endless runners.">
     <meta name="keywords"
         data-en="about gettodev, development team, getto bash, indie developers, retro games, pixel art"
         data-es="about gettodev, equipo de desarrollo, getto bash, desarrolladores indie, juegos retro, pixel art"
-        content="about gettodev, equipo de desarrollo, getto bash, desarrolladores indie, juegos retro, pixel art">
+        content="about gettodev, development team, getto bash, indie developers, retro games, pixel art">
     <meta name="author" content="GettoDev">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://gettodev.github.io/about-us.html">
@@ -24,7 +24,7 @@
     <meta property="og:description" 
         data-en="Meet the GettoDev team - Getto and Bash, retro game developers"
         data-es="Conoce al equipo GettoDev - Getto y Bash, desarrolladores de juegos retro"
-        content="Conoce al equipo GettoDev - Getto y Bash, desarrolladores de juegos retro">
+        content="Meet the GettoDev team - Getto and Bash, retro game developers">
     <meta property="og:image" content="https://gettodev.github.io/assets/team/team-getto.webp">
 
     <!-- Twitter -->
@@ -34,14 +34,14 @@
     <meta property="twitter:description"
         data-en="Meet the GettoDev team - Getto and Bash, retro game developers"
         data-es="Conoce al equipo GettoDev - Getto y Bash, desarrolladores de juegos retro"
-        content="Conoce al equipo GettoDev - Getto y Bash, desarrolladores de juegos retro">
+        content="Meet the GettoDev team - Getto and Bash, retro game developers">
     <meta property="twitter:image" content="https://gettodev.github.io/assets/team/team-getto.webp">
 
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="assets/ui/favicon.webp">
     <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.webp">
 
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="output.css">
 
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
@@ -75,90 +75,94 @@
     </script>
 </head>
 
-<body>
-    <header role="banner">
-        <img src="assets/banners/getto-banner.webp" alt="GettoDev Banner - Indie Game Development Studio" loading="lazy">
-    </header>
-
-    <nav role="navigation" aria-label="Main navigation">
-        <div id="sidebar">
-            <script type="text/javascript" src="js/sidebar.js"></script>
+<body class="bg-dark text-secondary font-sans">
+    <!-- Navigation -->
+    <nav class="bg-dark/95 backdrop-blur-sm sticky top-0 z-50 border-b border-primary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="text-secondary font-bold text-2xl hover:text-accent transition-colors">GettoDev</a>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="index.html" class="text-secondary hover:text-accent transition-colors text-lg">Home</a>
+                        <a href="about-us.html" class="text-secondary hover:text-accent transition-colors text-lg">About</a>
+                        <div class="relative group">
+                            <button class="text-secondary hover:text-accent transition-colors text-lg">Legacy Games</button>
+                            <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="maidhen.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Maidhen</a>
+                                <a href="pies-frescos.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Pies Frescos</a>
+                            </div>
+                        </div>
+                        <a href="retro-reviews.html" class="text-secondary hover:text-accent transition-colors text-lg">Retro Reviews</a>
+                        <div class="relative group">
+                            <button class="text-secondary hover:text-accent transition-colors text-lg">Emulators</button>
+                            <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="emulators/vircon32web/Vircon32Web.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Vircon32</a>
+                            </div>
+                        </div>
+                        <a href="ut99.html" class="text-secondary hover:text-accent transition-colors text-lg">UT99 Mod</a>
+                        <a href="guestbook.html" class="text-secondary hover:text-accent transition-colors text-lg">Guestbook</a>
+                        <a href="contact.html" class="text-secondary hover:text-accent transition-colors text-lg">Contact</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <div class="divider"></div>
-
-    <main role="main">
-        <h1 class="neon-yellow" data-en="The Army of Two" data-es="El Ejército de Dos">The Army of Two</h1>
-        <h3 class="neon-cyan" data-en="Meet the developers behind the games" data-es="Conoce a los desarrolladores detrás de los juegos">Meet the developers behind the games</h3>
-
-        <section class="team-hero">
-            <img class="team-hero__image" src="assets/team/team-getto.webp" alt="Getto, indie game developer" />
-            <div class="team-hero__content">
-                <h3 class="neon-yellow" data-en="Getto - The Code Master" data-es="Getto - El Maestro del Código">Getto - The Code Master</h3>
-                <p><strong data-en="Date Of Birth:" data-es="Fecha de Nacimiento:">Date Of Birth:</strong> 04-21-1987</p>
-                <p><strong data-en="Height:" data-es="Altura:">Height:</strong> 177cm</p>
-                <p><strong data-en="Weight:" data-es="Peso:">Weight:</strong> 88kg</p>
-                <p data-en="Indie game developer with a passion for retro gaming. Proficient in Java, C#, and JavaScript. I specialize in creating challenging and nostalgic gaming experiences. Fan of shmup and a proud Nintendo and Sega enthusiast. I once achieved a 200-win streak in KoF 2000." data-es="Desarrollador de juegos indie con pasión por el gaming retro. Experto en Java, C# y JavaScript. Me especializo en crear experiencias de juego desafiantes y nostálgicas. Fan de los shmup y orgulloso entusiasta de Nintendo y Sega. Una vez logré una racha de 200 victorias en KoF 2000.">Indie game developer with a passion for retro gaming. Proficient in Java, C#, and JavaScript. I specialize in creating challenging and nostalgic gaming experiences. Fan of shmup and a proud Nintendo and Sega enthusiast. I once achieved a 200-win streak in KoF 2000.</p>
-                <p><strong data-en="Contact:" data-es="Contacto:">Contact:</strong> <span id="email-contact">[Email Protected]</span></p>
-            </div>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <section class="text-center mb-20">
+            <h1 data-en="The Army of Two" data-es="El Ejército de Dos" class="text-6xl font-bold text-secondary mb-6 bg-gradient-to-r from-red-500 via-yellow-400 to-green-400 bg-clip-text text-transparent">The Army of Two</h1>
+            <p data-en="Meet the developers behind the games" data-es="Conoce a los desarrolladores detrás de los juegos" class="text-2xl text-light">Meet the developers behind the games</p>
         </section>
 
-        <div class="divider"></div>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="bg-primary/20 backdrop-blur-sm rounded-3xl p-10 text-center border border-primary/30 hover:bg-primary/40 transition-all hover:scale-105 shadow-xl">
+                <img src="assets/team/team-getto.webp" alt="Getto" class="w-56 h-56 rounded-full mx-auto mb-8 border-4 border-accent object-cover shadow-2xl shadow-accent/30">
+                <h2 data-en="Getto - The Code Master" data-es="Getto - El Maestro del Código" class="text-3xl font-bold text-secondary mb-6">Getto - The Code Master</h2>
+                <div class="text-left space-y-3">
+                    <p class="text-light"><strong class="text-secondary">Date Of Birth:</strong> 04-21-1987</p>
+                    <p class="text-light"><strong class="text-secondary">Height:</strong> 177cm</p>
+                    <p class="text-light"><strong class="text-secondary">Weight:</strong> 88kg</p>
+                    <p data-en="Indie game developer with a passion for retro gaming. Proficient in Java, C#, and JavaScript. I specialize in creating challenging and nostalgic gaming experiences. Fan of shmup and a proud Nintendo and Sega enthusiast. I once achieved a 200-win streak in KoF 2000." data-es="Desarrollador de juegos indie con pasión por el gaming retro. Experto en Java, C# y JavaScript. Me especializo en crear experiencias de juego desafiantes y nostálgicas. Fan de los shmup y orgulloso entusiasta de Nintendo y Sega. Una vez logré una racha de 200 victorias en KoF 2000." class="text-light leading-relaxed">Indie game developer with a passion for retro gaming. Proficient in Java, C#, and JavaScript. I specialize in creating challenging and nostalgic gaming experiences. Fan of shmup and a proud Nintendo and Sega enthusiast. I once achieved a 200-win streak in KoF 2000.</p>
+                    <p class="text-light"><strong class="text-secondary">Contact:</strong> <span id="email-contact">[Email Protected]</span></p>
+                </div>
+            </div>
 
-        <section class="team-hero">
-            <img class="team-hero__image" src="assets/team/team-bash.webp" alt="Bash, translator and game localizer" />
-            <div class="team-hero__content">
-                <h3 class="neon-yellow" data-en="Bash - The Localization Expert" data-es="Bash - El Experto en Localización">Bash - The Localization Expert</h3>
-                <p><strong data-en="Date Of Birth:" data-es="Fecha de Nacimiento:">Date Of Birth:</strong> Unknown</p>
-                <p><strong data-en="Height:" data-es="Altura:">Height:</strong> 181cm</p>
-                <p><strong data-en="Weight:" data-es="Peso:">Weight:</strong> 95kg</p>
-                <p data-en="Chinese/English translator dedicated to game localization. Fan of Final Fantasy and Suikoden and running games." data-es="Traductor chino/inglés dedicado a la localización de juegos. Fan de Final Fantasy y Suikoden y los juegos de carrera.">Chinese/English translator dedicated to game localization. Fan of Final Fantasy and Suikoden and
-                    running games.</p>
+            <div class="bg-primary/20 backdrop-blur-sm rounded-3xl p-10 text-center border border-primary/30 hover:bg-primary/40 transition-all hover:scale-105 shadow-xl">
+                <img src="assets/team/team-bash.webp" alt="Bash" class="w-56 h-56 rounded-full mx-auto mb-8 border-4 border-accent object-cover shadow-2xl shadow-accent/30">
+                <h2 data-en="Bash - The Localization Expert" data-es="Bash - El Experto en Localización" class="text-3xl font-bold text-secondary mb-6">Bash - The Localization Expert</h2>
+                <div class="text-left space-y-3">
+                    <p class="text-light"><strong class="text-secondary">Date Of Birth:</strong> Unknown</p>
+                    <p class="text-light"><strong class="text-secondary">Height:</strong> 181cm</p>
+                    <p class="text-light"><strong class="text-secondary">Weight:</strong> 95kg</p>
+                    <p data-en="Chinese/English translator dedicated to game localization. Fan of Final Fantasy and Suikoden and running games." data-es="Traductor chino/inglés dedicado a la localización de juegos. Fan de Final Fantasy y Suikoden y los juegos de carrera." class="text-light leading-relaxed">Chinese/English translator dedicated to game localization. Fan of Final Fantasy and Suikoden and running games.</p>
+                </div>
             </div>
         </section>
-
-        <div class="divider"></div>
     </main>
 
-    <footer>
-        <p class="neon-yellow">--Powered by GettoDev since 1998.--</p>
-        <div>
-            <img src="assets/badges/a18.gif" alt="badge" />
-            <img src="assets/badges/b38.gif" alt="badge" />
-            <img src="assets/badges/c6.gif" alt="badge" />
-            <img src="assets/badges/c8.gif" alt="badge" />
-            <img src="assets/badges/c11.gif" alt="badge" />
-            <img src="assets/badges/d11.gif" alt="badge" />
-            <img src="assets/badges/d33.gif" alt="badge" />
-            <img src="assets/badges/d34.gif" alt="badge" />
-            <img src="assets/badges/d57.gif" alt="badge" />
-            <img src="assets/badges/d64.gif" alt="badge" />
-            <img src="assets/badges/b56.png" alt="badge" />
-            <img src="assets/badges/d17.png" alt="badge" />
-            <img src="assets/badges/d56.png" alt="badge" />
+    <footer class="bg-dark border-t border-primary/30 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-light">&copy; 2026 GettoDev. All rights reserved.</p>
+                <p class="text-light">Powered by GettoDev since 1998</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Sidebar script loaded from external file -->
-    <script type="text/javascript" src="js/sidebar.js"></script>
-    
     <!-- Language switching script -->
     <script type="text/javascript" src="js/language-switcher.js"></script>
 
     <!-- Email protection script -->
     <script>
-        // Simple email protection
         document.addEventListener('DOMContentLoaded', function () {
             const emailElement = document.getElementById('email-contact');
             const user = 'GettoDev';
             const domain = 'proton.me';
-            
-            emailElement.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
+
+            emailElement.innerHTML = `<a href="mailto:${user}@${domain}" class="text-accent hover:text-magenta transition-colors">${user}@${domain}</a>`;
         });
     </script>
 
 </body>
 
 </html>
-

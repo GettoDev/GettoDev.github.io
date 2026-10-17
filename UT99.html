@@ -1,15 +1,5 @@
 <!DOCTYPE html>
-<!-- 
- _____ _   _ _   _    _    _   _  ____ _____ ____  
-| ____| \ | | | | |  / \  | \ | |/ ___| ____|  _ \ 
-|  _| |  \| | |_| | / _ \ |  \| | |   |  _| | | | |
-| |___| |\  |  _  |/ ___ \| |\  | |___| |___| |_| |
-|_____|_| \_|_| |_/_/   \_\_| \_|\____|_____|____/ 
-                                                
-    POWERED BY GETTODEV SINCE 1998
-    Indie Game Development Studio - Retro Indie Games
--->
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -18,47 +8,59 @@
     <link rel="icon" type="image/webp" href="assets/ui/favicon.webp">
     <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.webp">
 
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="output.css">
 </head>
 
-<body>
-    <header role="banner">
-        <img src="assets/banners/getto-banner.webp" alt="GettoDev Banner" loading="lazy" decoding="async">
-    </header>
-
-    <nav role="navigation" aria-label="Main navigation">
-        <div id="sidebar">
-            <script type="text/javascript" src="js/sidebar.js"></script>
+<body class="bg-dark text-secondary font-sans">
+    <!-- Navigation -->
+    <nav class="bg-dark/95 backdrop-blur-sm sticky top-0 z-50 border-b border-primary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="text-secondary font-bold text-2xl hover:text-accent transition-colors">GettoDev</a>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="index.html" class="text-secondary hover:text-accent transition-colors text-lg">Home</a>
+                        <a href="about-us.html" class="text-secondary hover:text-accent transition-colors text-lg">About</a>
+                        <div class="relative group">
+                            <button class="text-secondary hover:text-accent transition-colors text-lg">Legacy Games</button>
+                            <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="maidhen.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Maidhen</a>
+                                <a href="pies-frescos.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Pies Frescos</a>
+                            </div>
+                        </div>
+                        <a href="retro-reviews.html" class="text-secondary hover:text-accent transition-colors text-lg">Retro Reviews</a>
+                        <div class="relative group">
+                            <button class="text-secondary hover:text-accent transition-colors text-lg">Emulators</button>
+                            <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="emulators/vircon32web/Vircon32Web.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Vircon32</a>
+                            </div>
+                        </div>
+                        <a href="ut99.html" class="text-secondary hover:text-accent transition-colors text-lg">UT99 Mod</a>
+                        <a href="guestbook.html" class="text-secondary hover:text-accent transition-colors text-lg">Guestbook</a>
+                        <a href="contact.html" class="text-secondary hover:text-accent transition-colors text-lg">Contact</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <div class="divider"></div>
-
-    <main role="main">
-        <section class="legacy-section">
-            <h1 class="neon-yellow">UT99 MOD</h1>
-            <h3 class="neon-cyan">under construction</h3>
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <section class="bg-primary/20 backdrop-blur-sm rounded-3xl p-16 text-center border border-primary/30 hover:bg-primary/40 transition-all shadow-xl">
+            <h1 class="text-6xl font-bold text-secondary mb-6 bg-gradient-to-r from-red-500 via-yellow-400 to-green-400 bg-clip-text text-transparent">UT99 MOD</h1>
+            <h2 class="text-4xl font-bold text-accent mb-6">Under Construction</h2>
+            <p class="text-xl text-light">We're working on something special for Unreal Tournament 99. Stay tuned!</p>
         </section>
     </main>
 
-    <footer>
-        <p class="neon-yellow">--Powered by GettoDev since 1998.--</p>
-        <div>
-            <img src="assets/badges/a18.gif" alt="ghost" loading="lazy" decoding="async" />
-            <img src="assets/badges/b38.gif" alt="loading" loading="lazy" decoding="async" />
-            <img src="assets/badges/c6.gif" alt="arkanoid" loading="lazy" decoding="async" />
-            <img src="assets/badges/c8.gif" alt="retrogamer" loading="lazy" decoding="async" />
-            <img src="assets/badges/c11.gif" alt="somanyideas" loading="lazy" decoding="async" />
-            <img src="assets/badges/d11.gif" alt="pcuser" loading="lazy" decoding="async" />
-            <img src="assets/badges/d33.gif" alt="thecomputer" loading="lazy" decoding="async" />
-            <img src="assets/badges/d34.gif" alt="system32" loading="lazy" decoding="async" />
-            <img src="assets/badges/d57.gif" alt="invaders" loading="lazy" decoding="async" />
-            <img src="assets/badges/d64.gif" alt="retrovideo" loading="lazy" decoding="async" />
-            <img src="assets/badges/b56.png" alt="oldelectronic" loading="lazy" decoding="async" />
-            <img src="assets/badges/d17.png" alt="dukenukem" loading="lazy" decoding="async" />
-            <img src="assets/badges/d56.png" alt="what" loading="lazy" decoding="async" />
+    <footer class="bg-dark border-t border-primary/30 py-16 pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-light">&copy; 2026 GettoDev. All rights reserved.</p>
+                <p class="text-light">Powered by GettoDev since 1998</p>
+            </div>
         </div>
     </footer>
+
 </body>
 
 </html>

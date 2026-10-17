@@ -39,7 +39,7 @@ Module.onAbort = function(reason) {
 Module.GL_MAX_TEXTURE_IMAGE_UNITS = 1;
 
 Module.canvas = (function() {
-    const canvas = document.getElementById('canvas');
+    const canvas = document.getElementById('screen');
     if (canvas) {
         canvas.addEventListener("webglcontextlost", function(e) {
             console.error('WebGL context lost. Please reload the page.');
@@ -62,14 +62,16 @@ Module.onRuntimeInitialized = function() {
     if (status) {
         status.textContent = 'Estado: Emulador listo — inserta un cartucho (.v32)';
     }
+
+    // Set canvas resolution to match display size
+    const canvas = document.getElementById('screen');
+    if (canvas) {
+        canvas.width = 640;
+        canvas.height = 360;
+    }
 };
 
 function setupFileUpload() {
-    const fileInput = document.getElementById('romFileInput');
-    if (fileInput) {
-        fileInput.addEventListener('change', handleFileSelect, false);
-    }
-
     const memoryCardInput = document.getElementById('memoryCardInput');
     if (memoryCardInput) {
         memoryCardInput.addEventListener('change', loadMemoryCardFile, false);
@@ -136,6 +138,28 @@ function loadMemoryCardFile(event) {
     };
     reader.readAsArrayBuffer(file);
 }
+
+window.loadRom = function(url) {
+    console.log('Loading ROM from URL:', url);
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.arrayBuffer();
+        })
+        .then(arrayBuffer => {
+            const uint8Array = new Uint8Array(arrayBuffer);
+            writeAndLoad('/uploads/cartridge.v32', uint8Array, 'loadCartridgeFromPath');
+        })
+        .catch(error => {
+            console.error('Error loading ROM:', error);
+            if (window.updateEmulatorStatus) {
+                window.updateEmulatorStatus('Error al cargar ROM: ' + error.message);
+            }
+        });
+};
 
 function saveMemoryCard() {
     if (typeof Module === 'undefined' || typeof Module.ccall !== 'function') return;

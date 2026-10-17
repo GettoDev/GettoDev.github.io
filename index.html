@@ -1,33 +1,22 @@
 <!DOCTYPE html>
-<!-- 
- _____ _   _ _   _    _    _   _  ____ _____ ____  
-| ____| \ | | | | |  / \  | \ | |/ ___| ____|  _ \ 
-|  _| |  \| | |_| | / _ \ |  \| | |   |  _| | | | |
-| |___| |\  |  _  |/ ___ \| |\  | |___| |___| |_| |
-|_____|_| \_|_| |_/_/   \_\_| \_|\____|_____|____/ 
-                                                
-    POWERED BY GETTODEV SINCE 1998
-    Indie Game Development Studio - Retro Indie Games
--->
-<html>
+<html lang="en">
 
 <head>
-  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-en="GettoDev - Indie Game Development Studio | Retro & Arcade" data-es="GettoDev - Estudio de Desarrollo de Videojuegos Indie | Retro & Arcade">GettoDev - Estudio de Desarrollo de Videojuegos Indie | Retro & Arcade</title>
+    <title data-en="GettoDev - Indie Game Development Studio | Retro & Arcade" data-es="GettoDev - Estudio de Desarrollo de Videojuegos Indie | Retro & Arcade">GettoDev - Indie Game Development Studio</title>
     <meta name="description"
         data-en="GettoDev - Independent game development studio. We create nostalgic arcade and retro gaming experiences. Design, creativity and engineering."
         data-es="GettoDev - Estudio independiente de desarrollo de videojuegos. Creamos experiencias arcade y retro nostálgicas. Diseño, creatividad e ingeniería."
-        content="GettoDev - Estudio independiente de desarrollo de videojuegos. Creamos experiencias arcade y retro nostálgicas. Diseño, creatividad e ingeniería.">
+        content="GettoDev - Independent game development studio. We create nostalgic arcade and retro gaming experiences. Design, creativity and engineering.">
     <meta name="keywords"
-        data-en="indie games, game development, creative studio, web games, retro arcade, pixel art, html5 games, maidhen, pies frescos"
-        data-es="videojuegos indie, desarrollo de juegos, estudio creativo, juegos web, arcade retro, pixel art, juegos html5, maidhen, pies frescos"
-        content="videojuegos indie, desarrollo de juegos, estudio creativo, juegos web, arcade retro, pixel art, juegos html5, maidhen, pies frescos">
+        data-en="indie games, game development, creative studio, web games, retro arcade, pixel art, html5 games"
+        data-es="videojuegos indie, desarrollo de juegos, estudio creativo, juegos web, arcade retro, pixel art, juegos html5"
+        content="indie games, game development, creative studio, web games, retro arcade, pixel art, html5 games">
     <meta name="author" content="GettoDev">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://gettodev.github.io/">
-    
+
     <!-- Hreflang tags for internationalization -->
     <link rel="alternate" hreflang="en" href="https://gettodev.github.io/">
     <link rel="alternate" hreflang="es" href="https://gettodev.github.io/">
@@ -36,29 +25,29 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gettodev.github.io/">
-    <meta property="og:title" data-en="GettoDev - Indie Game Development Studio" data-es="GettoDev - Estudio de Videojuegos Indie" content="GettoDev - Estudio de Videojuegos Indie">
+    <meta property="og:title" data-en="GettoDev - Indie Game Development Studio" data-es="GettoDev - Estudio de Videojuegos Indie" content="GettoDev - Indie Game Development Studio">
     <meta property="og:description"
         data-en="Independent studio specialized in retro arcade and creative game development"
         data-es="Estudio independiente especializado en desarrollo de videojuegos arcade y retro"
-        content="Estudio independiente especializado en desarrollo de videojuegos arcade y retro">
+        content="Independent studio specialized in retro arcade and creative game development">
     <meta property="og:image" content="https://gettodev.github.io/assets/banners/getto-banner.webp">
     <meta property="og:image:alt" content="GettoDev Banner - Indie Game Development Studio">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://gettodev.github.io/">
-    <meta property="twitter:title" data-en="GettoDev - Indie Game Development Studio" data-es="GettoDev - Estudio de Videojuegos Indie" content="GettoDev - Estudio de Videojuegos Indie">
+    <meta property="twitter:title" data-en="GettoDev - Indie Game Development Studio" data-es="GettoDev - Estudio de Videojuegos Indie" content="GettoDev - Indie Game Development Studio">
     <meta property="twitter:description"
         data-en="Independent studio specialized in retro arcade and creative game development"
         data-es="Estudio independiente especializado en desarrollo de videojuegos arcade y retro"
-        content="Estudio independiente especializado en desarrollo de videojuegos arcade y retro">
+        content="Independent studio specialized in retro arcade and creative game development">
     <meta property="twitter:image" content="https://gettodev.github.io/assets/banners/getto-banner.webp">
 
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="assets/ui/favicon.webp">
     <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.webp">
 
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="output.css">
 
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
@@ -68,7 +57,7 @@
         "name": "GettoDev",
         "url": "https://gettodev.github.io",
         "logo": "https://gettodev.github.io/assets/banners/getto-banner.webp",
-        "description": "Estudio independiente especializado en desarrollo de videojuegos arcade y retro",
+        "description": "Independent studio specialized in retro arcade and creative game development",
         "sameAs": ["https://instagram.com/gettodev"],
         "founder": {
             "@type": "Person",
@@ -79,147 +68,393 @@
     </script>
 </head>
 
-<body>
-    <header role="banner">
-        <img src="assets/banners/getto-banner.webp" alt="GettoDev Banner - Indie Game Development Studio" loading="lazy" decoding="async">
-    </header>
-
-    <nav role="navigation" aria-label="Main navigation">
-        <div id="sidebar"></div>
+<body class="bg-dark text-secondary font-sans">
+    <!-- Navigation -->
+    <nav class="bg-dark/95 backdrop-blur-sm sticky top-0 z-50 border-b border-primary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="text-secondary font-bold text-2xl hover:text-accent transition-colors">GettoDev</a>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="index.html" class="text-secondary hover:text-accent transition-colors text-lg">Home</a>
+                        <a href="about-us.html" class="text-secondary hover:text-accent transition-colors text-lg">About</a>
+                        <div class="relative group">
+                            <button class="text-secondary hover:text-accent transition-colors text-lg">Legacy Games</button>
+                            <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="maidhen.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Maidhen</a>
+                                <a href="pies-frescos.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Pies Frescos</a>
+                            </div>
+                        </div>
+                        <a href="retro-reviews.html" class="text-secondary hover:text-accent transition-colors text-lg">Retro Reviews</a>
+                        <div class="relative group">
+                            <button class="text-secondary hover:text-accent transition-colors text-lg">Emulators</button>
+                            <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="emulators/vircon32web/Vircon32Web.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Vircon32</a>
+                            </div>
+                        </div>
+                        <a href="ut99.html" class="text-secondary hover:text-accent transition-colors text-lg">UT99 Mod</a>
+                        <a href="guestbook.html" class="text-secondary hover:text-accent transition-colors text-lg">Guestbook</a>
+                        <a href="contact.html" class="text-secondary hover:text-accent transition-colors text-lg">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
 
-    <div class="divider"></div>
-
-    <main role="main">
-        <p class="tagline neon-yellow" data-en="keep it simple" data-es="mantenlo simple" style="text-align: center;">keep it simple</p>
-        <h1 class="neon-cyan" data-en="Nostalgia never dies." data-es="La nostalgia nunca muere." style="text-align: center;">Nostalgia never dies.</h1>
-
-        <p data-en="Explosions, pixels and chiptune music! We are an indie studio that revives the magic of classic FPS and arcades. Challenge your friends and climb the leaderboards. Play our free games, follow us on <a href='https://www.instagram.com/gettodev/' target='_blank'>Instagram</a> and become an Retro legend!" data-es="¡Explosiones, píxeles y música chiptune! Somos un estudio indie que revive la magia de los FPS y arcades clásicos. Desafía a tus amigos y escala en las tablas de posiciones. ¡Juega nuestros juegos gratis, síguenos en <a href='https://www.instagram.com/gettodev/' target='_blank'>Instagram</a> y conviértete en una leyenda Retro!">Explosions, pixels and chiptune music! We are an indie studio that revives the magic of classic
-            FPS and arcades. Challenge your friends and climb the leaderboards. Play our free games, follow us
-            on <a href="https://www.instagram.com/gettodev/" target="_blank">Instagram</a> and become an
-            Retro legend!</p>
-
-        <p><img src="assets/ui/divider.webp" alt="Divider - Retro gaming separator" loading="lazy" decoding="async"></p>
-
-        <div class="divider"></div>
-
-        <section aria-labelledby="games-heading">
-            <h2 id="games-heading" class="neon-yellow" data-en="Our Games" data-es="Nuestros Juegos">Our Games</h2>
+    <main>
+    <header id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-dark via-primary/50 to-dark"></div>
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-20 w-72 h-72 bg-accent rounded-full filter blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-primary rounded-full filter blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-magenta rounded-full filter blur-3xl animate-pulse-slow" style="animation-delay: 4s;"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-float">
+                <h1 class="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-red-500 via-yellow-400 via-green-400 to-cyan-400 bg-clip-text text-transparent">
+                    GettoDev
+                </h1>
+            </div>
+            <p class="text-3xl md:text-4xl mb-4 text-secondary font-light">Indie Game Development Studio</p>
+            <p data-en="Crafting unforgettable gaming moments since 1998" data-es="Creando momentos inolvidables de juego desde 1998" class="text-xl mb-12 text-light opacity-80">Crafting unforgettable gaming moments since 1998</p>
             
-            <!-- Released Games -->
-            <div class="game-grid">
-                <div class="game-item">
-                    <a href="play.html?id=bubblaboing" class="game-button">
-                        <img src="assets/thumbs/bubblaboing.png" alt="bubblaboing" loading="lazy" decoding="async">
-                        <div class="play-overlay">▶ PLAY</div>
-                    </a>
-                    <h3 class="neon-cyan">Bubbla Boing</h3>
-                </div>
-                <div class="game-item">
-                    <a href="play.html?id=gomafalda" class="game-button">
-                        <img src="assets/thumbs/gomafalda.png" alt="Go Mafalda" loading="lazy" decoding="async">
-                        <div class="play-overlay">▶ PLAY</div>
-                    </a>
-                    <h3 class="neon-cyan">Go Mafalda</h3>
-                </div>
-                <div class="game-item">
-                    <a href="play.html?id=neondirective" class="game-button">
-                        <img src="assets/thumbs/neondirective.png" alt="Neon Directive" loading="lazy" decoding="async">
-                        <div class="play-overlay">▶ PLAY</div>
-                    </a>
-                    <h3 class="neon-cyan">Neon Directive</h3>
-                </div>
-                <div class="game-item">
-                    <a href="play.html?id=nullpointer" class="game-button">
-                        <img src="assets/thumbs/nullpointer.png" alt="NullPointer.Type" loading="lazy" decoding="async">
-                        <div class="play-overlay">▶ PLAY</div>
-                    </a>
-                    <h3 class="neon-cyan">NullPointer.Type</h3>
-                </div>
-                <div class="game-item">
-                    <a href="play.html?id=runsnowballrun" class="game-button">
-                        <img src="assets/thumbs/runsnowballrun.png" alt="Run Snowball Run" loading="lazy" decoding="async">
-                        <div class="play-overlay">▶ PLAY</div>
-                    </a>
-                    <h3 class="neon-cyan">Run Snowball Run</h3>
-                
-                </div>
-                <div class="game-item">
-                    <a href="play.html?id=sonicspeed" class="game-button">
-                        <img src="assets/thumbs/sonicspeed.png" alt="Sonic Speed Run" loading="lazy" decoding="async">
-                        <div class="play-overlay">▶ PLAY</div>
-                    </a>
-                    <h3 class="neon-cyan">Sonic Speed Run</h3>
-                
-                </div>
-                <div class="game-item">
-                    <a href="play.html?id=mariorun" class="game-button">
-                        <img src="assets/thumbs/mariorun.png" alt="Run Mario Run" loading="lazy" decoding="async">
-                        <div class="play-overlay">▶ PLAY</div>
-                    </a>
-                    <h3 class="neon-cyan">Run Mario Run</h3>
-                </div>
-                <div class="game-item">
-                    <a href="play.html?id=memory" class="game-button">
-                        <img src="assets/thumbs/memory.png" alt="Memory Match" loading="lazy" decoding="async">
-                        <div class="play-overlay">▶ PLAY</div>
-                    </a>
-                    <h3 class="neon-cyan">Dandys World Memory</h3>
-                </div>
-                
+            <div class="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+                <a href="#games" class="group bg-gradient-to-r from-accent to-magenta text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-accent/50 transition-all hover:scale-105 flex items-center justify-center gap-2">
+                    <span>Explore Games</span>
+                </a>
+                <a href="contact.html" class="border-2 border-secondary text-secondary px-10 py-4 rounded-full font-semibold text-lg hover:bg-secondary hover:text-dark transition-all hover:scale-105">Get in Touch</a>
             </div>
 
-            <div class="divider"></div>
-            
-            <h3 class="neon-yellow" data-en="In Development" data-es="En Desarrollo">In Development</h3>
-            
-            <!-- Games In Development -->
-            <div class="game-grid dev-games">
-                <div class="game-item">
-                    <a href="play.html?id=brumbrumcarrera" class="game-button">
-                        <img src="assets/thumbs/brumbrumcarrera.png" alt="Brum Brum Carrera" loading="lazy" decoding="async">
-                        <div class="play-overlay">▶ PLAY</div>
-                    </a>
-                    <h3 class="neon-cyan">Brum Brum Carrera</h3>
+            <div class="flex justify-center gap-8 text-light">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-accent">10+</div>
+                    <div class="text-sm mt-1">Games</div>
                 </div>
-                <div class="game-item">
-                    <a href="play.html?id=superrobotx" class="game-button">
-                        <img src="assets/thumbs/superrobotx.png" alt="Super Robot X" loading="lazy" decoding="async">
-                        <div class="play-overlay">▶ PLAY</div>
-                    </a>
-                    <h3 class="neon-cyan">Super Robot X</h3>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-magenta">28</div>
+                    <div class="text-sm mt-1">Years</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary">∞</div>
+                    <div class="text-sm mt-1">Fun</div>
                 </div>
             </div>
+        </div>
 
-            <div class="divider"></div>
-        </section>
-    </main>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#games" class="text-secondary text-4xl">v</a>
+        </div>
+    </header>
 
-    
-    <footer>
-        <p class="neon-yellow">--Powered by GettoDev since 1998.--</p>
-        <div>
-            <img src="assets/badges/a18.gif" alt="ghost" loading="lazy" decoding="async" />
-            <img src="assets/badges/b38.gif" alt="loading" loading="lazy" decoding="async" />
-            <img src="assets/badges/c6.gif" alt="arkanoid" loading="lazy" decoding="async" />
-            <img src="assets/badges/c8.gif" alt="retrogamer" loading="lazy" decoding="async" />
-            <img src="assets/badges/c11.gif" alt="somanyideas" loading="lazy" decoding="async" />
-            <img src="assets/badges/d11.gif" alt="pcuser" loading="lazy" decoding="async" />
-            <img src="assets/badges/d33.gif" alt="thecomputer" loading="lazy" decoding="async" />
-            <img src="assets/badges/d34.gif" alt="system32" loading="lazy" decoding="async" />
-            <img src="assets/badges/d57.gif" alt="invaders" loading="lazy" decoding="async" />
-            <img src="assets/badges/d64.gif" alt="retrovideo" loading="lazy" decoding="async" />
-            <img src="assets/badges/b56.png" alt="oldelectronic" loading="lazy" decoding="async" />
-            <img src="assets/badges/d17.png" alt="dukenukem" loading="lazy" decoding="async" />
-            <img src="assets/badges/d56.png" alt="what" loading="lazy" decoding="async" />
+    <!-- Games Section -->
+    <section id="games" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-secondary mb-4 bg-gradient-to-r from-red-500 via-yellow-400 to-green-400 bg-clip-text text-transparent">Our Games</h2>
+                <p class="text-xl text-light">Play & Enjoy</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-accent/20">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/thumbs/bubblaboing.png" alt="Bubbla Boing" class="w-full h-56 object-contain bg-dark/50 p-4 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-secondary mb-2">Bubbla Boing</h3>
+                        <p class="text-light text-sm mb-4">Classic bubble breaker arcade game</p>
+                        <button onclick="openGamePopup('bubblaboing')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                    </div>
+                </div>
+                <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-accent/20">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/thumbs/gomafalda.png" alt="Go Mafalda" class="w-full h-56 object-contain bg-dark/50 p-4 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-secondary mb-2">Go Mafalda</h3>
+                        <p class="text-light text-sm mb-4">Retro platform runner adventure</p>
+                        <button onclick="openGamePopup('gomafalda')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                    </div>
+                </div>
+                <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-accent/20">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/thumbs/neondirective.png" alt="Neon Directive" class="w-full h-56 object-contain bg-dark/50 p-4 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-secondary mb-2">Neon Directive</h3>
+                        <p class="text-light text-sm mb-4">Fast-paced retro arcade action</p>
+                        <button onclick="openGamePopup('neondirective')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                    </div>
+                </div>
+                <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-accent/20">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/thumbs/nullpointer.png" alt="NullPointer.Type" class="w-full h-56 object-contain bg-dark/50 p-4 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-secondary mb-2">NullPointer.Type</h3>
+                        <p class="text-light text-sm mb-4">Intense space shooter</p>
+                        <button onclick="openGamePopup('nullpointer')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                    </div>
+                </div>
+                <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-accent/20">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/thumbs/runsnowballrun.png" alt="Run Snowball Run" class="w-full h-56 object-contain bg-dark/50 p-4 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-secondary mb-2">Run Snowball Run</h3>
+                        <p class="text-light text-sm mb-4">Endless runner adventure</p>
+                        <button onclick="openGamePopup('runsnowballrun')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                    </div>
+                </div>
+                <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-accent/20">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/thumbs/sonicspeed.png" alt="Sonic Speed Run" class="w-full h-56 object-contain bg-dark/50 p-4 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-secondary mb-2">Sonic Speed Run</h3>
+                        <p class="text-light text-sm mb-4">Pixel endless runner</p>
+                        <button onclick="openGamePopup('sonicspeed')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                    </div>
+                </div>
+                <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-accent/20">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/thumbs/mariorun.png" alt="Run Mario Run" class="w-full h-56 object-contain bg-dark/50 p-4 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-secondary mb-2">Run Mario Run</h3>
+                        <p class="text-light text-sm mb-4">Classic platform runner</p>
+                        <button onclick="openGamePopup('mariorun')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                    </div>
+                </div>
+                <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-accent/20">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/thumbs/memory.png" alt="Dandys World Memory" class="w-full h-56 object-contain bg-dark/50 p-4 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-secondary mb-2">Dandys World Memory</h3>
+                        <p class="text-light text-sm mb-4">Retro puzzle game</p>
+                        <button onclick="openGamePopup('memory')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work in Progress Section -->
+    <section id="wip" class="py-24 bg-gradient-to-b from-primary/20 to-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-secondary mb-4">In Development</h2>
+                <p class="text-xl text-light">Coming Soon</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-accent/30 shadow-xl">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/thumbs/brumbrumcarrera.png" alt="Brum Brum Carrera" class="w-full h-56 object-contain bg-dark/50 p-4 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">Beta</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-secondary mb-2">Brum Brum Carrera</h3>
+                        <p class="text-light text-sm mb-4">Retro racing action</p>
+                        <button onclick="openGamePopup('brumbrumcarrera')" class="w-full bg-gradient-to-r from-magenta to-accent text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-magenta/50 transition-all">Play Beta</button>
+                    </div>
+                </div>
+                <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-accent/30 shadow-xl">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/thumbs/superrobotx.png" alt="Super Robot X" class="w-full h-56 object-contain bg-dark/50 p-4 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">Beta</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-secondary mb-2">Super Robot X</h3>
+                        <p class="text-light text-sm mb-4">Mecha action game</p>
+                        <button onclick="openGamePopup('superrobotx')" class="w-full bg-gradient-to-r from-magenta to-accent text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-magenta/50 transition-all">Play Beta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-secondary mb-4">Achievements</h2>
+                <p class="text-xl text-light">Numbers That Matter</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="bg-primary/20 backdrop-blur-sm rounded-2xl p-8 text-center border border-primary/30 hover:bg-primary/40 transition-all">
+                    <div class="text-6xl font-bold text-accent mb-2">10+</div>
+                    <div class="text-secondary text-lg">Games Released</div>
+                </div>
+                <div class="bg-primary/20 backdrop-blur-sm rounded-2xl p-8 text-center border border-primary/30 hover:bg-primary/40 transition-all">
+                    <div class="text-6xl font-bold text-magenta mb-2">28</div>
+                    <div class="text-secondary text-lg">Years Experience</div>
+                </div>
+                <div class="bg-primary/20 backdrop-blur-sm rounded-2xl p-8 text-center border border-primary/30 hover:bg-primary/40 transition-all">
+                    <div class="text-6xl font-bold text-primary mb-2">5K+</div>
+                    <div class="text-secondary text-lg">Players</div>
+                </div>
+                <div class="bg-primary/20 backdrop-blur-sm rounded-2xl p-8 text-center border border-primary/30 hover:bg-primary/40 transition-all">
+                    <div class="text-6xl font-bold text-secondary mb-2">∞</div>
+                    <div class="text-secondary text-lg">Creativity</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-r from-accent to-magenta">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-5xl font-bold text-white mb-6">Ready to Play?</h2>
+            <p class="text-xl text-white/90 mb-8">Join thousands of players enjoying our retro games</p>
+            <a href="#games" class="inline-block bg-white text-accent px-12 py-4 rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-white/50 transition-all hover:scale-105">Start Playing</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-primary/30 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-2xl font-bold text-secondary">GettoDev</span>
+                    </div>
+                    <p class="text-light">Indie game development studio creating nostalgic arcade experiences since 1998.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-secondary mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-light hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="#games" class="text-light hover:text-accent transition-colors">Games</a></li>
+                        <li><a href="about-us.html" class="text-light hover:text-accent transition-colors">About</a></li>
+                        <li><a href="contact.html" class="text-light hover:text-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-secondary mb-4">Games</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" onclick="openGamePopup('maidhen')" class="text-light hover:text-accent transition-colors">Maidhen</a></li>
+                        <li><a href="#" onclick="openGamePopup('pies-frescos')" class="text-light hover:text-accent transition-colors">Pies Frescos</a></li>
+                        <li><a href="emulators/vircon32web/Vircon32Web.html" class="text-light hover:text-accent transition-colors">VirCon32 Emulator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-secondary mb-4">Connect</h3>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/gettodev/" target="_blank" class="text-accent hover:text-magenta transition-colors text-lg">Instagram</a>
+                        <a href="https://gamejolt.com/@GettoDev" target="_blank" class="text-accent hover:text-magenta transition-colors text-lg">GameJolt</a>
+                        <a href="https://gettodev.itch.io/" target="_blank" class="text-accent hover:text-magenta transition-colors text-lg">Itch.io</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-primary/30 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-light">&copy; 2026 GettoDev. All rights reserved.</p>
+                    <p class="text-light">Powered by GettoDev since 1998</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4 mt-6">
+                    <img src="assets/badges/a18.gif" alt="badge" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="assets/badges/b38.gif" alt="badge" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="assets/badges/c6.gif" alt="badge" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="assets/badges/c8.gif" alt="badge" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="assets/badges/c11.gif" alt="badge" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="assets/badges/d11.gif" alt="badge" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="assets/badges/d33.gif" alt="badge" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="assets/badges/d34.gif" alt="badge" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="assets/badges/d57.gif" alt="badge" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="assets/badges/d64.gif" alt="badge" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="assets/badges/b56.png" alt="badge" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="assets/badges/d17.png" alt="badge" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="assets/badges/d56.png" alt="badge" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
         </div>
     </footer>
+    </main>
 
-    <!-- Sidebar script loaded from external file -->
-    <script type="text/javascript" src="js/sidebar.js"></script>
-    
+    <!-- Game Popup Modal -->
+    <div id="gamePopup" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center backdrop-blur-sm">
+        <div class="bg-dark max-w-6xl w-[90%] h-[90vh] rounded-2xl shadow-2xl flex flex-col border border-primary/30">
+            <div class="flex justify-between items-center p-6 border-b border-primary/30">
+                <h3 id="popupTitle" class="text-2xl font-bold text-secondary">Game Window</h3>
+                <button onclick="closeGamePopup()" class="text-4xl text-light hover:text-accent transition-colors">&times;</button>
+            </div>
+            <div class="flex-1 bg-black overflow-hidden">
+                <iframe id="gameFramePopup" src="" class="w-full h-full border-0"></iframe>
+            </div>
+            <div class="p-6 border-t border-primary/30 flex gap-4 justify-center">
+                <button onclick="toggleFullscreen()" class="bg-gradient-to-r from-accent to-magenta text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Fullscreen</button>
+                <button onclick="closeGamePopup()" class="bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-dark transition-all">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Data -->
+    <script type="text/javascript" src="data/games.js"></script>
+
     <!-- Language switching script -->
     <script type="text/javascript" src="js/language-switcher.js"></script>
+
+    <!-- Game Popup Script -->
+    <script>
+        let currentGame = null;
+
+        function openGamePopup(gameId) {
+            const game = window.GAMES_DATA.find(g => g.id === gameId);
+            if (!game) return;
+
+            currentGame = game;
+            const popup = document.getElementById('gamePopup');
+            const title = document.getElementById('popupTitle');
+            const frame = document.getElementById('gameFramePopup');
+
+            title.textContent = game.title;
+            frame.src = game.iframe;
+
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGamePopup() {
+            const popup = document.getElementById('gamePopup');
+            const frame = document.getElementById('gameFramePopup');
+
+            frame.src = '';
+            popup.classList.add('hidden');
+            popup.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+            currentGame = null;
+        }
+
+        function toggleFullscreen() {
+            const frame = document.getElementById('gameFramePopup');
+            if (frame.requestFullscreen) {
+                frame.requestFullscreen();
+            } else if (frame.webkitRequestFullscreen) {
+                frame.webkitRequestFullscreen();
+            } else if (frame.msRequestFullscreen) {
+                frame.msRequestFullscreen();
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeGamePopup();
+            }
+        });
+    </script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9BPQC22FF"></script>
@@ -233,4 +468,3 @@
 </body>
 
 </html>
-

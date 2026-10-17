@@ -114,15 +114,7 @@
             <image:caption>Go Mafalda - Retro Arcade Game</image:caption>
         </image:image>
     </url>
-    
-    <!-- Unified Game Runner -->
-    <url>
-        <loc>https://gettodev.github.io/play.html</loc>
-        <lastmod>2026-10-10</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
+
     <!-- Bubbla Boing Game Page -->
     <url>
         <loc>https://gettodev.github.io/bubblaboing.html</loc>

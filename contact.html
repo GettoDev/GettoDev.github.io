@@ -1,18 +1,7 @@
 <!DOCTYPE html>
-<!-- 
- _____ _   _ _   _    _    _   _  ____ _____ ____  
-| ____| \ | | | | |  / \  | \ | |/ ___| ____|  _ \ 
-|  _| |  \| | |_| | / _ \ |  \| | |   |  _| | | | |
-| |___| |\  |  _  |/ ___ \| |\  | |___| |___| |_| |
-|_____|_| \_|_| |_/_/   \_\_| \_|\____|_____|____/ 
-                                               
-    POWERED BY GETTODEV SINCE 1998
-    Indie Game Development Studio - Retro Indie Games
--->
-<html>
+<html lang="en">
 
 <head>
-  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GettoDev - Contact | Indie Game Development Studio</title>
@@ -43,96 +32,90 @@
     <link rel="icon" type="image/webp" href="assets/ui/favicon.webp">
     <link rel="apple-touch-icon" href="assets/ui/apple-touch-icon.webp">
 
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="output.css">
 </head>
 
-<body>
-    <header role="banner">
-        <img src="assets/banners/getto-banner.webp" alt="GettoDev Banner - Indie Game Development Studio" loading="lazy">
-    </header>
-
-    <nav role="navigation" aria-label="Main navigation">
-        <div id="sidebar"></div>
+<body class="bg-dark text-secondary font-sans">
+    <!-- Navigation -->
+    <nav class="bg-dark/95 backdrop-blur-sm sticky top-0 z-50 border-b border-primary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="text-secondary font-bold text-2xl hover:text-accent transition-colors">GettoDev</a>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="index.html" class="text-secondary hover:text-accent transition-colors text-lg">Home</a>
+                        <a href="about-us.html" class="text-secondary hover:text-accent transition-colors text-lg">About</a>
+                        <div class="relative group">
+                            <button class="text-secondary hover:text-accent transition-colors text-lg">Legacy Games</button>
+                            <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="maidhen.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Maidhen</a>
+                                <a href="pies-frescos.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Pies Frescos</a>
+                            </div>
+                        </div>
+                        <a href="retro-reviews.html" class="text-secondary hover:text-accent transition-colors text-lg">Retro Reviews</a>
+                        <div class="relative group">
+                            <button class="text-secondary hover:text-accent transition-colors text-lg">Emulators</button>
+                            <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="emulators/vircon32web/Vircon32Web.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Vircon32</a>
+                            </div>
+                        </div>
+                        <a href="ut99.html" class="text-secondary hover:text-accent transition-colors text-lg">UT99 Mod</a>
+                        <a href="guestbook.html" class="text-secondary hover:text-accent transition-colors text-lg">Guestbook</a>
+                        <a href="contact.html" class="text-secondary hover:text-accent transition-colors text-lg">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
 
-    <div class="divider"></div>
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <section class="text-center mb-20">
+            <h1 data-en="Contact" data-es="Contacto" class="text-6xl font-bold text-secondary mb-6 bg-gradient-to-r from-red-500 via-yellow-400 to-green-400 bg-clip-text text-transparent">Contact</h1>
+            <p data-en="Connect with us" data-es="Conéctate con nosotros" class="text-2xl text-light">Connect with us</p>
+        </section>
 
-    <main role="main">
-        <h1 class="neon-cyan" data-en="Contact" data-es="Contacto">Contact</h1>
-        <p class="tagline neon-yellow" data-en="Connect with us" data-es="Conéctate con nosotros">Connect with us</p>
-
-        <div class="divider"></div>
-        
-        <section aria-labelledby="contact-heading">
-            <h2 id="contact-heading" class="neon-yellow" data-en="Find Us Online" data-es="Encuéntranos en línea">Find Us Online</h2>
-            
-            <div class="contact-container">
-                <div class="contact-section">
-                    <h3 class="neon-cyan" data-en="Email" data-es="Correo electrónico">Email</h3>
-                    <div>
-                        <a href="mailto:gettodev@proton.me" class="button">gettodev@proton.me</a>
-                    </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="contact-section">
-                    <h3 class="neon-cyan" data-en="Gaming Platforms" data-es="Plataformas de Gaming">Gaming Platforms</h3>
-                    <div>
-                        <a href="https://gamejolt.com/@GettoDev" target="_blank" class="button">GameJolt</a>
-                    </div>
-                    <div>
-                        <a href="https://gettodev.itch.io/" target="_blank" class="button">Itch.io</a>
-                    </div>
-                    <div>
-                        <a href="https://gettodev.newgrounds.com/" target="_blank" class="button">Newgrounds</a>
-                    </div>
-                    <div>
-                        <a href="https://patugogames.gamer.gd/?i=1" target="_blank" class="button">Patugo Games</a>
-                    </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="contact-section">
-                    <h3 class="neon-cyan" data-en="Social Media" data-es="Redes Sociales">Social Media</h3>
-                    <div>
-                        <a href="https://www.instagram.com/gettodev/" target="_blank" class="button">Instagram</a>
-                    </div>
-                </div>
-
+        <section class="space-y-8">
+            <div class="bg-primary/20 backdrop-blur-sm rounded-3xl p-10 border border-primary/30 hover:bg-primary/40 transition-all hover:scale-105 shadow-xl">
+                <h2 data-en="Email" data-es="Correo electrónico" class="text-3xl font-bold text-secondary mb-6">Email</h2>
+                <a href="mailto:gettodev@proton.me" class="inline-block bg-gradient-to-r from-accent to-magenta text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all hover:scale-105">gettodev@proton.me</a>
             </div>
 
-            <div class="divider"></div>
+            <div class="bg-primary/20 backdrop-blur-sm rounded-3xl p-10 border border-primary/30 hover:bg-primary/40 transition-all hover:scale-105 shadow-xl">
+                <h2 data-en="Gaming Platforms" data-es="Plataformas de Gaming" class="text-3xl font-bold text-secondary mb-6">Gaming Platforms</h2>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://gamejolt.com/@GettoDev" target="_blank" class="bg-primary/30 text-secondary px-6 py-3 rounded-xl font-semibold hover:bg-primary/50 hover:text-accent transition-all hover:scale-105 border border-primary/30">GameJolt</a>
+                    <a href="https://gettodev.itch.io/" target="_blank" class="bg-primary/30 text-secondary px-6 py-3 rounded-xl font-semibold hover:bg-primary/50 hover:text-accent transition-all hover:scale-105 border border-primary/30">Itch.io</a>
+                    <a href="https://gettodev.newgrounds.com/" target="_blank" class="bg-primary/30 text-secondary px-6 py-3 rounded-xl font-semibold hover:bg-primary/50 hover:text-accent transition-all hover:scale-105 border border-primary/30">Newgrounds</a>
+                    <a href="https://patugogames.gamer.gd/?i=1" target="_blank" class="bg-primary/30 text-secondary px-6 py-3 rounded-xl font-semibold hover:bg-primary/50 hover:text-accent transition-all hover:scale-105 border border-primary/30">Patugo Games</a>
+                </div>
+            </div>
+
+            <div class="bg-primary/20 backdrop-blur-sm rounded-3xl p-10 border border-primary/30 hover:bg-primary/40 transition-all hover:scale-105 shadow-xl">
+                <h2 data-en="Social Media" data-es="Redes Sociales" class="text-3xl font-bold text-secondary mb-6">Social Media</h2>
+                <a href="https://www.instagram.com/gettodev/" target="_blank" class="inline-block bg-gradient-to-r from-accent to-magenta text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all hover:scale-105">Instagram</a>
+            </div>
+
+            <div class="bg-primary/20 backdrop-blur-sm rounded-3xl p-10 border border-primary/30 hover:bg-primary/40 transition-all hover:scale-105 shadow-xl">
+                <h2 data-en="Support" data-es="Apoyo" class="text-3xl font-bold text-secondary mb-6">Support</h2>
+                <a href="https://cafecito.app/gettodev" target="_blank" class="inline-block bg-gradient-to-r from-accent to-magenta text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all hover:scale-105">
+                    <span data-en="Donate on Cafecito" data-es="Donar en Cafecito">Donate on Cafecito</span>
+                </a>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p class="neon-yellow">--Powered by GettoDev since 1998.--</p>
-        <div>
-            <img src="assets/badges/a18.gif" alt="ghost" />
-            <img src="assets/badges/b38.gif" alt="loading" />
-            <img src="assets/badges/c6.gif" alt="arkanoid" />
-            <img src="assets/badges/c8.gif" alt="retrogamer" />
-            <img src="assets/badges/c11.gif" alt="somanyideas" />
-            <img src="assets/badges/d11.gif" alt="pcuser" />
-            <img src="assets/badges/d33.gif" alt="thecomputer" />
-            <img src="assets/badges/d34.gif" alt="system32" />
-            <img src="assets/badges/d57.gif" alt="invaders" />
-            <img src="assets/badges/d64.gif" alt="retrovideo" />
-            <img src="assets/badges/b56.png" alt="oldelectronic" />
-            <img src="assets/badges/d17.png" alt="dukenukem" />
-            <img src="assets/badges/d56.png" alt="what" />
+    <footer class="bg-dark border-t border-primary/30 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-light">&copy; 2026 GettoDev. All rights reserved.</p>
+                <p class="text-light">Powered by GettoDev since 1998</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Sidebar script loaded from external file -->
-    <script type="text/javascript" src="js/sidebar.js"></script>
-    
     <!-- Language switching script -->
     <script type="text/javascript" src="js/language-switcher.js"></script>
 
 </body>
 
 </html>
-
