@@ -69,6 +69,9 @@
 </head>
 
 <body class="bg-dark text-secondary font-sans">
+    <!-- Keep Android Open Banner -->
+    <script src="https://keepandroidopen.org/banner.js"></script>
+
     <!-- Navigation -->
     <nav class="bg-dark/95 backdrop-blur-sm sticky top-0 z-50 border-b border-primary/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,55 +79,65 @@
                 <div class="flex items-center space-x-8">
                     <a href="index.html" class="text-secondary font-bold text-2xl hover:text-accent transition-colors">GettoDev</a>
                     <div class="hidden md:flex space-x-8">
-                        <a href="index.html" class="text-secondary hover:text-accent transition-colors text-lg">Home</a>
-                        <a href="about-us.html" class="text-secondary hover:text-accent transition-colors text-lg">About</a>
+                        <a href="index.html" data-en="Home" data-es="Inicio" class="text-secondary hover:text-accent transition-colors text-lg">Home</a>
+                        <a href="about-us.html" data-en="About" data-es="Nosotros" class="text-secondary hover:text-accent transition-colors text-lg">About</a>
                         <div class="relative group">
-                            <button class="text-secondary hover:text-accent transition-colors text-lg">Legacy Games</button>
+                            <button data-en="Legacy Games" data-es="Juegos Legados" class="text-secondary hover:text-accent transition-colors text-lg">Legacy Games</button>
                             <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
                                 <a href="maidhen.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Maidhen</a>
                                 <a href="pies-frescos.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Pies Frescos</a>
                             </div>
                         </div>
-                        <a href="retro-reviews.html" class="text-secondary hover:text-accent transition-colors text-lg">Retro Reviews</a>
+                        <a href="retro-reviews.html" data-en="Retro Reviews" data-es="Reseñas Retro" class="text-secondary hover:text-accent transition-colors text-lg">Retro Reviews</a>
                         <div class="relative group">
-                            <button class="text-secondary hover:text-accent transition-colors text-lg">Emulators</button>
+                            <button data-en="Emulators" data-es="Emuladores" class="text-secondary hover:text-accent transition-colors text-lg">Emulators</button>
                             <div class="absolute left-0 mt-2 w-48 bg-dark/95 backdrop-blur-sm rounded-xl border border-primary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
                                 <a href="emulators/vircon32web/Vircon32Web.html" class="block px-4 py-3 text-secondary hover:bg-primary/30 hover:text-accent transition-colors text-lg">Vircon32</a>
                             </div>
                         </div>
-                        <a href="ut99.html" class="text-secondary hover:text-accent transition-colors text-lg">UT99 Mod</a>
-                        <a href="guestbook.html" class="text-secondary hover:text-accent transition-colors text-lg">Guestbook</a>
-                        <a href="contact.html" class="text-secondary hover:text-accent transition-colors text-lg">Contact</a>
+                        <a href="ut99.html" data-en="UT99 Mod" data-es="Mod UT99" class="text-secondary hover:text-accent transition-colors text-lg">UT99 Mod</a>
+                        <a href="guestbook.html" data-en="Guestbook" data-es="Libro de Visitas" class="text-secondary hover:text-accent transition-colors text-lg">Guestbook</a>
+                        <a href="contact.html" data-en="Contact" data-es="Contacto" class="text-secondary hover:text-accent transition-colors text-lg">Contact</a>
                     </div>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden text-secondary hover:text-accent transition-colors">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-2">
+                        <button onclick="setLanguage('en')" class="px-3 py-1 text-sm font-semibold rounded-lg bg-primary/30 hover:bg-primary/50 text-secondary transition-colors">EN</button>
+                        <button onclick="setLanguage('es')" class="px-3 py-1 text-sm font-semibold rounded-lg bg-primary/30 hover:bg-primary/50 text-secondary transition-colors">ES</button>
+                    </div>
+                    <button id="mobile-menu-btn" class="md:hidden text-secondary hover:text-accent transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-dark/95 backdrop-blur-sm border-t border-primary/30">
             <div class="px-4 py-4 space-y-2">
-                <a href="index.html" class="block text-secondary hover:text-accent transition-colors text-lg py-2">Home</a>
-                <a href="about-us.html" class="block text-secondary hover:text-accent transition-colors text-lg py-2">About</a>
+                <a href="index.html" data-en="Home" data-es="Inicio" class="block text-secondary hover:text-accent transition-colors text-lg py-2">Home</a>
+                <a href="about-us.html" data-en="About" data-es="Nosotros" class="block text-secondary hover:text-accent transition-colors text-lg py-2">About</a>
                 <div class="py-2">
-                    <span class="text-secondary text-lg font-semibold">Legacy Games</span>
+                    <span data-en="Legacy Games" data-es="Juegos Legados" class="text-secondary text-lg font-semibold">Legacy Games</span>
                     <div class="pl-4 mt-2 space-y-2">
                         <a href="maidhen.html" class="block text-secondary hover:text-accent transition-colors text-lg">Maidhen</a>
                         <a href="pies-frescos.html" class="block text-secondary hover:text-accent transition-colors text-lg">Pies Frescos</a>
                     </div>
                 </div>
-                <a href="retro-reviews.html" class="block text-secondary hover:text-accent transition-colors text-lg py-2">Retro Reviews</a>
+                <a href="retro-reviews.html" data-en="Retro Reviews" data-es="Reseñas Retro" class="block text-secondary hover:text-accent transition-colors text-lg py-2">Retro Reviews</a>
                 <div class="py-2">
-                    <span class="text-secondary text-lg font-semibold">Emulators</span>
+                    <span data-en="Emulators" data-es="Emuladores" class="text-secondary text-lg font-semibold">Emulators</span>
                     <div class="pl-4 mt-2 space-y-2">
                         <a href="emulators/vircon32web/Vircon32Web.html" class="block text-secondary hover:text-accent transition-colors text-lg">Vircon32</a>
                     </div>
                 </div>
-                <a href="ut99.html" class="block text-secondary hover:text-accent transition-colors text-lg py-2">UT99 Mod</a>
-                <a href="guestbook.html" class="block text-secondary hover:text-accent transition-colors text-lg py-2">Guestbook</a>
-                <a href="contact.html" class="block text-secondary hover:text-accent transition-colors text-lg py-2">Contact</a>
+                <a href="ut99.html" data-en="UT99 Mod" data-es="Mod UT99" class="block text-secondary hover:text-accent transition-colors text-lg py-2">UT99 Mod</a>
+                <a href="guestbook.html" data-en="Guestbook" data-es="Libro de Visitas" class="block text-secondary hover:text-accent transition-colors text-lg py-2">Guestbook</a>
+                <a href="contact.html" data-en="Contact" data-es="Contacto" class="block text-secondary hover:text-accent transition-colors text-lg py-2">Contact</a>
+                <div class="flex items-center space-x-2 pt-4 border-t border-primary/30">
+                    <button onclick="setLanguage('en')" class="px-3 py-1 text-sm font-semibold rounded-lg bg-primary/30 hover:bg-primary/50 text-secondary transition-colors">EN</button>
+                    <button onclick="setLanguage('es')" class="px-3 py-1 text-sm font-semibold rounded-lg bg-primary/30 hover:bg-primary/50 text-secondary transition-colors">ES</button>
+                </div>
             </div>
         </div>
     </nav>
@@ -144,28 +157,28 @@
                     GettoDev
                 </h1>
             </div>
-            <p class="text-3xl md:text-4xl mb-4 text-secondary font-light">Indie Game Development Studio</p>
-            <p data-en="Crafting unforgettable gaming moments since 1998" data-es="Creando momentos inolvidables de juego desde 1998" class="text-xl mb-12 text-light opacity-80">Crafting unforgettable gaming moments since 1998</p>
-            
+            <p data-en="Indie Game Development Studio" data-es="Estudio de Desarrollo de Videojuegos Indie" class="text-3xl md:text-4xl mb-4 text-secondary font-light">Indie Game Development Studio</p>
+            <p data-en="Passion for video games since 1998" data-es="Pasión por los videojuegos desde 1998" class="text-xl mb-12 text-light opacity-80">Passion for video games since 1998</p>
+
             <div class="flex flex-col sm:flex-row gap-6 justify-center mb-16">
                 <a href="#games" class="group bg-gradient-to-r from-accent to-magenta text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-accent/50 transition-all hover:scale-105 flex items-center justify-center gap-2">
-                    <span>Explore Games</span>
+                    <span data-en="Explore Games" data-es="Explora los Juegos">Explore Games</span>
                 </a>
-                <a href="contact.html" class="border-2 border-secondary text-secondary px-10 py-4 rounded-full font-semibold text-lg hover:bg-secondary hover:text-dark transition-all hover:scale-105">Get in Touch</a>
+                <a href="contact.html" data-en="Get in Touch" data-es="Contáctanos" class="border-2 border-secondary text-secondary px-10 py-4 rounded-full font-semibold text-lg hover:bg-secondary hover:text-dark transition-all hover:scale-105">Get in Touch</a>
             </div>
 
             <div class="flex justify-center gap-8 text-light">
                 <div class="text-center">
                     <div class="text-4xl font-bold text-accent">10+</div>
-                    <div class="text-sm mt-1">Games</div>
+                    <div data-en="Games" data-es="Juegos" class="text-sm mt-1">Games</div>
                 </div>
                 <div class="text-center">
                     <div class="text-4xl font-bold text-magenta">28</div>
-                    <div class="text-sm mt-1">Years</div>
+                    <div data-en="Years" data-es="Años" class="text-sm mt-1">Years</div>
                 </div>
                 <div class="text-center">
                     <div class="text-4xl font-bold text-primary">∞</div>
-                    <div class="text-sm mt-1">Fun</div>
+                    <div data-en="Fun" data-es="Diversión" class="text-sm mt-1">Fun</div>
                 </div>
             </div>
         </div>
@@ -179,8 +192,8 @@
     <section id="games" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold text-secondary mb-4 bg-gradient-to-r from-red-500 via-yellow-400 to-green-400 bg-clip-text text-transparent">Our Games</h2>
-                <p class="text-xl text-light">Play & Enjoy</p>
+                <h2 data-en="Our Games" data-es="Nuestros Juegos" class="text-5xl font-bold text-secondary mb-4 bg-gradient-to-r from-red-500 via-yellow-400 to-green-400 bg-clip-text text-transparent">Our Games</h2>
+                <p data-en="Play & Enjoy" data-es="Juega y disfruta" class="text-xl text-light">Play & Enjoy</p>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
@@ -191,8 +204,8 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-secondary mb-2">Bubbla Boing</h3>
-                        <p class="text-light text-sm mb-4">Classic bubble breaker arcade game</p>
-                        <button onclick="openGamePopup('bubblaboing')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                        <p data-en="Classic bubble breaker arcade game" data-es="Juego arcade clásico de romper burbujas" class="text-light text-sm mb-4">Classic bubble breaker arcade game</p>
+                        <button onclick="openGamePopup('bubblaboing')" data-en="Play Now" data-es="Jugar ahora" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
                     </div>
                 </div>
                 <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-accent/20">
@@ -202,8 +215,8 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-secondary mb-2">Go Mafalda</h3>
-                        <p class="text-light text-sm mb-4">Retro platform runner adventure</p>
-                        <button onclick="openGamePopup('gomafalda')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                        <p data-en="Retro platform runner adventure" data-es="Aventura de plataformas retro" class="text-light text-sm mb-4">Retro platform runner adventure</p>
+                        <button onclick="openGamePopup('gomafalda')" data-en="Play Now" data-es="Jugar ahora" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
                     </div>
                 </div>
                 <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-accent/20">
@@ -213,8 +226,8 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-secondary mb-2">Neon Directive</h3>
-                        <p class="text-light text-sm mb-4">Fast-paced retro arcade action</p>
-                        <button onclick="openGamePopup('neondirective')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                        <p data-en="Fast-paced retro arcade action" data-es="Acción arcade retro frenética" class="text-light text-sm mb-4">Fast-paced retro arcade action</p>
+                        <button onclick="openGamePopup('neondirective')" data-en="Play Now" data-es="Jugar ahora" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
                     </div>
                 </div>
                 <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-accent/20">
@@ -224,8 +237,8 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-secondary mb-2">NullPointer.Type</h3>
-                        <p class="text-light text-sm mb-4">Intense space shooter</p>
-                        <button onclick="openGamePopup('nullpointer')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                        <p data-en="Intense space shooter" data-es="Shooter espacial intenso" class="text-light text-sm mb-4">Intense space shooter</p>
+                        <button onclick="openGamePopup('nullpointer')" data-en="Play Now" data-es="Jugar ahora" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
                     </div>
                 </div>
                 <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-accent/20">
@@ -235,8 +248,8 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-secondary mb-2">Run Snowball Run</h3>
-                        <p class="text-light text-sm mb-4">Endless runner adventure</p>
-                        <button onclick="openGamePopup('runsnowballrun')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                        <p data-en="Endless runner adventure" data-es="Aventura de endless runner" class="text-light text-sm mb-4">Endless runner adventure</p>
+                        <button onclick="openGamePopup('runsnowballrun')" data-en="Play Now" data-es="Jugar ahora" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
                     </div>
                 </div>
                 <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-accent/20">
@@ -246,8 +259,8 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-secondary mb-2">Sonic Speed Run</h3>
-                        <p class="text-light text-sm mb-4">Pixel endless runner</p>
-                        <button onclick="openGamePopup('sonicspeed')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                        <p data-en="Pixel endless runner" data-es="Endless runner pixel art" class="text-light text-sm mb-4">Pixel endless runner</p>
+                        <button onclick="openGamePopup('sonicspeed')" data-en="Play Now" data-es="Jugar ahora" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
                     </div>
                 </div>
                 <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-accent/20">
@@ -257,8 +270,8 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-secondary mb-2">Run Mario Run</h3>
-                        <p class="text-light text-sm mb-4">Classic platform runner</p>
-                        <button onclick="openGamePopup('mariorun')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                        <p data-en="Classic platform runner" data-es="Runner de plataformas clásico" class="text-light text-sm mb-4">Classic platform runner</p>
+                        <button onclick="openGamePopup('mariorun')" data-en="Play Now" data-es="Jugar ahora" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
                     </div>
                 </div>
                 <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-accent/20">
@@ -268,8 +281,8 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-secondary mb-2">Dandys World Memory</h3>
-                        <p class="text-light text-sm mb-4">Retro puzzle game</p>
-                        <button onclick="openGamePopup('memory')" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
+                        <p data-en="Retro puzzle game" data-es="Juego de puzzles retro" class="text-light text-sm mb-4">Retro puzzle game</p>
+                        <button onclick="openGamePopup('memory')" data-en="Play Now" data-es="Jugar ahora" class="w-full bg-gradient-to-r from-accent to-magenta text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Play Now</button>
                     </div>
                 </div>
             </div>
@@ -280,31 +293,31 @@
     <section id="wip" class="py-24 bg-gradient-to-b from-primary/20 to-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold text-secondary mb-4">In Development</h2>
-                <p class="text-xl text-light">Coming Soon</p>
+                <h2 data-en="In Development" data-es="En Desarrollo" class="text-5xl font-bold text-secondary mb-4">In Development</h2>
+                <p data-en="Coming Soon" data-es="Próximamente" class="text-xl text-light">Coming Soon</p>
             </div>
-            
+
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-accent/30 shadow-xl">
                     <div class="relative overflow-hidden">
                         <img src="assets/thumbs/brumbrumcarrera.png" alt="Brum Brum Carrera" class="w-full h-56 object-contain bg-dark/50 p-4 group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">Beta</div>
+                        <div data-en="Beta" data-es="Beta" class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">Beta</div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-secondary mb-2">Brum Brum Carrera</h3>
-                        <p class="text-light text-sm mb-4">Retro racing action</p>
-                        <button onclick="openGamePopup('brumbrumcarrera')" class="w-full bg-gradient-to-r from-magenta to-accent text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-magenta/50 transition-all">Play Beta</button>
+                        <p data-en="Retro racing action" data-es="Acción de carreras retro" class="text-light text-sm mb-4">Retro racing action</p>
+                        <button onclick="openGamePopup('brumbrumcarrera')" data-en="Play Beta" data-es="Jugar beta" class="w-full bg-gradient-to-r from-magenta to-accent text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-magenta/50 transition-all">Play Beta</button>
                     </div>
                 </div>
                 <div class="group bg-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-primary/40 transition-all hover:scale-105 border border-accent/30 shadow-xl">
                     <div class="relative overflow-hidden">
                         <img src="assets/thumbs/superrobotx.png" alt="Super Robot X" class="w-full h-56 object-contain bg-dark/50 p-4 group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">Beta</div>
+                        <div data-en="Beta" data-es="Beta" class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">Beta</div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-secondary mb-2">Super Robot X</h3>
-                        <p class="text-light text-sm mb-4">Mecha action game</p>
-                        <button onclick="openGamePopup('superrobotx')" class="w-full bg-gradient-to-r from-magenta to-accent text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-magenta/50 transition-all">Play Beta</button>
+                        <p data-en="Mecha action game" data-es="Juego de acción mecha" class="text-light text-sm mb-4">Mecha action game</p>
+                        <button onclick="openGamePopup('superrobotx')" data-en="Play Beta" data-es="Jugar beta" class="w-full bg-gradient-to-r from-magenta to-accent text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-magenta/50 transition-all">Play Beta</button>
                     </div>
                 </div>
             </div>
@@ -315,26 +328,26 @@
     <section id="stats" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold text-secondary mb-4">Achievements</h2>
-                <p class="text-xl text-light">Numbers That Matter</p>
+                <h2 data-en="Achievements" data-es="Logros" class="text-5xl font-bold text-secondary mb-4">Achievements</h2>
+                <p data-en="Numbers That Matter" data-es="Números Importantes" class="text-xl text-light">Numbers That Matter</p>
             </div>
-            
+
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="bg-primary/20 backdrop-blur-sm rounded-2xl p-8 text-center border border-primary/30 hover:bg-primary/40 transition-all">
                     <div class="text-6xl font-bold text-accent mb-2">10+</div>
-                    <div class="text-secondary text-lg">Games Released</div>
+                    <div data-en="Games Released" data-es="Juegos Lanzados" class="text-secondary text-lg">Games Released</div>
                 </div>
                 <div class="bg-primary/20 backdrop-blur-sm rounded-2xl p-8 text-center border border-primary/30 hover:bg-primary/40 transition-all">
                     <div class="text-6xl font-bold text-magenta mb-2">28</div>
-                    <div class="text-secondary text-lg">Years Experience</div>
+                    <div data-en="Years Experience" data-es="Años de Experiencia" class="text-secondary text-lg">Years Experience</div>
                 </div>
                 <div class="bg-primary/20 backdrop-blur-sm rounded-2xl p-8 text-center border border-primary/30 hover:bg-primary/40 transition-all">
                     <div class="text-6xl font-bold text-primary mb-2">5K+</div>
-                    <div class="text-secondary text-lg">Players</div>
+                    <div data-en="Players" data-es="Jugadores" class="text-secondary text-lg">Players</div>
                 </div>
                 <div class="bg-primary/20 backdrop-blur-sm rounded-2xl p-8 text-center border border-primary/30 hover:bg-primary/40 transition-all">
                     <div class="text-6xl font-bold text-secondary mb-2">∞</div>
-                    <div class="text-secondary text-lg">Creativity</div>
+                    <div data-en="Creativity" data-es="Creatividad" class="text-secondary text-lg">Creativity</div>
                 </div>
             </div>
         </div>
@@ -343,9 +356,9 @@
     <!-- CTA Section -->
     <section class="py-24 bg-gradient-to-r from-accent to-magenta">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-5xl font-bold text-white mb-6">Ready to Play?</h2>
-            <p class="text-xl text-white/90 mb-8">Join thousands of players enjoying our retro games</p>
-            <a href="#games" class="inline-block bg-white text-accent px-12 py-4 rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-white/50 transition-all hover:scale-105">Start Playing</a>
+            <h2 data-en="Ready to Play?" data-es="¿Listo para Jugar?" class="text-5xl font-bold text-white mb-6">Ready to Play?</h2>
+            <p data-en="Join thousands of players enjoying our retro games" data-es="Únete a miles de jugadores disfrutando nuestros juegos retro" class="text-xl text-white/90 mb-8">Join thousands of players enjoying our retro games</p>
+            <a href="#games" data-en="Start Playing" data-es="Empieza a jugar" class="inline-block bg-white text-accent px-12 py-4 rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-white/50 transition-all hover:scale-105">Start Playing</a>
         </div>
     </section>
 
@@ -357,19 +370,19 @@
                     <div class="flex items-center gap-2 mb-4">
                         <span class="text-2xl font-bold text-secondary">GettoDev</span>
                     </div>
-                    <p class="text-light">Indie game development studio creating nostalgic arcade experiences since 1998.</p>
+                    <p data-en="Indie game development studio creating nostalgic arcade experiences since 1998." data-es="Estudio de desarrollo de videojuegos indie creando experiencias arcade nostálgicas desde 1998." class="text-light">Indie game development studio creating nostalgic arcade experiences since 1998.</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold text-secondary mb-4">Quick Links</h3>
+                    <h3 data-en="Quick Links" data-es="Enlaces Rápidos" class="text-xl font-bold text-secondary mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-light hover:text-accent transition-colors">Home</a></li>
-                        <li><a href="#games" class="text-light hover:text-accent transition-colors">Games</a></li>
-                        <li><a href="about-us.html" class="text-light hover:text-accent transition-colors">About</a></li>
-                        <li><a href="contact.html" class="text-light hover:text-accent transition-colors">Contact</a></li>
+                        <li><a href="index.html" data-en="Home" data-es="Inicio" class="text-light hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="#games" data-en="Games" data-es="Juegos" class="text-light hover:text-accent transition-colors">Games</a></li>
+                        <li><a href="about-us.html" data-en="About" data-es="Nosotros" class="text-light hover:text-accent transition-colors">About</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-es="Contacto" class="text-light hover:text-accent transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold text-secondary mb-4">Games</h3>
+                    <h3 data-en="Games" data-es="Juegos" class="text-xl font-bold text-secondary mb-4">Games</h3>
                     <ul class="space-y-2">
                         <li><a href="#" onclick="openGamePopup('maidhen')" class="text-light hover:text-accent transition-colors">Maidhen</a></li>
                         <li><a href="#" onclick="openGamePopup('pies-frescos')" class="text-light hover:text-accent transition-colors">Pies Frescos</a></li>
@@ -377,7 +390,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold text-secondary mb-4">Connect</h3>
+                    <h3 data-en="Connect" data-es="Conectar" class="text-xl font-bold text-secondary mb-4">Connect</h3>
                     <div class="flex gap-4">
                         <a href="https://www.instagram.com/gettodev/" target="_blank" class="text-accent hover:text-magenta transition-colors text-lg">Instagram</a>
                         <a href="https://gamejolt.com/@GettoDev" target="_blank" class="text-accent hover:text-magenta transition-colors text-lg">GameJolt</a>
@@ -388,8 +401,8 @@
             
             <div class="border-t border-primary/30 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-light">&copy; 2026 GettoDev. All rights reserved.</p>
-                    <p class="text-light">Powered by GettoDev since 1998</p>
+                    <p data-en="&copy; 2026 GettoDev. All rights reserved." data-es="&copy; 2026 GettoDev. Todos los derechos reservados." class="text-light">&copy; 2026 GettoDev. All rights reserved.</p>
+                    <p data-en="Powered by GettoDev since 1998" data-es="Impulsado por GettoDev desde 1998" class="text-light">Powered by GettoDev since 1998</p>
                 </div>
                 <div class="flex flex-wrap justify-center gap-4 mt-6">
                     <img src="assets/badges/a18.gif" alt="badge" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
@@ -415,15 +428,15 @@
     <div id="gamePopup" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center backdrop-blur-sm">
         <div class="bg-dark max-w-6xl w-[90%] h-[90vh] rounded-2xl shadow-2xl flex flex-col border border-primary/30">
             <div class="flex justify-between items-center p-6 border-b border-primary/30">
-                <h3 id="popupTitle" class="text-2xl font-bold text-secondary">Game Window</h3>
+                <h3 id="popupTitle" data-en="Game Window" data-es="Ventana de Juego" class="text-2xl font-bold text-secondary">Game Window</h3>
                 <button onclick="closeGamePopup()" class="text-4xl text-light hover:text-accent transition-colors">&times;</button>
             </div>
             <div class="flex-1 bg-black overflow-hidden">
                 <iframe id="gameFramePopup" src="" class="w-full h-full border-0"></iframe>
             </div>
             <div class="p-6 border-t border-primary/30 flex gap-4 justify-center">
-                <button onclick="toggleFullscreen()" class="bg-gradient-to-r from-accent to-magenta text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Fullscreen</button>
-                <button onclick="closeGamePopup()" class="bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-dark transition-all">Close</button>
+                <button onclick="toggleFullscreen()" data-en="Fullscreen" data-es="Pantalla Completa" class="bg-gradient-to-r from-accent to-magenta text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all">Fullscreen</button>
+                <button onclick="closeGamePopup()" data-en="Close" data-es="Cerrar" class="bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-dark transition-all">Close</button>
             </div>
         </div>
     </div>
